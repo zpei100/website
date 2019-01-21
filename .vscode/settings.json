@@ -1,3 +1,14 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "files.exclude": {
+    "__error": "Not found",
+    ".vscode": true,
+    "node_modules": true,
+    "webpack.config.js": true,
+    "package-lock.json": true,
+    "package.json": true,
+    ".gitignore": true,
+    ".babelrc": true,
+    "src/server": true
+  }
 }

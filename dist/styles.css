@@ -1,3 +1,38 @@
+body {
+  margin: 0;
+  font-family: Helvetica, Arial;
+}
 
+.parallax {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url("assets/images/dark1.jpg");
+  position: relative;
+}
+.parallax .greeting {
+  color: white;
+  font-size: 64px;
+  position: absolute;
+  top: 42%;
+  left: 20%;
+  font-weight: 700;
+  opacity: 0;
+}
+.parallax .greeting p {
+  margin: 0;
+}
+.parallax img {
+  width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  opacity: 0;
+}
+
+#skills {
+  height: 100vh;
+  width: 100vw;
+}
 
 /*# sourceMappingURL=styles.css.map */
