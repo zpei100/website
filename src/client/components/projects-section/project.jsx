@@ -17,7 +17,7 @@ export default class Project extends Component {
         overlay.css({opacity: 1, transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '15%', transition: `linear, ${duration}s ${delay}s`})
         overlayBot.css({bottom: '15%', transition: `linear, ${duration}s ${delay}s`})
-        thumbnail.css({opacity: 0, transition: `ease-in ${delay}s`})
+        thumbnail.css({opacity: 0, transition: `linear ${delay}s`})
       },
 
       () => {
@@ -42,7 +42,8 @@ export default class Project extends Component {
   }
   
   render() {
-    const { description, name, images, thumbnail } = this.props
+    const { technologies, name, thumbnail, toggleModal, idx } = this.props
+    console.log('toggle modal: ', toggleModal)
     const containerStyles = {
       overflow: 'hidden',
       position: 'relative',
@@ -110,11 +111,11 @@ export default class Project extends Component {
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
               <div style={overlayNameStyles}>{name}</div>
-              <div style={overlayDescriptionStyles}>{description}</div>
+              <div style={overlayDescriptionStyles}>{technologies}</div>
             </div>
 
             <div style={overlayBotStyles} ref={overlayBot => this.overlayBot = overlayBot}>
-              <div style={detailsStyle} ref={details => this.details = details}>Details</div>
+              <div onClick={() => toggleModal(idx)} style={detailsStyle} ref={details => this.details = details}>Details</div>
             </div>
 
           </div>

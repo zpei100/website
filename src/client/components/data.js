@@ -51,6 +51,7 @@ export default {
     {
       name: 'CozySheets',
       description: `UI clone of Airbnb's listing page`,
+      technologies: 'React/Redux',
       thumbnail: 'assets/gallery/cozysheets/thumbnail.png',
       images: [
         'assets/gallery/cozysheets/performance.png',
@@ -66,6 +67,7 @@ export default {
     {
       name: 'Reddit-Clone',
       description: 'Posting / Commenting mini-app',
+      technologies: 'React/Redux',
       thumbnail: 'assets/gallery/reddit-clone/thumbnail.png',
       images: [
         'assets/gallery/reddit-clone/Main.png',
@@ -82,6 +84,7 @@ export default {
     {
       name: 'upScale',
       description: 'Server optimization and scaling',
+      technologies: 'React/Redux',
       thumbnail: 'assets/gallery/upScale/Main.png',
       images: [
         'assets/gallery/upScale/Main.png',

@@ -73,6 +73,20 @@ body {
   font-size: 21px;
   font-weight: 600;
 }
+#aboutMe .sticky {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  width: 100%;
+  padding: 0;
+  height: 10%;
+}
+#aboutMe .sticky li {
+  margin: 0;
+}
 
 .circle {
   border-radius: 50%;
@@ -122,6 +136,29 @@ body {
   height: 375px;
   width: 100%;
   grid-template-columns: repeat(3, 30%);
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+#modal-content {
+  background: white;
+  margin: auto auto;
+  width: 650px;
+  height: 720px;
+  padding: 5px, 5px;
+}
+
+.slider {
+  background: black !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,27 +1,35 @@
 import React, { Component } from 'react'
 import Skills from './skills/skills.jsx'
 import Parallax from './parallax/parallax.jsx'
-import data from './data'
+import Modal from './modal/modal.jsx'
 import ExpertiseSection from './expertise-section/expertise-section.jsx'
 import ProjectsSection from './projects-section/projects-section.jsx'
-import '../eventHandlers/parallaxEffect'
 
+import data from './data'
+import '../eventHandlers/parallaxEffect'
 
 export default class App extends Component {
   constructor() {
     super()
-    this.state = data
+    this.state = {
+      data, showModal: false, active: 0
+    }
+  }
+
+  toggleModal = idx => {
+    this.setState({showModal: !this.state.showModal, active: idx})
   }
 
   render() {
-    const { skills, expertises, projects } = this.state
+    const { showModal, data: {skills, expertises, projects}} = this.state
 
     return (
       <React.Fragment>
         <Parallax />
         <Skills skillsData={skills} />
         <ExpertiseSection expertises={expertises} />
-        <ProjectsSection projects={projects}/>
+        <ProjectsSection projects={projects} toggleModal={this.toggleModal}/>
+        <Modal showModal={this.state.showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/>
       </React.Fragment>
     );
   }
