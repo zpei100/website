@@ -10,7 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url('assets/images/dark1.jpg');
+  background: url('assets/images/dark-background.jpg');
   position: relative;
 
   .greeting {
@@ -21,6 +21,7 @@ body {
     left: 20%;
     font-weight: 700;
     opacity: 0;
+    
    
     p {
       margin: 0
@@ -36,8 +37,117 @@ body {
   }
 }
 
-////////
-#skills {
-  height: 100vh;
+
+// Not critical -- file: skills -- bar graph on the right
+#skills-section {
+  height: 70vh;
+  min-height: 50vh;
   width: 100vw;
+  display: flex;
+  background: #EEE5E9;
+
+  &>div {
+    padding: 50px 80px;
+  }
+}
+
+#skills-bars {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+//aboutme, picture and short introduction of self, on the left
+#aboutMe {
+  width: 50%;
+  height: 100%;
+  
+  .introduction {
+    p {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    padding: 0 0 0 50px;
+  }
+
+  .links {
+    margin: 20px 0 0 0;
+
+    .link {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    
+      a {
+        text-decoration: none;
+        color: $link-color;
+        margin: 0 0 0 7px;
+        font-size: 21px;
+        font-weight: 600;
+        
+      }
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  height: 225px;
+  width: 225px;
+  min-width: 225px;
+  border: 2px solid black;
+  overflow: hidden;
+  background: url('assets/images/profile.png') no-repeat;
+  background-size: contain
+
+  
+}
+
+//expertise section:
+#expertise-section {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+  ), url('assets/images/expertise-background.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 50px 50px;
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .expertise-grid {
+    display: grid;
+    height: 80%;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(auto, 40%));
+    grid-template-rows: repeat(2, minmax(auto, 40%)); 
+  }
+}
+
+//projects section:
+#projects-section {
+  height: 100vh;
+  width: 100%;
+  background: #EEE5E9;
+  padding: 30px 0;
+
+  h1 {
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .gallery {
+    padding: 0 5%;
+    display: grid;
+    grid-gap: 10px;
+    height: 375px;
+    width: 100%;
+    grid-template-columns: repeat(3, 30%);
+  }
 }

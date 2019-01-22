@@ -9,6 +9,9 @@
     "package.json": true,
     ".gitignore": true,
     ".babelrc": true,
-    "src/server": true
+    "src/client/eventHandlers": true,
+    "src/client/components/parallax": true,
+    "src/client/components/skills": true,
+    "src/client/components/expertise-section": true
   }
 }
