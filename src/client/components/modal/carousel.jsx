@@ -36,7 +36,7 @@ export default class Carousel extends Component {
   }
 
   slide = operation => {
-    if (!this.state.animating) {
+     if (!this.state.animating) {
       const marginChange = this.getRenderedImageSize() + 'px'
       this.setState({animating: true}, () => {
         this.slider

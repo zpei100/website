@@ -43,7 +43,7 @@ export default class Bar extends Component {
     return (
       <div style={containerStyle}>
         <div style={barContainerStyles}>
-          <div ref={bar => this.bar = bar} style={barStyle}></div>
+          <div ref={bar => this.bar = bar} style={barStyle} className="bar"></div>
         </div>
         <div style={labelStyle}>{label}</div>
       </div>

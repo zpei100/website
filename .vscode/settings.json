@@ -8,13 +8,6 @@
     "package-lock.json": true,
     "package.json": true,
     ".gitignore": true,
-    "src/client/eventHandlers": true,
-    "src/client/components/parallax": true,
-    "src/client/components/*modal.*": true,
-    "src/client/components/*parallax": true,
-    "src/client/components/*parallax.*": true,
-    "dist": true,
-    "src/client/components/modal": true,
-    "src/client/components/projects-section": true
+    "src/client/eventHandlers": true
   }
 }

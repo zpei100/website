@@ -7,7 +7,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("assets/images/dark-background.jpg");
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.7)), url("assets/images/dark-background.jpg");
   position: relative;
 }
 .parallax .greeting {
@@ -50,42 +50,36 @@ body {
 #aboutMe {
   width: 50%;
   height: 100%;
+  position: relative;
+  box-sizing: border-box;
 }
 #aboutMe .introduction {
   padding: 0 0 0 50px;
 }
+#aboutMe .introduction h1 {
+  margin-top: 0;
+  font-size: 32px;
+}
 #aboutMe .introduction p {
-  margin: 0;
-  font-size: 24px;
+  font-size: 16px;
+  line-height: 26px;
 }
 #aboutMe .links {
-  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
 #aboutMe .links .link {
   display: flex;
-  align-items: center;
+  justify-content: center;
   margin: 10px 0;
 }
 #aboutMe .links .link a {
   text-decoration: none;
   color: black;
   margin: 0 0 0 7px;
-  font-size: 21px;
-  font-weight: 600;
-}
-#aboutMe .sticky {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  display: flex;
-  justify-content: space-around;
-  background: white;
-  width: 100%;
-  padding: 0;
-  height: 10%;
-}
-#aboutMe .sticky li {
-  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .circle {
@@ -97,6 +91,10 @@ body {
   overflow: hidden;
   background: url("assets/images/profile.png") no-repeat;
   background-size: contain;
+}
+
+.bar {
+  background: lightblue !important;
 }
 
 #expertise-section {
@@ -115,8 +113,8 @@ body {
   display: grid;
   height: 80%;
   width: 100%;
-  grid-template-columns: repeat(2, minmax(auto, 40%));
-  grid-template-rows: repeat(2, minmax(auto, 40%));
+  grid-template-columns: repeat(2, 48%);
+  grid-template-rows: repeat(2, 50%);
 }
 
 #projects-section {

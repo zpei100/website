@@ -13,6 +13,10 @@ export default {
       value: '90%'
     },
     {
+      name: 'Angular 2+',
+      value: '40%'
+    },
+    {
       name: 'Node.js',
       value: '80%'
     },
@@ -23,6 +27,10 @@ export default {
     {
       name: 'MySQL',
       value: '60%'
+    },
+    {
+      name: 'GraphQL',
+      value: '65%'
     }
   ],
   expertises: [
@@ -32,7 +40,7 @@ export default {
       description: 'Build responsive, interactive, high performance websites'
     },
     {
-      icon: 'assets/images/server.svg',
+      icon: 'assets/images/optimization.svg',
       title: 'Optimization',
       description: 'Improve page loading speed and performance'
     },
@@ -62,7 +70,8 @@ export default {
         'assets/gallery/cozysheets/modal.png',
         'assets/gallery/cozysheets/performance_02.png',
         'assets/gallery/cozysheets/related.png'
-      ]
+      ],
+      website: 'https://airbnbui-service.herokuapp.com/rooms/5'
     },
     {
       name: 'Reddit-Clone',
@@ -79,7 +88,8 @@ export default {
         'assets/gallery/reddit-clone/NewPost.png',
         'assets/gallery/reddit-clone/performance_02.png',
         'assets/gallery/reddit-clone/performance.png'
-      ]
+      ],
+      website: 'https://reddit-clon.herokuapp.com/'
     },
     {
       name: 'upScale',

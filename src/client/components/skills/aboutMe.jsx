@@ -3,26 +3,21 @@ import External from './external.jsx'
 import $ from 'jquery'
 
 export default class AboutMe extends Component {
-  // componentDidMount() {
-  //   this.io = new IntersectionObserver(([entry]) => {
-  //     if(entry.intersectionRatio >= 0.5) {
-  //       $('.links').animate({left: '-100%'}, 500, () => {
-  //         $('.links').animate({opacity: 1}, 500)
-  //       })
-  //     } 
-  //   }, {threshold: [0.5, 0.6, 0.7, 1]})
-
-  //   this.io.observe(this.links)
-  // }
-
   render() {
     return (
       <div  id="aboutMe" ref={links => this.links = links}>
         <div style={{display: 'flex'}}>
           <div className="circle"></div>
           <div className="introduction">
+            <h1>About Me</h1>
             <p>
-              My journey of software engineering began in July of 2018. Since then, I've built numerous full stack applications from the ground up. And I can do so using either raw HTML/CSS/JavaScript or by leveraging modern libraries and frameworks. 
+              I'm passionate about mathematics and problem solving. I began my software engineering journey in July 2018.
+            </p>
+            <p>
+              Since then, I've built numerous full stack applications from the ground up, using technologies ranging from raw JavaScript (pre-ES5) to the most buzz-wordy frameworks and libraries today.
+            </p>
+            <p>
+              I enjoy solving toy problems with time and space complexity constraints. My hobbies include playing social board-games like one night werewolf, and watching gamers beating the hardest contents while breaking world records.
             </p>
           </div>
         </div>
