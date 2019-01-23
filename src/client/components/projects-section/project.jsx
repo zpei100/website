@@ -43,7 +43,6 @@ export default class Project extends Component {
   
   render() {
     const { technologies, name, thumbnail, toggleModal, idx } = this.props
-    console.log('toggle modal: ', toggleModal)
     const containerStyles = {
       overflow: 'hidden',
       position: 'relative',

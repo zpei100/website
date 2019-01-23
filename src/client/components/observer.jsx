@@ -13,6 +13,7 @@ export default class Observer extends React.Component {
     this.io = new IntersectionObserver(
       ([entry]) => {
         if(entry.intersectionRatio > 0) {
+          console.log('intersection more than 0')
           this.io.unobserve(this.container)
           this.props.load().then(module => this.setState({component: module.default}))
         }        

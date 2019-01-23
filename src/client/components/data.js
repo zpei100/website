@@ -120,7 +120,7 @@ export default {
       technologies: ['Node.js', 'MongoDB', 'Redis', 'Docker', 'AWS', ],
       thumbnail: 'assets/gallery/upScale/Main.png',
       images: [
-        'assets/gallery/upScale/Main.png',
+        'assets/gallery/upScale/Main-50.png',
         'assets/gallery/upScale/JMeter.png',
         'assets/gallery/upScale/NewRelic.png'
       ]

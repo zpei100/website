@@ -2,13 +2,26 @@ body {
   margin: 0;
   font-family: Helvetica, Arial;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: honey;
+  src: url("assets/fonts/painter.ttf");
+}
+div {
+  font-family: myFirstFont;
+}
+
+.honey {
+  font-family: honey, Arial;
 }
 
 .parallax {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.7)), url("assets/images/dark-background.jpg");
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.7)), url("assets/images/dark-background-30.jpg");
   position: relative;
 }
 .parallax button {
@@ -28,6 +41,11 @@ body {
   left: 20%;
   font-weight: 700;
   opacity: 0;
+}
+.parallax .greeting div {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }
 .parallax .greeting p {
   margin: 0;
@@ -104,14 +122,14 @@ body {
 }
 
 .bar {
-  background: lightblue !important;
+  background: #22201d !important;
 }
 
 #expertise-section {
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("assets/images/expertise-background.jpg") no-repeat 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/expertise-background-50.jpg") no-repeat 50% 50%;
   background-size: cover;
   background-attachment: fixed;
   color: white;

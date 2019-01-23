@@ -45,7 +45,6 @@ export default class Carousel extends Component {
           .animate({marginLeft: `${operation}=${marginChange}`}, this.animationDuration, () => {
             const newActive = this.updateActive(operation)
             this.setState({active: newActive, images: getThree(this.props.images, newActive), animating: false}, () => {
-              console.log('margin left after reset: ', this.getRenderedImageSize())
               this.slider.find('img').first().css({marginLeft: `-${marginChange}`})
           })
         })

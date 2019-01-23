@@ -5,8 +5,6 @@ export default class Bar extends Component {
   componentDidMount() {
     this.io = new IntersectionObserver(
       ([entry]) => {
-        console.log('fire')
-        console.log(entry.intersectionRatio)
         if(entry.intersectionRatio > 0.75) {
           this.io.unobserve(this.bar);
           const { delay = 0.2 } = this.props;
@@ -36,9 +34,10 @@ export default class Bar extends Component {
 
     const barContainerStyles = {
       width: '75%',
-      border: '1px solid black',
+      border: '3px solid black',
       overflow: 'hidden',
       position: 'relative',
+      borderRadius: '14px',
     }
 
     const labelStyle = {

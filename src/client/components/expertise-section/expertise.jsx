@@ -6,7 +6,6 @@ export default class Expertise extends Component {
     this.io = new IntersectionObserver(
       ([entry]) => {
         if(entry.intersectionRatio > 0.25) {
-          console.log('fire')
           $(this.container).animate({opacity: 1}, 1000)
           this.io.unobserve(this.container)
         }
