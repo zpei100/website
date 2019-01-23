@@ -36,30 +36,53 @@ export default {
   expertises: [
     {
       icon: 'assets/images/coding2.svg',
-      title: 'UI development',
-      description: 'Build responsive, interactive, high performance websites'
+      title: 'UI/UX development',
+      description: 'Build responsive, interactive components',
+      bulletpoints: [
+         'Responsive layouts and all the basic compnents, including carousels, galleries, modals, dropdowns, forms etc...',
+         'Custom animations based on user interactions',
+         'Client-side caching, and use of service workers for better 3G and even off-line experience (learning)',
+         'Modular codebase with React, Redux and Sass',
+      ]
     },
     {
       icon: 'assets/images/optimization.svg',
       title: 'Optimization',
-      description: 'Improve page loading speed and performance'
+      description: 'Improve page loading speed and user experience',
+      bulletpoints: [
+        'Deliver content to users more quickly with server-side-rendering',
+        'Lazy loading below the fold, and non-critical content, images with observers',
+        'Dynamically import components to lessen size of initial data transfered',
+        'Single page applications with bundling tools to reduce number of resource requests'
+      ]
     },
     {
       icon: 'assets/images/server.svg',
       title: 'Server',
-      description: 'Implement RESTful APIs as well as GraphQL back ends'
+      description: 'Implement RESTful APIs as well as GraphQL back ends',
+      bulletpoints: [
+        'Implement RESTful APIs to support all CRUD operations and nested queries with MySQL and MongoDB',
+        'GraphQL integration for exact and efficient queries',
+        'Server-side caching, templating, routing, authentication and SSL handling',
+      ]
     },
     {
       icon: 'assets/images/scale.svg',
-      title: 'Back-end Scaling',
-      description: 'Leveraging server caching, CDN, load balancers and reverse proxies to increase back end scaliability'
+      title: 'Scaling',
+      description: 'Leveraging server caching, CDN, load balancers and reverse proxies to increase back end scaliability',
+      bulletpoints: [
+        'Leveraging CDN and reverse-proxies to reduce server load (learning)',
+        'Reduce numbers of requests hitting the server via caching on multiple layers',
+        'Deploy Dockerized applications across multiple AWS cloud instances',
+        'Benchmarked back-end performance with JMeter, ApacheBench, New Relic'
+      ]
     }
   ],
   projects: [
     {
       name: 'CozySheets',
-      description: `UI clone of Airbnb's listing page`,
-      technologies: 'React/Redux',
+      description: `Recreated Airbnb's listing page`,
+      technologies: ['React', 'Redux', 'Bootstrap', 'Sass'],
       thumbnail: 'assets/gallery/cozysheets/thumbnail.png',
       images: [
         'assets/gallery/cozysheets/performance.png',
@@ -75,8 +98,8 @@ export default {
     },
     {
       name: 'Reddit-Clone',
-      description: 'Posting / Commenting mini-app',
-      technologies: 'React/Redux',
+      description: 'Posting and commenting app',
+      technologies: ['React', 'Apollo', 'GraphQL', 'MongoDB'],
       thumbnail: 'assets/gallery/reddit-clone/thumbnail.png',
       images: [
         'assets/gallery/reddit-clone/Main.png',
@@ -93,8 +116,8 @@ export default {
     },
     {
       name: 'upScale',
-      description: 'Server optimization and scaling',
-      technologies: 'React/Redux',
+      description: 'Back end optimization and scaling',
+      technologies: ['Node.js', 'MongoDB', 'Redis', 'Docker', 'AWS', ],
       thumbnail: 'assets/gallery/upScale/Main.png',
       images: [
         'assets/gallery/upScale/Main.png',

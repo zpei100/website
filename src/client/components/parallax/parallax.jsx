@@ -4,7 +4,7 @@ import $ from 'jquery'
 export default class Parallax extends Component {
   componentDidMount() {
     this.image.onload = () => {
-      $(this.image).animate({opacity: 0.85}, 1000)
+      $(this.image).animate({opacity: 0.75}, 1000)
       setTimeout(() => {
         $(this.greeting).animate({opacity: 1}, 1000)
       }, 300)
@@ -18,6 +18,11 @@ export default class Parallax extends Component {
         <div ref={greeting => this.greeting = greeting} className="greeting">
           <p>Hi! I'm Zen,</p>
           <p>a full-stack developer</p>
+          <button 
+            onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'end'})}
+          >
+            About Me
+          </button>
         </div>
       </div>       
     );

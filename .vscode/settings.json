@@ -7,7 +7,6 @@
     "webpack.config.js": true,
     "package-lock.json": true,
     "package.json": true,
-    ".gitignore": true,
-    "src/client/eventHandlers": true
+    ".gitignore": true
   }
 }

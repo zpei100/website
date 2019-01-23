@@ -87,11 +87,17 @@ export default class Project extends Component {
 
     const overlayDescriptionStyles = {
       fontSize: '18px', 
-      margin: '8px 0 0 0',
+      // margin: '8px 0 0 0',
+      padding: '0 25px',
+      boxSizing: 'border-box',
       fontWeight: 300, 
       color: 'red', 
       width: '100%', 
       textAlign: 'center',
+      display: 'flex',
+      justifyContent: 'space-around',
+      listStyleType: 'none',
+      
     }
 
     const detailsStyle = {
@@ -99,7 +105,8 @@ export default class Project extends Component {
       border: '4px solid',
       borderColor: 'red',
       padding: '10px',
-      textAlign: 'center'
+      textAlign: 'center',
+      cursor: 'pointer'
     }
 
     return (
@@ -111,7 +118,7 @@ export default class Project extends Component {
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
               <div style={overlayNameStyles}>{name}</div>
-              <div style={overlayDescriptionStyles}>{technologies}</div>
+              <ul style={overlayDescriptionStyles}>{technologies.map(technology => <li>{technology}</li>)}</ul>
             </div>
 
             <div style={overlayBotStyles} ref={overlayBot => this.overlayBot = overlayBot}>

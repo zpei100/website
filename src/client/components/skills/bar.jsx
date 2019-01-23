@@ -3,11 +3,26 @@ import $ from 'jquery'
 
 export default class Bar extends Component {
   componentDidMount() {
-    const { delay = 0.2 } = this.props;
-    console.log('delay for the bar: ',)
-    setTimeout(() => {
-      $(this.bar).animate({left: '0%'}, 2000, 'swing')
-    }, 1000 * delay)
+    this.io = new IntersectionObserver(
+      ([entry]) => {
+        console.log('fire')
+        console.log(entry.intersectionRatio)
+        if(entry.intersectionRatio > 0.75) {
+          this.io.unobserve(this.bar);
+          const { delay = 0.2 } = this.props;
+          setTimeout(() => {
+            $(this.bar).animate({left: '0%'}, 2000, 'swing')
+          }, 1000 * delay)
+        }
+      }, {threshold: [1]}
+    )
+
+    this.io.observe(this.barContainer)
+
+    // const { delay = 0.2 } = this.props;
+    // setTimeout(() => {
+    //   $(this.bar).animate({left: '0%'}, 2000, 'swing')
+    // }, 1000 * delay)
   }
 
   render() {
@@ -42,7 +57,7 @@ export default class Bar extends Component {
 
     return (
       <div style={containerStyle}>
-        <div style={barContainerStyles}>
+        <div style={barContainerStyles} ref={barContainer => this.barContainer = barContainer}>
           <div ref={bar => this.bar = bar} style={barStyle} className="bar"></div>
         </div>
         <div style={labelStyle}>{label}</div>

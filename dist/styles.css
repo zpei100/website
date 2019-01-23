@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Helvetica, Arial;
+  box-sizing: border-box;
 }
 
 .parallax {
@@ -9,6 +10,15 @@ body {
   overflow: hidden;
   background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.7)), url("assets/images/dark-background.jpg");
   position: relative;
+}
+.parallax button {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 15px;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 22px;
 }
 .parallax .greeting {
   color: white;
@@ -100,7 +110,8 @@ body {
 #expertise-section {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/expertise-background.jpg") no-repeat 50% 50%;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("assets/images/expertise-background.jpg") no-repeat 50% 50%;
   background-size: cover;
   background-attachment: fixed;
   color: white;
@@ -109,12 +120,16 @@ body {
 #expertise-section h1 {
   font-size: 48px;
 }
+#expertise-section li {
+  line-height: 25px;
+  width: 90%;
+}
 #expertise-section .expertise-grid {
   display: grid;
   height: 80%;
   width: 100%;
-  grid-template-columns: repeat(2, 48%);
-  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: repeat(2, 46%);
+  grid-template-rows: repeat(2, 46%);
 }
 
 #projects-section {
@@ -122,6 +137,7 @@ body {
   width: 100%;
   background: #EEE5E9;
   padding: 30px 0;
+  box-sizing: border-box;
 }
 #projects-section h1 {
   font-size: 56px;
@@ -153,6 +169,21 @@ body {
   width: 650px;
   height: 720px;
   padding: 5px, 5px;
+}
+
+#modal-content-description {
+  padding: 0 25px;
+}
+#modal-content-description p {
+  font-size: 22px;
+  font-weight: 600;
+}
+#modal-content-description a {
+  text-decoration: none;
+  color: black;
+  border: 2px solid;
+  border-color: red;
+  padding: 10px;
 }
 
 .slider {
