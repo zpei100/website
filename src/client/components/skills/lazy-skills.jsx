@@ -4,8 +4,8 @@ import Observer from '../observer.jsx'
 export default class LazySkills extends Component {
   render() {
     return (
-      <Observer load={() => import(/*webpackChunkName: "Skills" */ './skills.jsx')}>
-        {Component => Component ? <Component {...this.props}/> : ''}
+      <Observer threshold={0.01} load={() => import(/*webpackChunkName: "Skills" */ './skills.jsx')}>
+        {Component => Component ? <Component {...this.props}/> : <div style={{height: '100vh'}}></div>}
       </Observer>
     );
   }

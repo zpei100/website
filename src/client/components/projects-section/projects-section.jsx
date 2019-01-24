@@ -8,7 +8,7 @@ export default class ProjectsSection extends Component {
       <div id="projects-section">
         <h1>Projects</h1>
         <div className="gallery">
-          {this.props.projects.map((project, idx) => <Project {...project} idx={idx} toggleModal={toggleModal} />)}
+          {this.props.projects.map((project, idx) => <Project key={`project-${idx}`} {...project} idx={idx} toggleModal={toggleModal} />)}
         </div>
       </div>
     );

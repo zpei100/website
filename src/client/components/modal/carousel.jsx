@@ -90,7 +90,7 @@ export default class Carousel extends Component {
       <React.Fragment>
         <div className="carousel" style={carouselStyles}>
           <div style={sliderStyles} ref={slider => this.slider = $(slider)} className="slider">
-            {images.map(image => <img style={sliderImageStyles} src={image} />)}
+            {images.map((image, idx) => <img key={`image-${idx}`} style={sliderImageStyles} src={image} />)}
           </div>
         </div>
         <div style={{display: 'flex'}}>

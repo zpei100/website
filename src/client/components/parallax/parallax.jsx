@@ -17,7 +17,7 @@ export default class Parallax extends Component {
         <img ref={image => this.image = image} src="assets/images/lightbulb-50.jpg" />
         <div ref={greeting => this.greeting = greeting} className="greeting">
           <p style={{fontSize: '100px'}}>Hi! I'm Zen,</p>
-          <p style={{fontSize: '58px', fontWeight: '500' }} className="honey">a full-stack developer</p>
+          <p style={{fontSize: '58px', fontWeight: '500' }} className="honey">a full-stack developer...</p>
           <div>
           <button 
             onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'end'})}

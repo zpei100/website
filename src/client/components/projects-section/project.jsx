@@ -117,7 +117,7 @@ export default class Project extends Component {
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
               <div style={overlayNameStyles}>{name}</div>
-              <ul style={overlayDescriptionStyles}>{technologies.map(technology => <li>{technology}</li>)}</ul>
+              <ul style={overlayDescriptionStyles}>{technologies.map((technology, idx) => <li key={`technology-${idx}`}>{technology}</li>)}</ul>
             </div>
 
             <div style={overlayBotStyles} ref={overlayBot => this.overlayBot = overlayBot}>

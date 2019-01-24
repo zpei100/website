@@ -36,7 +36,7 @@ export default class Expertise extends Component {
         <div style={detailsStyles}>
           <h2 style={titleStyles}>{title}</h2>
           {/* <p>{description}</p> */}
-          <ul>{bulletpoints.map(bulletpoint => <li>{bulletpoint}</li>)}</ul>
+          <ul>{bulletpoints.map((bulletpoint, idx) => <li key={`bulletpoint-${idx}`}>{bulletpoint}</li>)}</ul>
         </div>
       </div>
     );

@@ -1,0 +1,44 @@
+@import 'variables';
+
+//modal:
+#modal {
+  background: rgba(0,0,0,0.5);
+  height: 100%; 
+  width: 100%; 
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+#modal-content {
+  background: white;
+  margin: auto auto;
+  width: 650px;
+  height: 720px;
+  padding: 5px, 5px;
+}
+
+#modal-content-description {
+  padding: 0 25px;
+  
+  p {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid;
+    border-color: red;
+    padding: 10px;
+  }
+}
+
+
+//overrides;
+.slider {
+  background: black!important;
+}

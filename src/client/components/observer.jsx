@@ -1,10 +1,11 @@
 import React from 'react'
 
 export default class Observer extends React.Component {
-  constructor() {
+  constructor({threshold}) {
     super()
     this.state = {
-      component: null
+      component: null,
+      threshold: threshold || 0
     }
     this.container = null
   }
@@ -12,13 +13,12 @@ export default class Observer extends React.Component {
   componentDidMount() {
     this.io = new IntersectionObserver(
       ([entry]) => {
-        if(entry.intersectionRatio > 0) {
-          console.log('intersection more than 0')
+        if(entry.intersectionRatio > this.state.threshold) {
           this.io.unobserve(this.container)
           this.props.load().then(module => this.setState({component: module.default}))
         }        
       }
-    )
+    , {threshold: [this.state.threshold]})
     this.io.observe(this.container)
   }
 
