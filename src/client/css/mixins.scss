@@ -1,0 +1,7 @@
+@import 'variables';
+
+@mixin responsive($maxWidth) {
+  @media screen and (max-width: $maxWidth) {
+    @content
+  }
+}

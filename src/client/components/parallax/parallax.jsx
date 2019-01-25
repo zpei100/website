@@ -14,7 +14,7 @@ export default class Parallax extends Component {
   render() {
     return (
       <div className="parallax">
-        <img ref={image => this.image = image} src="assets/images/lightbulb-50.jpg" />
+        <img ref={image => this.image = image} src="assets/images/lightbulb-50-1920x1280.jpg" />
         <div ref={greeting => this.greeting = greeting} className="greeting">
           <p style={{fontSize: '100px'}}>Hi! I'm Zen,</p>
           <p style={{fontSize: '58px', fontWeight: '500' }} className="honey">a full-stack developer...</p>

@@ -18,6 +18,7 @@ export default class Expertise extends Component {
     const { icon, title, description, bulletpoints = [] } = this.props
     const expertiseStyles = {
       display: 'flex',
+      // justifyContent: 'start',
       padding: '30px 30px',
       opacity: 0
     }
@@ -27,7 +28,7 @@ export default class Expertise extends Component {
     }
 
     const detailsStyles = {
-      margin: '0 30px'
+      margin: '0 0 0 30px'
     }
 
     return (

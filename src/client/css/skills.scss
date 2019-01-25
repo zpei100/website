@@ -1,4 +1,6 @@
+//skills: =====================================================================
 @import 'variables';
+@import 'mixins';
 
 #skills-section {
   height: 70vh;
@@ -10,7 +12,69 @@
   &>div {
     padding: 50px 80px;
   }
+
+  //1500px-
+  @include responsive(1500px) {
+    height: 100vh;
+    max-height: 100vh;
+    display: block;
+
+    .skill-label {
+      width: 100px !important;
+    }
+
+    #aboutMe {
+      width: 100% !important;
+      height: 40% !important;
+      min-height: 360px;
+
+    }
+
+    #skills-bars {
+      width: 100%;
+      height: 50%;
+    }
+
+    .links {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      background: white;
+      margin: 0;
+      border-top: 2px solid black;
+      z-index: 10;
+      height: auto !important;
+      flex-direction: row !important;
+      
+      .link {
+        border: 0.5px solid grey;
+        border-top: none;
+        border-bottom: none;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        align-items: center;
+        width: 100% !important;
+        justify-content: center !important;
+        
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+
+    //1500px-
 }
+
+
 
 #skills-bars {
   width: 50%;
@@ -25,7 +89,7 @@
   position: relative;
   box-sizing: border-box;
 
-  .introduction {
+  .text {
     h1 {
       margin-top: 0;
       font-size: $aboutMe-title-size;
@@ -34,22 +98,32 @@
     p {
       font-size: $aboutMe-description-font-size;
       line-height: $aboutMe-description-line-height;
+      margin: 20px 0;
     }
 
     padding: 0 0 0 50px;
+    max-height: 100%;
+    overflow: auto;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .links {
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
     
-
     
     .link {
       display: flex;
       justify-content: center;
       margin: 10px 0;
+      cursor: pointer;
+      width: 100%;
+      height: $link-text-size;
     
       a {
         text-decoration: none;
@@ -59,7 +133,7 @@
         font-weight: $link-text-weight; 
       }
     }
-
+  }
     
     
     .bar {

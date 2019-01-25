@@ -10,11 +10,13 @@ export default class Project extends Component {
     const thumbnail = $(this.thumbnail)
     const duration = 0.3
     const delay = duration /2
+    const container = $(this.container)
 
     $(this.container).hover(
       () => {
         overlay.stop()
         overlay.css({opacity: 1, transition: `ease-in, ${duration}s`})
+        container.css({border: '2px solid black', transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '15%', transition: `linear, ${duration}s ${delay}s`})
         overlayBot.css({bottom: '15%', transition: `linear, ${duration}s ${delay}s`})
         thumbnail.css({opacity: 0, transition: `linear ${delay}s`})
@@ -23,7 +25,9 @@ export default class Project extends Component {
       () => {
         overlay.stop()
         overlay.css({opacity: 0, transition: `ease-in, ${duration}s`})
-        overlayTop.css({top: '-15%', transition: `ease-out, ${duration}s`})
+        container.css({border: 'none', transition: `ease-in, ${duration}s`})
+        container.css({border: 'none', transition: `ease-in, ${duration}s`})
+        overlayTop.css({top: '-25%', transition: `ease-out, ${duration}s`})
         overlayBot.css({bottom: '-15%', transition: `ease-out, ${duration}s`})
         thumbnail.css({opacity: 1, transition: `ease-out ${delay}s`})
       }
@@ -43,9 +47,17 @@ export default class Project extends Component {
   
   render() {
     const { technologies, name, thumbnail, toggleModal, idx } = this.props
+
+    //styles
+    const fullSize = {
+      width: '100%',
+      height: '100%'
+    }
+
     const containerStyles = {
       overflow: 'hidden',
       position: 'relative',
+      borderRadius: '12px'
     } 
 
     const overlayStyles = {
@@ -57,16 +69,12 @@ export default class Project extends Component {
       opacity: 0
     }
 
-    const thumbnailStyles = {
-      width: '100%',
-      height: '100%'
-    }
+    const thumbnailStyles = {...fullSize}
 
     const overlayTopStyles = {
       position: 'absolute',
-      top: '-15%',
-      height: '100%',
-      width: '100%',
+      top: '-25%',
+      ...fullSize
     }
     
     const overlayBotStyles = {
@@ -78,15 +86,14 @@ export default class Project extends Component {
     }
 
     const overlayNameStyles = {
-      fontSize: '24px', 
+      fontSize: '30px', 
       fontWeight: 600, 
       width: '100%', 
       textAlign: 'center',
     }
 
-    const overlayDescriptionStyles = {
+    const overlayTechnologiesStyles = {
       fontSize: '18px', 
-      // margin: '8px 0 0 0',
       padding: '0 25px',
       boxSizing: 'border-box',
       fontWeight: 300, 
@@ -94,30 +101,47 @@ export default class Project extends Component {
       width: '100%', 
       textAlign: 'center',
       display: 'flex',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
       listStyleType: 'none',
-      
     }
 
     const detailsStyle = {
       width: '150px',
       border: '4px solid',
+      borderRadius: '12px',
       borderColor: 'red',
       padding: '10px',
       textAlign: 'center',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      fontSize: '20px',
+      fontWeight: 600,
     }
 
     return (
-      <div ref={container => this.container = container} style={containerStyles} className="project">
-        <img ref={thumbnail => this.thumbnail = thumbnail} style={thumbnailStyles} src={thumbnail} />
+      <div 
+        ref={container => this.container = container} 
+        style={containerStyles} 
+        className="project"
+      >
+        {/* thumbnail for project. Hover over for overlay */}
+        <img 
+          ref={thumbnail => this.thumbnail = thumbnail} 
+          style={thumbnailStyles} 
+          src={thumbnail} 
+        />
+        
+        {/* Overlay: name, technologies used, and button to show more */}
         <div style={overlayStyles} ref={overlay => this.overlay = overlay}>
 
           <div style={{position: 'relative', height: '100%'}}>
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
               <div style={overlayNameStyles}>{name}</div>
-              <ul style={overlayDescriptionStyles}>{technologies.map((technology, idx) => <li key={`technology-${idx}`}>{technology}</li>)}</ul>
+
+              <ul style={overlayTechnologiesStyles}>
+                {technologies.map((technology, idx) => 
+                  <li key={`technology-${idx}`} style={{margin: '0 10px'}}>{technology}</li>)}
+              </ul>
             </div>
 
             <div style={overlayBotStyles} ref={overlayBot => this.overlayBot = overlayBot}>

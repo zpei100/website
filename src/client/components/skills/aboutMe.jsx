@@ -6,9 +6,17 @@ export default class AboutMe extends Component {
   render() {
     return (
       <div  id="aboutMe" ref={links => this.links = links}>
-        <div style={{display: 'flex'}}>
-          <div className="circle"></div>
-          <div className="introduction">
+        <div style={{display: 'flex', height: '100%'}}>
+          <div style={{height: '100%'}}>
+            <div className="circle"></div>
+            <ul className="links">
+              <External text="LinkedIn" link="https://www.linkedin.com/in/zhengqp" icon="assets/icons/linkedin.svg" />
+              <External text="Github" link="https://github.com/zpei100" icon="assets/icons/github.svg" />
+              <External text="Gmail" link="mailto:zhengqing.pei@gmail.com" icon="assets/icons/gmail.svg" />
+              <External text="Resume" link="/resume" icon="assets/icons/resume.svg" />
+            </ul>
+          </div>
+          <div className="text">
             <h1>About Me</h1>
             <p>
               I'm passionate about mathematics and problem solving. I began my software engineering journey in July 2018.
@@ -21,13 +29,6 @@ export default class AboutMe extends Component {
             </p>
           </div>
         </div>
-
-        <ul className="links">
-          <External text="LinkedIn" link="https://www.linkedin.com/in/zhengqp" icon="assets/icons/linkedin.png" />
-          <External text="Github" link="https://github.com/zpei100" icon="assets/icons/github.png" />
-          <External text="Gmail" link="mailto:zhengqing.pei@gmail.com" icon="assets/icons/gmail.png" />
-          <External text="Resume" link="/resume" icon="assets/icons/resume.png" />
-        </ul>
       </div>
     );
   }
