@@ -86,16 +86,16 @@ export default class Project extends Component {
     }
 
     const overlayNameStyles = {
-      fontSize: '30px', 
+      fontSize: '50px', 
       fontWeight: 600, 
       width: '100%', 
       textAlign: 'center',
     }
 
     const overlayTechnologiesStyles = {
-      fontSize: '18px', 
-      padding: '0 25px',
+      fontSize: '28px', 
       boxSizing: 'border-box',
+      padding: 0,
       fontWeight: 300, 
       color: 'red', 
       width: '100%', 
@@ -136,6 +136,7 @@ export default class Project extends Component {
           <div style={{position: 'relative', height: '100%'}}>
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
+
               <div style={overlayNameStyles}>{name}</div>
 
               <ul style={overlayTechnologiesStyles}>

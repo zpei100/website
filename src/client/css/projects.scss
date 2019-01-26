@@ -1,5 +1,5 @@
 @import 'variables';
-
+@import 'mixins';
 
 //projects section:
 #projects-section {
@@ -14,12 +14,25 @@
     text-align: center;
   }
 
+  img {
+    object-fit: contain;
+  }
+
+  .project {
+    height: auto;
+  }
+
   .gallery {
-    padding: 0 5%;
+    padding: 0 2%;
+    box-sizing: border-box;
     display: grid;
     grid-gap: 10px;
-    height: 375px;
     width: 100%;
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(3, auto);
+
+    @include responsive($lg-breakpoint) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto, 30%);
+    }
   }
 }

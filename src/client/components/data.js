@@ -9,7 +9,7 @@ export default {
       value: '75%'
     },
     {
-      name: 'React/Redux',
+      name: 'React & Redux',
       value: '90%'
     },
     {

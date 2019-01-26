@@ -1,5 +1,15 @@
 @import 'variables';
 @import 'mixins';
+@import 'banner';
+
+@font-face {
+  font-family: honey;
+  src: url('assets/fonts/painter.ttf');
+}
+
+.honey {
+  font-family: honey;
+}
 
 body {
   margin: 0;
@@ -8,66 +18,103 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: honey;
-  src: url('assets/fonts/painter.ttf');
-}
 
-div {
-  font-family: myFirstFont;
-}
+//projects section:
+#projects-section {
+  height: auto;
+  width: 100%;
+  background: #EEE5E9;
+  padding: 30px 0 200px 0;
+  box-sizing: border-box;
 
-.honey {
-  font-family: honey, Arial; 
-}
-
-.parallax {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(rgba(2,2,2,0.7), rgba(2,2,2,0.7)), url('assets/images/dark-background-50-1920x1280.jpg');
-  position: relative;
-
-  button {
-    border: 2px solid white;
-    background: transparent;
-    color: white;
-    padding: 15px;
-    border-radius: 14px;
-    cursor: pointer;
-    font-size: 22px;
-  }
-
-  .greeting {
-    div {
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-    }
-
-
-    color: white;
-    font-size: 64px;
-    position: absolute;
-    top: 42%;
-    left: 20%;
-    font-weight: 700;
-    opacity: 0;
-    
-    p {
-      margin: 0
-    }
+  h1 {
+    font-size: $h1-size;
+    text-align: center;
   }
 
   img {
-    width: 100%;
-    min-width: 100vw;
-    min-height: 100vh;
+    object-fit: contain;
+  }
+
+  .project {
     height: auto;
-    opacity: 0
+  }
+
+  .gallery {
+    padding: 0 2%;
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 10px;
+    width: 100%;
+    grid-template-columns: repeat(3, auto);
+
+    @include responsive($lg-breakpoint) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 15%);
+      grid-row-gap: 100px; 
+    }
   }
 }
 
+
+
+
+//expertise:
+
+//expertise section:
+@import 'variables';
+@import 'mixins';
+
+#expertise-section {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+  ), url('assets/images/expertise-background-50-1920x1280.jpg') no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 80px 80px;
+
+  h1 {
+    font-size: $h1-size;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: $h2-size;
+  }
+
+  li {
+    line-height: 26px;
+    font-size: 20px;
+    margin: 5px 0;
+    width: 100%;
+    font-weight: 300;
+  }
+
+  .expertise-grid {
+    display: grid;
+    height: 80%;
+    width: 100%;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+
+    @include responsive($xmd-breakpoint) {
+      grid-template-rows: repeat(4, minmax(auto, 30%));
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+  }
+}
+
+//===========================================================================================================================
+//skills-section: ===========================================================================================================
+//===========================================================================================================================
+
+//profile picture
 .circle {
   border-radius: 50%;
   height: $circle-size;
@@ -77,4 +124,260 @@ div {
   overflow: hidden;
   background: url('assets/images/profile.png') no-repeat;
   background-size: contain
+}
+
+//contains about me and skill bars
+#skills-section {
+  display: flex;
+  background: $aboutMe-background;
+
+  //break components into rows
+  @include responsive($lg-breakpoint) {
+    max-height: 1050px;
+    display: block;
+  }
+
+  @include responsive($md-breakpoint) {
+    max-height: 1300px !important;
+  }
+
+  @include responsive($xsm-breakpoint) {
+    max-height: none !important;
+    height: auto;
+  }
+
+  //about me and skill bars sections padding
+  &>div {
+    padding: 50px 2%;
+
+    @include responsive($lg-breakpoint) {
+      // padding: 50px 5%;
+    }
+  }
+}
+
+#skills-bars {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  @include responsive($lg-breakpoint) {
+    transform: rotate(-90deg) translateX(-550px) ;
+    transform-origin: 0 0;
+    width: 50vh;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding: 15vw 0 15vw 50px;
+  }
+
+  @include responsive($md-breakpoint) {
+    transform: rotate(-90deg) translateX(-700px);
+    padding-top: 0 !important;
+    // padding-left: 14% !important;
+    // padding-right: 14% !important;
+  }
+
+  @include responsive($xsm-breakpoint) {
+    transform: none;
+    width: 100vw;
+    height: auto;
+    padding: 0 5% !important;
+    padding-bottom: 40px !important;
+  }
+
+  .bar {
+    @include responsive($lg-breakpoint) {
+      height: 100%;
+    }
+  }
+
+  .bar-container {
+    @include responsive($lg-breakpoint) {
+      width: 125%;
+      margin: 25px 0 !important;
+    }
+
+    @include responsive($md-breakpoint) {
+      margin: 15px 0 !important;
+      width: 100% !important;
+    }
+  }
+ 
+  .skill-label {
+    @include responsive($lg-breakpoint) {
+      width: 100px !important;
+    }
+
+    @include responsive($xsm-breakpoint) {
+      transform: none !important;
+      display: flex !important;
+      padding: 0 10px !important;
+      align-items: center !important;
+      justify-content: center !important;
+      
+    }
+  }
+
+  .bar-fill {
+    background: $bar-color !important;
+  }
+}
+
+#aboutMe {
+  position: relative;
+  box-sizing: border-box;
+
+  @include responsive($lg-breakpoint) {
+    width: 100% !important;
+    height: auto;
+    max-height: 480px;
+  }
+
+  @include responsive($xsm-breakpoint) {
+    max-height: none;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+  }
+  //container contains both profile picture and description paragraph
+  & > div {
+    @include responsive($md-breakpoint) {
+      display: block !important;
+    }
+
+    //container contains profile picture
+    & > div {
+      @include responsive($md-breakpoint) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .text {
+    display: block;
+
+    @include responsive($md-breakpoint) {
+      display: block;
+      padding: 40px 50px 50px 50px;
+    }
+
+    @include responsive($xsm-breakpoint) {
+      // width: auto !important;
+      min-width: 0 !important;
+    }
+
+    //about me title
+    h1 {
+      margin-top: 0;
+      font-size: $aboutMe-title-size;
+
+      @include responsive($md-breakpoint) {
+        text-align: center;
+        font-size: $aboutMe-title-size-md;
+        margin-bottom: 10px;
+      }
+    }
+
+    //description text
+    p {
+      font-size: $aboutMe-description-font-size-xl;
+      line-height: $aboutMe-description-line-height-xl;
+      margin: 20px 0;
+      text-align: justify;
+      padding: 0 40px 0 0;
+
+      @include responsive($lg-breakpoint) {
+        font-size: $aboutMe-description-font-size-lg;
+        line-height: $aboutMe-description-line-height-lg;
+      }
+
+      @include responsive($md-breakpoint) {
+        text-align: justify;
+      }
+    }
+
+    padding: 0 0 0 50px;
+    min-width: $aboutMe-text-box-width;
+    max-height: 100%;
+    overflow: auto;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .links {
+    //external links flex column under profile picture
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+
+    //external links sticky to bottom of screen
+    @include responsive($lg-breakpoint) {
+      flex-direction: row !important;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      background: white;
+      border-top: 1px solid grey;
+      z-index: 10;
+      height: auto !important;
+    }
+    
+    
+    .link {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      cursor: pointer;
+      width: 100%;
+      height: $link-text-size;
+      padding: 5px;
+
+      //adds top border, spacing to each link
+      @include responsive($lg-breakpoint) {
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        align-items: center;
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    
+      //external link icons -- github / gmail etc
+      img {
+        height: 40px;
+        width: 40px;
+
+        @include responsive($lg-breakpoint) {
+          height: 30px !important;
+          width: 30px !important;
+        }
+
+        @include responsive($xsm-breakpoint) {
+          height: 25px;
+          width: 25px;
+        }
+      }
+
+      //external link texts
+      a {
+        text-decoration: none;
+        color: $link-color;
+        margin: 0 0 0 7px;
+        font-size: $link-text-size;
+        font-weight: $link-text-weight; 
+
+        @include responsive($xsm-breakpoint) {
+          font-size: $link-text-size-xsm;
+        }
+      }
+    }
+  }
 }

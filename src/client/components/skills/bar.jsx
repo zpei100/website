@@ -25,7 +25,7 @@ export default class Bar extends Component {
   }
 
   render() {
-    const {value, color = 'black', name:label, height = '40px', margin = '25px'} = this.props
+    const {value, color = 'black', name:label, height = '40px', margin = '20px'} = this.props
 
     const containerStyle = {
       display: 'flex',
@@ -83,8 +83,8 @@ export default class Bar extends Component {
       <MediaQuery maxWidth={1500}>
       {matches => (
         <div className="bar-container" style={matches ? VerticalContainerStyle : containerStyle}>
-          <div style={matches ? verticalBarContainerStyles : barContainerStyles} ref={barContainer => this.barContainer = barContainer}>
-            <div ref={bar => this.bar = bar} style={barStyle} className="bar"></div>
+          <div className="bar" style={matches ? verticalBarContainerStyles : barContainerStyles} ref={barContainer => this.barContainer = barContainer}>
+            <div ref={bar => this.bar = bar} style={barStyle} className="bar-fill"></div>
           </div>
           <div className="skill-label" style={matches ? verticalLabelStyles : labelStyle}>{label}</div>
         </div>

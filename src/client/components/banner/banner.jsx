@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
-export default class Parallax extends Component {
+export default class Banner extends Component {
   componentDidMount() {
     this.image.onload = () => {
       $(this.image).animate({opacity: 0.75}, 1000)
@@ -13,7 +13,7 @@ export default class Parallax extends Component {
   
   render() {
     return (
-      <div className="parallax">
+      <div id="banner">
         <img ref={image => this.image = image} src="assets/images/lightbulb-50-1920x1280.jpg" />
         <div ref={greeting => this.greeting = greeting} className="greeting">
           <p style={{fontSize: '100px'}}>Hi! I'm Zen,</p>

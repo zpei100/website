@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import Skills from './skills/skills.jsx'
 import LazySkills from './skills/lazy-skills.jsx'
-import Parallax from './parallax/parallax.jsx'
+import Banner from './banner/banner.jsx'
 // import Modal from './modal/modal.jsx'
 
 // import ExpertiseSection from './expertise-section/expertise-section.jsx'
@@ -37,7 +37,7 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
-        <Parallax />
+        <Banner />
         <LazySkills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
         <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
