@@ -1,7 +1,13 @@
 @import 'variables';
 
-@mixin responsive($maxWidth) {
-  @media screen and (max-width: $maxWidth) {
-    @content
-  }
+@mixin smallerThan($maxWidth) {
+	@media screen and (max-width: $maxWidth) {
+		@content;
+	}
+}
+
+@mixin biggerThan($minWidth) {
+	@media screen and (min-width: $minWidth) {
+		@content;
+	}
 }

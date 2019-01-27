@@ -40,8 +40,8 @@ export default class App extends Component {
         <Banner />
         <LazySkills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
-        <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
-        {Modal ? <Modal showModal={this.state.showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''}
+        {/* <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
+        {Modal ? <Modal showModal={this.state.showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''} */}
       </React.Fragment>
     );
   }

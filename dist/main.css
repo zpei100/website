@@ -11,7 +11,7 @@
 
 #skills-section {
   display: flex;
-  background: #EEE5E9;
+  background: #eee5e9;
 }
 @media screen and (max-width: 1500px) {
   #skills-section {

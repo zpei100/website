@@ -34,9 +34,9 @@ export default class Banner extends Component {
           <img src="assets/images/lightbulb-50-1920x1280.jpg"></img>
         </picture>} */}
 
-        <div ref={greeting => this.greeting = greeting} className="greeting">
-          <p style={{fontSize: '100px'}}>Hi! I'm Zen,</p>
-          <p style={{fontSize: '58px', fontWeight: '500' }} className="honey">a full-stack developer...</p>
+        <div ref={greeting => this.greeting = greeting} id="greeting">
+          <p id="greet-name">Hi! I'm Zen,</p>
+          <p id="greet-developer" className="honey">a full-stack developer...</p>
           <div>
           <button 
             onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'end'})}

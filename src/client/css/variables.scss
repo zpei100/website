@@ -1,4 +1,13 @@
-$aboutMe-background: #EEE5E9;
+//header-sizes:
+$h1-size: 60px;
+$h2-size: 36px;
+
+//skills-section:
+
+//profile-image-size:
+$circle-size: 225px;
+
+$aboutMe-background: #eee5e9;
 
 $aboutMe-description-font-size-lg: 20px;
 $aboutMe-description-font-size-xl: 24px;
@@ -11,23 +20,24 @@ $aboutMe-title-size-md: 48px;
 
 $aboutMe-text-box-width: 600px;
 
+//skills:
 $skills-height: 665px;
+$bar-color: rgb(34, 32, 29);
 
-$circle-size: 225px;
-
-$h1-size: 60px;
-$h2-size: 36px;
-
+//links to github, linkedIn etc:
 $link-text-size: 26px;
 $link-text-size-xsm: 20px;
 $link-text-weight: 700;
 $link-color: black;
 
-$bar-color: rgb(34, 32, 29);
+//screen sizes:
+$lg-bp: 1500px;
+$xmd-bp: 1200px;
+$sm-bp: 480px;
 
-$lg-breakpoint: 1500px;
-$xmd-breakpoint: 1200px;
-$md-breakpoint: 1024px;
-$xsm-breakpoint: 768px;
-$sm-breakpoint: 480px;
-$xs-breakpoint: 320px;
+$iphone5: 320px;
+$galaxyS5: 360px;
+$iphone678: 375px;
+$iphonePlus: 414px;
+$ipad: 768px;
+$ipad-pro: 1024px;

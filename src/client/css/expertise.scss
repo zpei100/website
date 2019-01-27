@@ -3,47 +3,43 @@
 @import 'mixins';
 
 #expertise-section {
-  min-height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
-  background: linear-gradient(
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.7)
-  ), url('assets/images/expertise-background-50-1920x1280.jpg') no-repeat 50% 50%;
-  background-size: cover;
-  background-attachment: fixed;
-  color: white;
-  padding: 80px 80px;
+	min-height: 100vh;
+	width: 100%;
+	box-sizing: border-box;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url('assets/images/expertise-background-50-1920x1280.jpg') no-repeat 50% 50%;
+	background-size: cover;
+	background-attachment: fixed;
+	color: white;
+	padding: 80px 80px;
 
-  
+	h1 {
+		font-size: $h1-size;
+		margin-top: 0;
+	}
 
-  h1 {
-    font-size: $h1-size;
-    margin-top: 0;
-  }
+	h2 {
+		font-size: $h2-size;
+	}
 
-  h2 {
-    font-size: $h2-size;
-  }
+	li {
+		line-height: 26px;
+		font-size: 20px;
+		margin: 5px 0;
+		width: 100%;
+		font-weight: 300;
+	}
 
-  li {
-    line-height: 26px;
-    font-size: 20px;
-    margin: 5px 0;
-    width: 100%;
-    font-weight: 300;
-  }
+	.expertise-grid {
+		display: grid;
+		height: 80%;
+		width: 100%;
+		grid-template-columns: repeat(2, 50%);
+		grid-template-rows: repeat(2, 50%);
 
-  .expertise-grid {
-    display: grid;
-    height: 80%;
-    width: 100%;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 50%);
-
-    @include responsive($xmd-breakpoint) {
-      grid-template-rows: repeat(4, 10%);
-      grid-template-columns: 1fr;
-    }
-  }
+		@include smallerThan($xmd-bp) {
+			grid-template-rows: repeat(4, 10%);
+			grid-template-columns: 1fr;
+		}
+	}
 }

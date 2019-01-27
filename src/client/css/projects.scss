@@ -3,53 +3,51 @@
 
 //projects section:
 #projects-section {
-  height: auto;
-  width: 100%;
-  background: #EEE5E9;
-  padding: 30px 0 200px 0;
-  box-sizing: border-box;
+	height: auto;
+	width: 100%;
+	background: #eee5e9;
+	padding: 30px 0 200px 0;
+	box-sizing: border-box;
 
-  h1 {
-    font-size: $h1-size;
-    text-align: center;
-  }
+	h1 {
+		font-size: $h1-size;
+		text-align: center;
+	}
 
-  img {
-    object-fit: contain;
-  }
+	img {
+		object-fit: contain;
+	}
 
-  .project {
-    height: auto;
-  }
+	.project {
+		height: auto;
+	}
 
-  .gallery {
-    padding: 0 2%;
-    box-sizing: border-box;
-    display: grid;
-    grid-gap: 10px;
-    width: 100%;
-    // grid-template-columns: repeat(3, auto);
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
-    "airbnb upscale"
-    "reddit upscale";
+	.gallery {
+		padding: 0 2%;
+		box-sizing: border-box;
+		display: grid;
+		grid-gap: 10px;
+		width: 100%;
+		// grid-template-columns: repeat(3, auto);
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas: "airbnb upscale" "reddit upscale";
 
-    #project-0 {
-      grid-area: airbnb;
-    }
+		#project-0 {
+			grid-area: airbnb;
+		}
 
-    #project-1 {
-      grid-area: reddit;
-    }
+		#project-1 {
+			grid-area: reddit;
+		}
 
-    #project-2 {
-      grid-area: upscale;
-    }
+		#project-2 {
+			grid-area: upscale;
+		}
 
-    @include responsive($lg-breakpoint) {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(auto, 30%);
-    }
-  }
+		@include smallerThan($lg-bp) {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(auto, 30%);
+		}
+	}
 }
