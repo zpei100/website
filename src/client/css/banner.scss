@@ -2,11 +2,21 @@
 
 //banner
 #banner {
-  width: 100vw;
-  max-height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
   overflow: hidden;
   background: linear-gradient(rgba(2,2,2,0.7), rgba(2,2,2,0.7)), url('assets/images/dark-background-50-1920x1280.jpg');
+  background-size: 100% 100%;
   position: relative;
+
+  img {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    opacity: 0;
+    object-fit: contain;
+  }
 
   button {
     border: 2px solid white;
@@ -37,14 +47,6 @@
     p {
       margin: 0
     }
-  }
-
-  img {
-    width: 100%;
-    min-width: 100vw;
-    min-height: 100vh;
-    height: auto;
-    opacity: 0
   }
 }
 

@@ -16,7 +16,7 @@ export default class Project extends Component {
       () => {
         overlay.stop()
         overlay.css({opacity: 1, transition: `ease-in, ${duration}s`})
-        container.css({border: '2px solid black', transition: `ease-in, ${duration}s`})
+        // container.css({border: '2px solid black', transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '15%', transition: `linear, ${duration}s ${delay}s`})
         overlayBot.css({bottom: '15%', transition: `linear, ${duration}s ${delay}s`})
         thumbnail.css({opacity: 0, transition: `linear ${delay}s`})
@@ -69,7 +69,10 @@ export default class Project extends Component {
       opacity: 0
     }
 
-    const thumbnailStyles = {...fullSize}
+    const thumbnailStyles = {
+      ...fullSize,
+      objectFit: 'cover'
+    }
 
     const overlayTopStyles = {
       position: 'absolute',
@@ -117,11 +120,14 @@ export default class Project extends Component {
       fontWeight: 600,
     }
 
+    console.log('id should be key: ', this.props.iden)
+
     return (
       <div 
         ref={container => this.container = container} 
         style={containerStyles} 
         className="project"
+        id={this.props.iden}
       >
         {/* thumbnail for project. Hover over for overlay */}
         <img 

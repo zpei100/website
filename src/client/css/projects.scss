@@ -28,7 +28,24 @@
     display: grid;
     grid-gap: 10px;
     width: 100%;
-    grid-template-columns: repeat(3, auto);
+    // grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    "airbnb upscale"
+    "reddit upscale";
+
+    #project-0 {
+      grid-area: airbnb;
+    }
+
+    #project-1 {
+      grid-area: reddit;
+    }
+
+    #project-2 {
+      grid-area: upscale;
+    }
 
     @include responsive($lg-breakpoint) {
       grid-template-columns: 1fr;

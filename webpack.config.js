@@ -1,7 +1,18 @@
 const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   entry: path.resolve(__dirname, 'src/client/index.jsx'),
   output: {
     filename: '[name].bundle.js',

@@ -39,7 +39,7 @@
 
   //about me and skill bars sections padding
   &>div {
-    padding: 50px 2%;
+    padding: 50px 3%;
 
     @include responsive($lg-breakpoint) {
       // padding: 50px 5%;
@@ -149,6 +149,10 @@
 
   .text {
     display: block;
+
+    @media screen and (min-width: 1700px) {
+      padding: 0 7%;
+    }
 
     @include responsive($md-breakpoint) {
       display: block;

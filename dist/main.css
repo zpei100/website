@@ -31,7 +31,7 @@
   }
 }
 #skills-section > div {
-  padding: 50px 2%;
+  padding: 50px 3%;
 }
 #skills-bars {
   width: 100%;
@@ -137,6 +137,11 @@
   overflow: auto;
   height: 100%;
   box-sizing: border-box;
+}
+@media screen and (min-width: 1700px) {
+  #aboutMe .text {
+    padding: 0 7%;
+  }
 }
 @media screen and (max-width: 1024px) {
   #aboutMe .text {

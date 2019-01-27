@@ -1,6 +1,6 @@
 @import 'variables';
 @import 'mixins';
-@import 'banner';
+// @import 'banner';
 
 @font-face {
   font-family: honey;
@@ -151,5 +151,114 @@ body {
       grid-template-columns: 1fr;
       height: auto;
     }
+  }
+}
+
+
+
+//banner ==================================================
+#banner {
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(rgba(2,2,2,0.7), rgba(2,2,2,0.7)), url('assets/images/dark-background-50-1920x1280.jpg');
+  background-size: 100% 100%;
+  position: relative;
+
+  img {
+    // width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    opacity: 0;
+  }
+
+  button {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  .greeting {
+    div {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+    }
+
+
+    color: white;
+    font-size: 64px;
+    position: absolute;
+    top: 42%;
+    left: 20%;
+    font-weight: 700;
+    opacity: 0;
+    
+    p {
+      margin: 0
+    }
+  }
+}
+
+
+
+//projects:
+#projects-section {
+  height: auto;
+  width: 100%;
+  // background: #EEE5E9;
+  background: black;
+  padding: 30px 0 200px 0;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+
+  h1 {
+    font-size: $h1-size;
+    text-align: center;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  .project {
+    height: auto;
+  }
+
+  .gallery {
+    padding: 2%;
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 30px;
+    width: 100%;
+    // grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, minmax(180px, 30vh));
+    grid-template-columns: repeat(3, minmax(180px, 25vw));
+    grid-template-areas: 
+    "airbnb airbnb upscale"
+    "reddit reddit upscale";
+
+    #project-0 {
+      grid-area: airbnb;
+    }
+
+    #project-1 {
+      grid-area: reddit;
+    }
+
+    #project-2 {
+      grid-area: upscale;
+    }
+
+    // @include responsive($lg-breakpoint) {
+    //   grid-template-columns: 1fr;
+    //   grid-template-rows: repeat(auto, 30%);
+    // }
   }
 }
