@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import $ from 'jquery'
 import MediaQuery from 'react-responsive'
 
 export default class Banner extends Component {
-  
   showImage = image => {
-    console.log('image: ', image)
     if (image) 
     image.onload = () => {
       $(image).animate({opacity: 0.75}, 1000)
@@ -22,7 +20,7 @@ export default class Banner extends Component {
           match ? 
 
           <div id="banner">
-            <img ref={image => this.showImage(image)} src="assets/images/banner-1.jpg" />
+            <img ref={image => this.showImage(image)} style={{width: '100vw', height: '100vh', transform: 'scale(1.4)', transformOrigin: '50% 20%'}} src="assets/images/banner-1.jpg" />
             <div ref={greeting => this.greeting = greeting} id="greeting">
               <p id="greet-name">Hi! I'm Zen,</p>
               <p id="greet-developer" className="honey">a full-stack developer...</p>

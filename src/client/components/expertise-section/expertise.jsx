@@ -44,7 +44,7 @@ export default class Expertise extends Component {
         <MediaQuery maxWidth={1000}>
         {match => (
           match ? 
-          <div style={{padding: '50px 0'}} ref={container => this.container = container}>
+          <div className="expertise-container" ref={container => this.container = container}>
             <div className="expertise-header" style={{display: 'flex', justifyContent: 'flex-start', paddingLeft: '40px'}}>
               <div><img src={icon}/></div>
               <h2 style={{...titleStyles, marginLeft: '25px', display: 'flex', alignItems: 'center'}}>{title}</h2>
@@ -52,7 +52,7 @@ export default class Expertise extends Component {
               {/* <p>{description}</p> */}
             <div style={{...detailsStyles, margin: 0}}>
               <ul style={{listStyle: 'circle'}}>{bulletpoints.map((bulletpoint, idx) => 
-                <li style={{fontSize: '26px', lineHeight: '34px', marginBottom: '15px'}} key={`bulletpoint-${idx}`}>{bulletpoint}</li>)}
+                <li key={`bulletpoint-${idx}`}>{bulletpoint}</li>)}
               </ul>
             </div>
           </div>

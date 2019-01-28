@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import External from './external.jsx'
-import $ from 'jquery'
+import Observer from '../observer.jsx'
 
 export default class AboutMe extends Component {
   render() {
@@ -9,12 +8,9 @@ export default class AboutMe extends Component {
         <div style={{display: 'flex', height: '100%'}}>
           <div style={{height: '100%'}}>
             <div className="picture-container"></div>
-            <ul className="links">
-              <External text="LinkedIn" link="https://www.linkedin.com/in/zhengqp" icon="assets/icons/linkedin.svg" />
-              <External text="Github" link="https://github.com/zpei100" icon="assets/icons/github.svg" />
-              <External text="Gmail" link="mailto:zhengqing.pei@gmail.com" icon="assets/icons/gmail.svg" />
-              <External text="Resume" link="/resume" icon="assets/icons/resume.svg" />
-            </ul>
+            <Observer load={() => import(/*webpackChunkName: "links" */ "./links.jsx")}>
+              {Component => Component ? <Component /> : ''} 
+            </Observer>
           </div>
           <div className="text">
             <h1>About Me</h1>

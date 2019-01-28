@@ -2,17 +2,24 @@
 @import 'mixins';
 
 
-
+//skills-section:
 //profile picture
 .picture-container {
 	border-radius: 50%;
-	height: $picture-container-size;
-	width: $picture-container-size;
-	min-width: $picture-container-size;
+	height: 225px;
+	width: 225px;
 	border: 2px solid black;
-	overflow: hidden;
 	background: url('assets/images/profile.png') no-repeat;
 	background-size: contain;
+	@include smallerThan($ipad-pro) {
+		height: 200px;
+		width: 200px;
+	}
+
+	@include smallerThan(700px) {
+		height: 25vw;
+		width: 25vw;
+	}
 }
 
 //contains about me and skill bars
@@ -22,25 +29,33 @@
 
 	//break components into rows
 	@include smallerThan($lg-bp) {
-		max-height: 1050px;
+		max-height: 900px;
 		display: block;
 	}
 
 	@include smallerThan($ipad-pro) {
-		max-height: 1300px !important;
+		max-height: 1100px !important;
 	}
 
 	@include smallerThan($ipad) {
-		max-height: none !important;
+		max-height: 1050 !important;
 		height: auto;
 	}
 
 	//about me and skill bars sections padding
 	& > div {
-		padding: 50px 3%;
+		padding: 50px 2%;
 
 		@include smallerThan($lg-bp) {
-			// padding: 50px 5%;
+			padding: 50px 7%;
+		}
+
+		@include smallerThan(700px) {
+			padding: 50px 2%;
+		}
+
+		@include smallerThan($sm-bp) {
+			padding: 20px 2%;
 		}
 	}
 }
@@ -48,12 +63,14 @@
 #skills-bars {
 	width: 100%;
 	height: 100%;
-	box-sizing: border-box;
 
 	@include smallerThan($lg-bp) {
-		transform: rotate(-90deg) translateX(-550px);
-		transform-origin: 0 0;
-		width: 50vh;
+		transform: rotate(-90deg) translateX(-400px);
+		transform-origin: top left;
+		padding: 3% 3% !important;
+
+		//height of the bar
+		width: 375px;
 		height: 100vw;
 		display: flex;
 		flex-direction: column;
@@ -62,35 +79,51 @@
 	}
 
 	@include smallerThan($ipad-pro) {
-		transform: rotate(-90deg) translateX(-700px);
-		padding-top: 0 !important;
-		// padding-left: 14% !important;
-		// padding-right: 14% !important;
+		transform: rotate(-90deg) translateX(-340px);
 	}
 
 	@include smallerThan($ipad) {
+		transform: rotate(-90deg) translateX(-300px);
+	}
+
+	@include smallerThan($sm-bp) {
 		transform: none;
-		width: 100vw;
-		height: auto;
-		padding: 0 5% !important;
-		padding-bottom: 40px !important;
+		justify-content: center;
+		margin: auto;
+		padding: 7% !important;
+		padding-top: 0 !important;
+		width: auto;
 	}
 
 	.bar {
 		@include smallerThan($lg-bp) {
 			height: 100%;
 		}
+
+		@include smallerThan($sm-bp) {
+			margin-right: 10px;
+		}
 	}
 
 	.bar-container {
 		@include smallerThan($lg-bp) {
 			width: 125%;
-			margin: 25px 0 !important;
+			//spacing between bars;
+			margin: 1.2vw 0 !important;
 		}
 
 		@include smallerThan($ipad-pro) {
-			margin: 15px 0 !important;
+			margin: 1vw 0 !important;
 			width: 100% !important;
+		}
+
+		@include smallerThan($ipad) {
+			height: 10vw;
+		}
+
+		@include smallerThan($sm-bp) {
+			width: 100% !important;
+			height: 6vh;
 		}
 	}
 
@@ -99,13 +132,31 @@
 			width: 100px !important;
 		}
 
-		@include smallerThan($ipad) {
+		@include smallerThan($sm-bp) {
 			transform: none !important;
-			display: flex !important;
-			padding: 0 10px !important;
-			align-items: center !important;
-			justify-content: center !important;
+			margin: 0 15px !important; 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 14vw !important;
+			font-size: 4vw;
+
+			min-width: 40px;
 		}
+
+
+		// @include smallerThan($ipad) {
+		// 	font-size: 2vw;
+		// 	width: auto;
+		// }
+
+		// @include smallerThan($ipad) {
+		// 	transform: none !important;
+		// 	display: flex !important;
+		// 	padding: 0 10px !important;
+		// 	align-items: center !important;
+		// 	justify-content: center !important;
+		// }
 	}
 
 	.bar-fill {
@@ -115,7 +166,6 @@
 
 #aboutMe {
 	position: relative;
-	box-sizing: border-box;
 
 	@include smallerThan($lg-bp) {
 		width: 100% !important;
@@ -123,11 +173,8 @@
 		max-height: 480px;
 	}
 
-	@include smallerThan($ipad) {
-		max-height: none;
-		padding-bottom: 0 !important;
-		padding-left: 0 !important;
-		padding-right: 0 !important;
+	@include smallerThan($ipad-pro) {
+		max-height: none !important;
 	}
 	//container contains both profile picture and description paragraph
 	& > div {
@@ -146,62 +193,70 @@
 
 	.text {
 		display: block;
+		padding: 0 4%;
 
-		@media screen and (min-width: 1700px) {
-			padding: 0 7%;
-		}
+		// @include biggerThan(1700px) {padding: 0 4%}
 
 		@include smallerThan($ipad-pro) {
 			display: block;
-			padding: 40px 50px 50px 50px;
+			padding: 4% 4%;
+			// padding: 3% 3%;
 		}
 
-		@include smallerThan($ipad) {
-			// width: auto !important;
-			min-width: 0 !important;
-			padding: 15px;
+		@include smallerThan(700px) {
+			padding: 4% 2%;
 		}
 
 		//about me title
 		h1 {
 			margin-top: 0;
-			font-size: $aboutMe-title-size;
+			margin-bottom: 15px;
+			font-size: 48px;
 
 			@include smallerThan($ipad-pro) {
+				font-size: 40px;
 				text-align: center;
-				font-size: $aboutMe-title-size-md;
-				margin-bottom: 10px;
+				margin-bottom: 20px;
+			}
+
+			@include smallerThan($sm-bp) {
+				font-size: 10vw;
 			}
 		}
 
 		//description text
 		p {
-			font-size: $aboutMe-description-font-size-xl;
-			line-height: $aboutMe-description-line-height-xl;
+			font-size: 1.4vw;
+			line-height: calc(1.4vw * 1.2);
 			margin: 20px 0;
 			text-align: justify;
-			padding: 0 40px 0 0;
 
-			@include smallerThan($lg-bp) {
-				font-size: $aboutMe-description-font-size-lg;
-				line-height: $aboutMe-description-line-height-lg;
+			@include smallerThan(1500px) {
+				font-size: 1.8vw;
+				line-height: 2.16vw;
 			}
 
 			@include smallerThan($ipad-pro) {
-				text-align: justify;
+				font-size: 2.4vw;
+				line-height: 2.71vw;
+				margin: 2% 0;
 			}
 
 			@include smallerThan($ipad) {
-				padding: 0;
+				font-size: 2.7vw;
+				line-height: 3.24vw;
+			}
+
+			@include smallerThan(700px) {
+				font-size: 3vw;
+				line-height: 3.6vw;
+			}
+
+			@include smallerThan($sm-bp) {
+				font-size: 4vw;
+				line-height: 5vw;
 			}
 		}
-
-		padding: 0 0 0 50px;
-		min-width: $aboutMe-text-box-width;
-		max-height: 100%;
-		overflow: auto;
-		height: 100%;
-		box-sizing: border-box;
 	}
 
 	.links {
@@ -212,12 +267,20 @@
 		align-items: center;
 		justify-content: space-between;
 		align-items: center;
+		opacity: 0;
+		animation: appear 2s forwards;
+
+		@keyframes appear {
+			0% {opacity: 0}
+			100% {opacity: 1}
+		}
 
 		//external links sticky to bottom of screen
 		@include smallerThan($lg-bp) {
 			flex-direction: row !important;
 			position: fixed;
 			bottom: 0;
+			padding: 1.5% 0;
 			left: 0;
 			width: 100%;
 			margin: 0;
@@ -229,12 +292,16 @@
 
 		.link {
 			display: flex;
-			justify-content: center;
-			margin: 10px 0;
 			cursor: pointer;
 			width: 100%;
-			height: $link-text-size;
-			padding: 5px;
+			padding-left: 22%;
+			margin: 5px 0;
+
+			& > div {
+				height: 26px;
+				display: flex;
+				align-items: center;
+			}
 
 			//adds top border, spacing to each link
 			@include smallerThan($lg-bp) {
@@ -244,21 +311,27 @@
 				align-items: center;
 				width: 100% !important;
 				justify-content: center !important;
+				padding-left: 0;
 			}
 
 			//external link icons -- github / gmail etc
 			img {
-				height: 40px;
-				width: 40px;
+				height: 26px;
+				width: 26px;
 
 				@include smallerThan($lg-bp) {
-					height: 30px !important;
-					width: 30px !important;
+					height: 50px;
+					width: 50px;
 				}
 
 				@include smallerThan($ipad) {
-					height: 25px;
-					width: 25px;
+					height: 32px;
+					width: 32px;
+				}
+
+				@include smallerThan(640px) {
+					height: 40px;
+					width: 40px;
 				}
 			}
 
@@ -267,11 +340,20 @@
 				text-decoration: none;
 				color: $link-color;
 				margin: 0 0 0 7px;
-				font-size: $link-text-size;
-				font-weight: $link-text-weight;
+				font-size: 20px;
+				vertical-align: center;
+				font-weight: 550;
+
+				@include smallerThan($ipad-pro) {
+					font-size: 32px;
+				}
 
 				@include smallerThan($ipad) {
-					font-size: $link-text-size-xsm;
+					font-size: 28px;
+				}
+
+				@include smallerThan(640px) {
+					display: none;
 				}
 			}
 		}
