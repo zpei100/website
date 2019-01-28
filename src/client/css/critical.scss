@@ -1,6 +1,6 @@
 @import 'variables';
 @import 'mixins';
-// @import 'banner';
+@import 'banner';
 
 @font-face {
 	font-family: honey;
@@ -12,106 +12,349 @@
 }
 
 body {
-  margin: 0;
-  font-family: Helvetica, Arial;
-	box-sizing: border-box;
+	margin: 0;
+	font-family: Helvetica, Arial;
+	* {
+		box-sizing: border-box;
+	}
 }
 
-//banner ==================================================
-#banner {
-	max-height: 100vh;
-	max-width: 100vw;
-	overflow: hidden;
-  background: 
-    linear-gradient(rgba(2, 2, 2, 0.85), rgba(2, 2, 2, 0.85)),
-    url('assets/images/dark-background-50-1920x1280.jpg');
-    
-  @include smallerThan($ipad-pro) {
-    background: 
-    linear-gradient(rgba(2, 2, 2, 0.85), rgba(2, 2, 2, 0.85)),
-    url('assets/images/dark-background-50-1024x683.jpg');
+//skills-section:
+//profile picture
+.picture-container {
+	border-radius: 50%;
+	height: 225px;
+	width: 225px;
+	border: 2px solid black;
+	background: url('assets/images/profile.png') no-repeat;
+	background-size: contain;
+	@include smallerThan($ipad-pro) {
+		height: 200px;
+		width: 200px;
+	}
 
-    // display: none;
-  }
+	@include smallerThan(700px) {
+		height: 25vw;
+		width: 25vw;
+	}
+}
 
-	background-size: 100% 100%;
-  position: relative;
-  
-  #greet-name {font-size: 6.5vw; margin: 0}
-  #greet-developer {font-size: 4vw; font-weight: 350; margin: 0}
+//contains about me and skill bars
+#skills-section {
+	display: flex;
+	background: $aboutMe-background;
 
-	img {
-		max-width: 100%;
-		max-height: 100%;
+	//break components into rows
+	@include smallerThan($lg-bp) {
+		max-height: 900px;
+		display: block;
+	}
+
+	@include smallerThan($ipad-pro) {
+		max-height: 1100px !important;
+	}
+
+	@include smallerThan($ipad) {
+		max-height: 1050 !important;
 		height: auto;
-		opacity: 0;
 	}
 
-	button {
-		border: 2px solid white;
-		color: white;
-		background: transparent;
-    border-radius: 12px;
-    
-    font-size: 2vw;
-    padding: 12px;
+	//about me and skill bars sections padding
+	& > div {
+		padding: 50px 2%;
 
-    @include smallerThan($ipad-pro) {
-      border-radius: 9px;
-      padding: 8px;
-    }
-
-    width: auto;
-    margin-right: 6%;
-    cursor: pointer;
-	}
-
-	#greeting {
-    //contains button
-		div {
-			display: flex;
-			justify-content: center;
-      margin-top: 3%
+		@include smallerThan($lg-bp) {
+			padding: 50px 7%;
 		}
 
-		color: white;
-		position: absolute;
-		top: 40%;
-		left: 15%;
-		font-weight: 700;
-		opacity: 0;
+		@include smallerThan(700px) {
+			padding: 50px 2%;
+		}
+
+		@include smallerThan($sm-bp) {
+			padding: 20px 2%;
+		}
 	}
 }
 
+#skills-bars {
+	width: 100%;
+	height: 100%;
+
+	@include smallerThan($lg-bp) {
+		transform: rotate(-90deg) translateX(-400px);
+		transform-origin: top left;
+		padding: 3% 3% !important;
+
+		//height of the bar
+		width: 375px;
+		height: 100vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// padding: 15vw 0 15vw 50px;
+	}
+
+	@include smallerThan($ipad-pro) {
+		transform: rotate(-90deg) translateX(-340px);
+	}
+
+	@include smallerThan($ipad) {
+		transform: rotate(-90deg) translateX(-300px);
+	}
+
+	@include smallerThan($sm-bp) {
+		transform: none;
+		justify-content: center;
+		margin: auto;
+		padding: 7% !important;
+		padding-top: 0 !important;
+		width: auto;
+	}
+
+	.bar {
+		@include smallerThan($lg-bp) {
+			height: 100%;
+		}
+
+		@include smallerThan($sm-bp) {
+			margin-right: 10px;
+		}
+	}
+
+	.bar-container {
+		@include smallerThan($lg-bp) {
+			width: 125%;
+			//spacing between bars;
+			margin: 1.2vw 0 !important;
+		}
+
+		@include smallerThan($ipad-pro) {
+			margin: 1vw 0 !important;
+			width: 100% !important;
+		}
+
+		@include smallerThan($ipad) {
+			height: 10vw;
+		}
+
+		@include smallerThan($sm-bp) {
+			width: 100% !important;
+			height: 6vh;
+		}
+	}
+
+	.skill-label {
+		@include smallerThan($lg-bp) {
+			width: 100px !important;
+		}
+
+		@include smallerThan($sm-bp) {
+			transform: none !important;
+			margin: 0 15px !important; 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 14vw !important;
+			font-size: 4vw;
+
+			min-width: 40px;
+		}
 
 
+		// @include smallerThan($ipad) {
+		// 	font-size: 2vw;
+		// 	width: auto;
+		// }
 
+		// @include smallerThan($ipad) {
+		// 	transform: none !important;
+		// 	display: flex !important;
+		// 	padding: 0 10px !important;
+		// 	align-items: center !important;
+		// 	justify-content: center !important;
+		// }
+	}
 
+	.bar-fill {
+		background: $bar-color !important;
+	}
+}
 
+#aboutMe {
+	position: relative;
 
+	@include smallerThan($lg-bp) {
+		width: 100% !important;
+		height: auto;
+		max-height: 480px;
+	}
 
+	@include smallerThan($ipad-pro) {
+		max-height: none !important;
+	}
+	//container contains both profile picture and description paragraph
+	& > div {
+		@include smallerThan($ipad-pro) {
+			display: block !important;
+		}
 
+		//container contains profile picture
+		& > div {
+			@include smallerThan($ipad-pro) {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
 
+	.text {
+		display: block;
+		padding: 0 4%;
 
+		// @include biggerThan(1700px) {padding: 0 4%}
 
+		@include smallerThan($ipad-pro) {
+			display: block;
+			padding: 4% 4%;
+			// padding: 3% 3%;
+		}
 
+		@include smallerThan(700px) {
+			padding: 4% 2%;
+		}
 
+		//about me title
+		h1 {
+			margin-top: 0;
+			margin-bottom: 15px;
+			font-size: 48px;
 
+			@include smallerThan($ipad-pro) {
+				font-size: 40px;
+				text-align: center;
+				margin-bottom: 20px;
+			}
 
+			@include smallerThan($sm-bp) {
+				font-size: 10vw;
+			}
+		}
 
+		//description text
+		p {
+			font-size: 1.4vw;
+			line-height: calc(1.4vw * 1.2);
+			margin: 20px 0;
+			text-align: justify;
 
+			@include smallerThan(1500px) {
+				font-size: 1.8vw;
+				line-height: 2.16vw;
+			}
 
+			@include smallerThan($ipad-pro) {
+				font-size: 2.4vw;
+				line-height: 2.71vw;
+				margin: 2% 0;
+			}
 
+			@include smallerThan($ipad) {
+				font-size: 2.7vw;
+				line-height: 3.24vw;
+			}
 
+			@include smallerThan(700px) {
+				font-size: 3vw;
+				line-height: 3.6vw;
+			}
 
+			@include smallerThan($sm-bp) {
+				font-size: 4vw;
+				line-height: 5vw;
+			}
+		}
+	}
 
+	.links {
+		//external links flex column under profile picture
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		align-items: center;
 
+		//external links sticky to bottom of screen
+		@include smallerThan($lg-bp) {
+			flex-direction: row !important;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			margin: 0;
+			background: white;
+			border-top: 1px solid grey;
+			z-index: 10;
+			height: auto !important;
+		}
 
+		.link {
+			display: flex;
+			cursor: pointer;
+			width: 100%;
+			padding-left: 22%;
+			margin: 5px 0;
 
+			& > div {
+				height: 26px;
+				display: flex;
+				align-items: center;
+			}
 
+			//adds top border, spacing to each link
+			@include smallerThan($lg-bp) {
+				width: 100%;
+				height: 50px;
+				margin: auto;
+				align-items: center;
+				width: 100% !important;
+				justify-content: center !important;
+				padding-left: 0;
+			}
 
+			//external link icons -- github / gmail etc
+			img {
+				height: 26px;
+				width: 26px;
 
+				@include smallerThan($lg-bp) {
+					height: 30px !important;
+					width: 30px !important;
+				}
 
+				@include smallerThan($ipad) {
+					height: 25px;
+					width: 25px;
+				}
+			}
+
+			//external link texts
+			a {
+				text-decoration: none;
+				color: $link-color;
+				margin: 0 0 0 7px;
+				font-size: 20px;
+				vertical-align: center;
+				font-weight: 550;
+
+				@include smallerThan($ipad) {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
 
 //projects section:
 #projects-section {

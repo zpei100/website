@@ -1,16 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
-//===========================================================================================================================
-//skills-section: ===========================================================================================================
-//===========================================================================================================================
+
 
 //profile picture
-.circle {
+.picture-container {
 	border-radius: 50%;
-	height: $circle-size;
-	width: $circle-size;
-	min-width: $circle-size;
+	height: $picture-container-size;
+	width: $picture-container-size;
+	min-width: $picture-container-size;
 	border: 2px solid black;
 	overflow: hidden;
 	background: url('assets/images/profile.png') no-repeat;

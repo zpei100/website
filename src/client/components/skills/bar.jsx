@@ -45,7 +45,6 @@ export default class Bar extends Component {
       overflow: 'hidden',
       position: 'relative',
       borderRadius: '14px',
-      
     }
 
     const barContainerStyles = {

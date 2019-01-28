@@ -8,7 +8,7 @@ export default class AboutMe extends Component {
       <div  id="aboutMe" ref={links => this.links = links}>
         <div style={{display: 'flex', height: '100%'}}>
           <div style={{height: '100%'}}>
-            <div className="circle"></div>
+            <div className="picture-container"></div>
             <ul className="links">
               <External text="LinkedIn" link="https://www.linkedin.com/in/zhengqp" icon="assets/icons/linkedin.svg" />
               <External text="Github" link="https://github.com/zpei100" icon="assets/icons/github.svg" />
