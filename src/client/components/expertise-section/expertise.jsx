@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import MediaQuery from 'react-responsive'
 
+if(!IntersectionObserver) const IntersectionObserver = import('intersection-observer-polyfill')
+
+
 export default class Expertise extends Component {
   constructor() {
     super()
@@ -11,6 +14,7 @@ export default class Expertise extends Component {
   }
 
   componentDidMount() {
+    
     this.io = new IntersectionObserver(
       ([entry]) => {
         if(entry.intersectionRatio > 0.25) {

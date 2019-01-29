@@ -1,5 +1,7 @@
 import React from 'react'
 
+if(!IntersectionObserver) const IntersectionObserver = import('intersection-observer-polyfill')
+
 export default class Observer extends React.Component {
   constructor({threshold}) {
     super()
