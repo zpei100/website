@@ -267,7 +267,7 @@
     flex-direction: row !important;
     position: fixed;
     bottom: 0;
-    padding: 1.5% 0;
+    padding: 1% 0;
     left: 0;
     width: 100%;
     margin: 0;
@@ -292,7 +292,7 @@
 @media screen and (max-width: 1500px) {
   #aboutMe .links .link {
     width: 100%;
-    height: 50px;
+    height: 30px;
     margin: auto;
     align-items: center;
     width: 100% !important;
@@ -311,14 +311,14 @@
 }
 @media screen and (max-width: 1500px) {
   #aboutMe .links .link img {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
   }
 }
 @media screen and (max-width: 768px) {
   #aboutMe .links .link img {
-    height: 32px;
-    width: 32px;
+    height: 30px;
+    width: 30px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -337,12 +337,12 @@
 }
 @media screen and (max-width: 1024px) {
   #aboutMe .links .link a {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 768px) {
   #aboutMe .links .link a {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -493,7 +493,7 @@
   }
 }
 #projects-section img {
-  object-fit: fill;
+  object-fit: cover;
   border: 2px solid black;
 }
 #projects-section .project {
@@ -585,98 +585,6 @@
   #projects-section .gallery #project-2 .technologies li {
     margin: 2% 0;
   }
-}
-
-#modal {
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: middle;
-}
-
-#modal-content {
-  background: white;
-  margin: auto auto;
-  border: 2px solid black;
-  border-radius: 12px;
-  overflow: hidden;
-}
-#modal-content button {
-  padding: 0 !important;
-}
-#modal-content button img {
-  height: 100%;
-}
-#modal-content .carousel {
-  height: 50vh;
-  width: 75vh;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content .carousel {
-    height: 48vw;
-    width: 72vw;
-  }
-}
-#modal-content #left-button {
-  background: #DCD6F7;
-  height: 4vh;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content #left-button {
-    height: 3vh;
-  }
-}
-#modal-content #right-button {
-  background: #D6E5E3;
-  height: 4vh;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content #right-button {
-    height: 3vh;
-  }
-}
-
-#modal-content-description {
-  padding: 0 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#modal-content-description h1 {
-  display: flex;
-  margin: 3% 0;
-  justify-content: center;
-  font-size: 3vw;
-}
-#modal-content-description p {
-  display: flex;
-  margin: 2% 0;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-  font-size: 1.5vw;
-}
-#modal-content-description #website-button {
-  display: flex;
-  justify-content: center;
-  margin: 3% 0;
-  font-size: 1.5vw;
-}
-#modal-content-description a {
-  text-decoration: none;
-  color: black;
-  border: 2px solid;
-  border-color: red;
-  padding: 10px;
-  border-radius: 12px;
-}
-
-.slider {
-  background: black !important;
 }
 
 /*# sourceMappingURL=main.css.map */

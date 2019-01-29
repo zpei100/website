@@ -83,16 +83,18 @@ export default {
       name: 'CozySheets',
       description: `Recreated Airbnb's listing page`,
       technologies: ['React', 'Redux', 'Bootstrap', 'Sass'],
-      thumbnail: 'assets/gallery/cozysheets/thumbnail.png',
+      thumbnail: 'assets/gallery/cozysheets/gallery.png',
       images: [
+        'assets/gallery/cozysheets/gallery.png',
         'assets/gallery/cozysheets/performance.png',
+        'assets/gallery/cozysheets/performance_02.png',
+        'assets/gallery/cozysheets/body.png',
         'assets/gallery/cozysheets/booking_01.png',
         'assets/gallery/cozysheets/booking_02.png',
-        'assets/gallery/cozysheets/descriptions.png',
-        'assets/gallery/cozysheets/gallery.png',
+        'assets/gallery/cozysheets/booking-modal.png',
         'assets/gallery/cozysheets/modal.png',
-        'assets/gallery/cozysheets/performance_02.png',
-        'assets/gallery/cozysheets/related.png'
+        'assets/gallery/cozysheets/related.png',
+        'assets/gallery/cozysheets/thumbnail.png'
       ],
       website: 'https://airbnbui-service.herokuapp.com/rooms/5'
     },
@@ -100,17 +102,15 @@ export default {
       name: 'Reddit-Clone',
       description: 'Posting and commenting app',
       technologies: ['React', 'Apollo', 'GraphQL', 'MongoDB'],
-      thumbnail: 'assets/gallery/reddit-clone/thumbnail.png',
+      thumbnail: 'assets/gallery/reddit-clone/main.png',
       images: [
-        'assets/gallery/reddit-clone/Main.png',
-        'assets/gallery/reddit-clone/Details.png',
-        'assets/gallery/reddit-clone/Edit1.png',
+        'assets/gallery/reddit-clone/main.png',
+        'assets/gallery/reddit-clone/Detail.png',
         'assets/gallery/reddit-clone/Edit2.png',
-        'assets/gallery/reddit-clone/Main.png',
-        'assets/gallery/reddit-clone/NestedComments.png',
-        'assets/gallery/reddit-clone/NewPost.png',
-        'assets/gallery/reddit-clone/performance_02.png',
-        'assets/gallery/reddit-clone/performance.png'
+        'assets/gallery/reddit-clone/nested.png',
+        'assets/gallery/reddit-clone/post.png',
+        'assets/gallery/reddit-clone/posting.png',
+        'assets/gallery/reddit-clone/reply.png'
       ],
       website: 'https://reddit-clon.herokuapp.com/'
     },

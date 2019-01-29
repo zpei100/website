@@ -93,8 +93,8 @@ export default class Carousel extends Component {
           </div>
         </div>
         <div style={{display: 'flex'}}>
-          <button id="left-button" style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/left-arrow.svg"></img></button>
-          <button id="right-button" style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/right-arrow.svg"></img></button>
+          <button id="left-button" style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/left-arrow.svg"></img></button>
+          <button id="right-button" style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/right-arrow.svg"></img></button>
         </div>
       </React.Fragment>
     );
