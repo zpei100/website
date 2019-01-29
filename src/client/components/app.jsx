@@ -3,6 +3,9 @@ import LazySkills from './skills/lazy-skills.jsx'
 import Banner from './banner/banner.jsx'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
+import IntersectionObserver from 'intersection-observer-polyfill'
+
+window.IntersectionObserver = IntersectionObserver;
 
 import data from './data'
 import '../eventHandlers/parallaxEffect'

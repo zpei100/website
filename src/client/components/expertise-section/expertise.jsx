@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import MediaQuery from 'react-responsive'
 
-if(!IntersectionObserver) const IntersectionObserver = import('intersection-observer-polyfill')
-
-
 export default class Expertise extends Component {
   constructor() {
     super()

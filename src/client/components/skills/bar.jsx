@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 import $ from 'jquery'
 
-if(!IntersectionObserver) const IntersectionObserver = import('intersection-observer-polyfill')
-
 export default class Bar extends Component {
   componentDidMount() {
     this.io = new IntersectionObserver(
