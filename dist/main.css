@@ -302,7 +302,7 @@
 }
 @media screen and (max-width: 480px) {
   #aboutMe .links .link {
-    height: 2;
+    height: 15vw;
   }
 }
 #aboutMe .links .link img {
@@ -477,7 +477,6 @@
 }
 @media screen and (max-width: 1024px) {
   #projects-section {
-    min-height: 168vh;
     background-size: auto auto;
     background-repeat: 50% 50%;
   }
@@ -495,6 +494,7 @@
 }
 #projects-section img {
   object-fit: fill;
+  border: 2px solid black;
 }
 #projects-section .project {
   height: auto;

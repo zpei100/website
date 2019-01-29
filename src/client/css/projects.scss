@@ -10,7 +10,6 @@
 	}
 
 	@include smallerThan($ipad-pro) {
-		min-height: 168vh;
 		background-size: auto auto;
 		background-repeat: 50% 50%
 	}
@@ -38,6 +37,7 @@
 
 	img {
 		object-fit: fill;
+		border: 2px solid black;
 	}
 
 	.project {
