@@ -95,6 +95,12 @@ body * {
   width: 50vw;
   height: 50vw;
 }
+@media screen and (max-width: 1024px) {
+  #modal-content {
+    width: 90vw;
+    height: 120vw;
+  }
+}
 #modal-content button {
   padding: 0 !important;
 }
@@ -132,12 +138,19 @@ body * {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: calc(25% - 3vh);
+  align-items: center;
 }
 #modal-content-description h1 {
   display: flex;
   margin: 1% 0;
   justify-content: center;
   font-size: 1.5vw;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description h1 {
+    font-size: 3vw;
+  }
 }
 #modal-content-description p {
   display: flex;
@@ -147,11 +160,21 @@ body * {
   font-weight: 600;
   font-size: 1vw;
 }
+@media screen and (max-width: 1024px) {
+  #modal-content-description p {
+    font-size: 2vw;
+  }
+}
 #modal-content-description #website-button {
   display: flex;
   justify-content: center;
   margin: 1% 0;
   font-size: 1vw;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description #website-button {
+    font-size: 2vw;
+  }
 }
 #modal-content-description a {
   text-decoration: none;
@@ -160,6 +183,13 @@ body * {
   border-color: red;
   padding: 10px;
   border-radius: 12px;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description a {
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid red;
+  }
 }
 
 .slider {
