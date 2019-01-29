@@ -147,7 +147,7 @@ export default class Project extends Component {
             </div>
 
             <div className="details" ref={overlayBot => this.overlayBot = overlayBot}>
-              <div onClick={() => toggleModal(idx)} ref={details => this.details = details}>Details</div>
+              <div onClick={() => toggleModal(idx)} ref={details => this.details = details}>DETAILS</div>
             </div>
 
           </div>

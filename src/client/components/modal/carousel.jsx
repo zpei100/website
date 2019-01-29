@@ -24,7 +24,25 @@ export default class Carousel extends Component {
     this.slider
       .find('img')
       .first()
-      .css({marginLeft: `-${this.getRenderedImageSize()}px`})
+      .css({marginLeft: `-${this.getRenderedImageSize()}px`});
+
+    $(".carousel").on("touchstart", (event) => {
+      var xClick = event.originalEvent.touches[0].pageX;
+      $(".carousel").one("touchmove", (event) => {
+      var xMove = event.originalEvent.touches[0].pageX;
+
+      if( Math.floor(xClick - xMove) > 5 ){
+          this.slide('-');
+      }
+      else if( Math.floor(xClick - xMove) < -5 ){
+          this.slide('+');
+      }
+    });
+
+      $(".carousel").on("touchend", function(){
+        $(".carousel").off("touchmove");
+      });
+    });
   }
 
   updateActive = operation => {
@@ -85,6 +103,7 @@ export default class Carousel extends Component {
     }
 
     const { images } = this.state
+
     return (
       <React.Fragment>
         <div className="carousel" style={carouselStyles}>

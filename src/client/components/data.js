@@ -118,7 +118,7 @@ export default {
       name: 'upScale',
       description: 'Back end optimization and scaling',
       technologies: ['Node.js', 'MongoDB', 'Redis', 'Docker', 'AWS', ],
-      thumbnail: 'assets/gallery/upScale/Main.png',
+      thumbnail: 'assets/gallery/upScale/Main-50.jpg',
       images: [
         'assets/gallery/upScale/Main-50.png',
         'assets/gallery/upScale/JMeter.png',

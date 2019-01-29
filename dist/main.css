@@ -463,7 +463,7 @@
   background: url("assets/images/project-background-1.jpg");
   background-size: 100% 100%;
   background-position: top left;
-  padding: 2% 0;
+  padding-bottom: 2%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -472,7 +472,6 @@
 @media screen and (min-width: 1024px) {
   #projects-section {
     height: auto;
-    min-height: 100vh;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -482,10 +481,14 @@
   }
 }
 #projects-section h1 {
-  font-size: 3vw;
   margin: 1% 0;
-  color: gold;
+  color: black;
   text-align: center;
+  font-size: 4vw;
+  width: 100%;
+  background: white;
+  padding: 2% 0;
+  margin-top: 0;
 }
 @media screen and (max-width: 1024px) {
   #projects-section h1 {
@@ -494,14 +497,15 @@
 }
 #projects-section img {
   object-fit: cover;
-  border: 2px solid black;
+  border: 3px solid black;
 }
 #projects-section .project {
   height: auto;
+  border-radius: 15px;
 }
 @media screen and (max-width: 1024px) {
   #projects-section .project {
-    width: 80vw;
+    width: 90vw;
     margin: 6% 0;
   }
 }
@@ -513,7 +517,7 @@
 }
 @media screen and (max-width: 1024px) {
   #projects-section .name {
-    font-size: 4vw;
+    font-size: 6vw;
   }
 }
 #projects-section .technologies {
@@ -525,7 +529,7 @@
 }
 @media screen and (max-width: 1024px) {
   #projects-section .technologies {
-    font-size: 2.4vw;
+    font-size: 4vw;
   }
 }
 #projects-section .technologies li {
@@ -537,19 +541,22 @@
   justify-content: center;
   position: absolute;
   bottom: -15%;
+  font-family: carla;
 }
 #projects-section .details > div {
   width: auto;
   font-size: 1.2vw;
   text-align: center;
-  border: 2px solid red;
-  border-radius: 8px;
+  border: 1px solid black;
+  border-radius: 15px;
   padding: 1.5% 2.5%;
   cursor: pointer;
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.4);
 }
 @media screen and (max-width: 1024px) {
   #projects-section .details > div {
-    font-size: 2.4vw;
+    font-size: 3vw;
+    padding: 2% 4%;
   }
 }
 #projects-section .gallery {

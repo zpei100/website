@@ -34,8 +34,6 @@
 	}
 
 	.carousel {
-		
-
 		img {
 			object-fit: contain;
 		}
@@ -53,17 +51,17 @@
 
 	#left-button {
 		background: #DCD6F7;
-		height: 4vh;
+		height: 5vh;
 		@include smallerThan($ipad-pro) {
-			height: 3vh;
+			height: 6vh;
 		}
 	}
 
 	#right-button {
 		background: #D6E5E3;
-		height: 4vh;
+		height: 5vh;
 		@include smallerThan($ipad-pro) {
-			height: 3vh;
+			height: 6vh;
 		}	
 	}
 }

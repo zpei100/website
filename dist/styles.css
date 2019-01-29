@@ -63,13 +63,31 @@
   font-family: honey;
   src: url("assets/fonts/painter.ttf");
 }
+@font-face {
+  font-family: lato;
+  src: url('https://fonts.googleapis.com/css?family=Lato" rel="stylesheet');
+}
 .honey {
   font-family: honey;
+}
+
+@font-face {
+  font-family: carla;
+  src: url("https://fonts.googleapis.com/css?family=Karla");
+}
+.karla {
+  font-family: carla;
 }
 
 body {
   margin: 0;
   font-family: Helvetica, Arial;
+}
+body p {
+  font-family: lato;
+}
+body li {
+  font-family: lato;
 }
 body * {
   box-sizing: border-box;
@@ -98,7 +116,7 @@ body * {
 @media screen and (max-width: 1024px) {
   #modal-content {
     width: 90vw;
-    height: 120vw;
+    height: 140vw;
   }
 }
 #modal-content button {
@@ -116,20 +134,20 @@ body * {
 }
 #modal-content #left-button {
   background: #DCD6F7;
-  height: 4vh;
+  height: 5vh;
 }
 @media screen and (max-width: 1024px) {
   #modal-content #left-button {
-    height: 3vh;
+    height: 5vh;
   }
 }
 #modal-content #right-button {
   background: #D6E5E3;
-  height: 4vh;
+  height: 5vh;
 }
 @media screen and (max-width: 1024px) {
   #modal-content #right-button {
-    height: 3vh;
+    height: 5vh;
   }
 }
 
@@ -138,7 +156,7 @@ body * {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(25% - 3vh);
+  height: calc(25% - 5vh);
   align-items: center;
 }
 #modal-content-description h1 {
