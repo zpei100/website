@@ -3,13 +3,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true
-      }),
+      // new UglifyJsPlugin({
+      //   cache: true,
+      //   parallel: true
+      // }),
       new OptimizeCSSAssetsPlugin({})
     ]
   },
