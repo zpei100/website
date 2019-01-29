@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-// import Skills from './skills/skills.jsx'
 import LazySkills from './skills/lazy-skills.jsx'
 import Banner from './banner/banner.jsx'
-// import Modal from './modal/modal.jsx'
-
-// import ExpertiseSection from './expertise-section/expertise-section.jsx'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
-
-// import ProjectsSection from './projects-section/projects-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
 
 import data from './data'
@@ -19,7 +13,6 @@ export default class App extends Component {
     this.state = {
       data, showModal: false, active: 0
     }
-
     this.modal = null;
   }
 
@@ -40,8 +33,15 @@ export default class App extends Component {
         <Banner />
         <LazySkills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
-        {/* <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
-        {Modal ? <Modal showModal={this.state.showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''} */}
+        <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
+
+        {/* <Modal 
+          showModal={this.state.showModal} 
+          toggleModal={this.toggleModal} 
+          data={this.state.data.projects[this.state.active]}
+        /> */}
+
+        {Modal ? <Modal showModal={showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''}
       </React.Fragment>
     );
   }

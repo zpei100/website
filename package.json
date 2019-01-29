@@ -7,12 +7,23 @@
     "webpack": "webpack -w",
     "sass": "sass --watch src/client/css/critical.scss:dist/styles.css src/client/css/main.scss:dist/main.css",
     "server": "nodemon src/server/index.js",
-    "start": "webpack -p && sass src/client/css/critical.scss:dist/styles.css src/client/css/main.scss:dist/main.css && node src/server/index.js"
+    "start": "webpack -p && sass src/client/css/critical.scss:dist/styles.css src/client/css/main.scss:dist/main.css && NODE_ENV=production node src/server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    
+  },
+  "dependencies": {
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-loadable": "^5.5.0",
+    "react-responsive": "^6.0.1",
+
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -30,14 +41,5 @@
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
-  },
-  "dependencies": {
-    "compression": "^1.7.3",
-    "express": "^4.16.4",
-    "jquery": "^3.3.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-loadable": "^5.5.0",
-    "react-responsive": "^6.0.1"
   }
 }

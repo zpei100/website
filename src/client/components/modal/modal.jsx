@@ -12,7 +12,7 @@ export default class Modal extends Component {
         <div id="modal-content-description">
           <h1>{name}</h1>
           <p>{description}</p>
-          {website ? <a href={website}>Website</a> : ''}
+          <div id="website-button">{website ? <a href={website}>Website</a> : ''}</div> 
         </div> 
       </div>
     </div> : ''

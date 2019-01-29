@@ -300,6 +300,11 @@
     padding-left: 0;
   }
 }
+@media screen and (max-width: 480px) {
+  #aboutMe .links .link {
+    height: 2;
+  }
+}
 #aboutMe .links .link img {
   height: 26px;
   width: 26px;
@@ -318,8 +323,8 @@
 }
 @media screen and (max-width: 640px) {
   #aboutMe .links .link img {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
 }
 #aboutMe .links .link a {
@@ -344,6 +349,334 @@
   #aboutMe .links .link a {
     display: none;
   }
+}
+
+#expertise-section {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/expertise-background-50-1920x1280.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding: 80px 80px;
+}
+@media screen and (max-width: 1000px) {
+  #expertise-section {
+    padding: 30px 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #expertise-section {
+    padding: 15px 15px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #expertise-section .expertise-container {
+    padding-top: 7vw;
+  }
+}
+#expertise-section .expertise-header {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  #expertise-section .expertise-header img {
+    width: 10vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  #expertise-section ul {
+    padding-left: 20px;
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #expertise-section ul {
+    padding-right: 10px;
+  }
+}
+#expertise-section h1 {
+  font-size: 60px;
+  margin-top: 0;
+}
+@media screen and (max-width: 768px) {
+  #expertise-section h1 {
+    font-size: 8vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #expertise-section h1 {
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 20px;
+  }
+}
+#expertise-section h2 {
+  font-size: 36px;
+}
+@media screen and (max-width: 1200px) {
+  #expertise-section h2 {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #expertise-section h2 {
+    font-size: 4vw;
+  }
+}
+#expertise-section li {
+  line-height: 26px;
+  font-size: 20px;
+  margin: 5px 0;
+  width: 100%;
+  font-weight: 300;
+}
+@media screen and (max-width: 1024px) {
+  #expertise-section li {
+    font-size: 2.6vw;
+    line-height: 3.12vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  #expertise-section li {
+    font-size: 3vw;
+    line-height: 3.6vw;
+  }
+}
+#expertise-section .expertise-grid {
+  display: grid;
+  height: 80%;
+  width: 100%;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+}
+@media screen and (max-width: 1200px) {
+  #expertise-section .expertise-grid {
+    grid-template-rows: repeat(4, minmax(auto, 30%));
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+#projects-section {
+  width: 100%;
+  background: url("assets/images/project-background-1.jpg");
+  background-size: 100% 100%;
+  background-position: top left;
+  padding: 2% 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  #projects-section {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #projects-section {
+    min-height: 168vh;
+    background-size: auto auto;
+    background-repeat: 50% 50%;
+  }
+}
+#projects-section h1 {
+  font-size: 3vw;
+  margin: 1% 0;
+  color: gold;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section h1 {
+    font-size: 5vw;
+  }
+}
+#projects-section img {
+  object-fit: fill;
+}
+#projects-section .project {
+  height: auto;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .project {
+    width: 80vw;
+    margin: 6% 0;
+  }
+}
+#projects-section .name {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8vw;
+  font-weight: 550;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .name {
+    font-size: 4vw;
+  }
+}
+#projects-section .technologies {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 2% 2%;
+  font-size: 1.2vw;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .technologies {
+    font-size: 2.4vw;
+  }
+}
+#projects-section .technologies li {
+  margin: 0 2%;
+}
+#projects-section .details {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: -15%;
+}
+#projects-section .details > div {
+  width: auto;
+  font-size: 1.2vw;
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 1.5% 2.5%;
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .details > div {
+    font-size: 2.4vw;
+  }
+}
+#projects-section .gallery {
+  padding: 2%;
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 10px;
+  box-shadow: 3px 3px black, 0em 0 4em black;
+  grid-template-rows: repeat(2, 18vw);
+  grid-template-columns: 13vw 13vw 26vw;
+  grid-template-areas: "airbnb airbnb upscale" "reddit reddit upscale";
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .gallery {
+    display: block;
+  }
+}
+#projects-section .gallery #project-0 {
+  grid-area: airbnb;
+}
+#projects-section .gallery #project-1 {
+  grid-area: reddit;
+}
+#projects-section .gallery #project-2 {
+  grid-area: upscale;
+}
+@media screen and (min-width: 1024px) {
+  #projects-section .gallery #project-2 .technologies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #projects-section .gallery #project-2 .technologies li {
+    margin: 2% 0;
+  }
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+#modal-content {
+  background: white;
+  margin: auto auto;
+  border: 2px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#modal-content button {
+  padding: 0 !important;
+}
+#modal-content button img {
+  height: 100%;
+}
+#modal-content .carousel {
+  height: 50vh;
+  width: 75vh;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content .carousel {
+    height: 48vw;
+    width: 72vw;
+  }
+}
+#modal-content #left-button {
+  background: #DCD6F7;
+  height: 4vh;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content #left-button {
+    height: 3vh;
+  }
+}
+#modal-content #right-button {
+  background: #D6E5E3;
+  height: 4vh;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content #right-button {
+    height: 3vh;
+  }
+}
+
+#modal-content-description {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#modal-content-description h1 {
+  display: flex;
+  margin: 3% 0;
+  justify-content: center;
+  font-size: 3vw;
+}
+#modal-content-description p {
+  display: flex;
+  margin: 2% 0;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  font-size: 1.5vw;
+}
+#modal-content-description #website-button {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+  font-size: 1.5vw;
+}
+#modal-content-description a {
+  text-decoration: none;
+  color: black;
+  border: 2px solid;
+  border-color: red;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.slider {
+  background: black !important;
 }
 
 /*# sourceMappingURL=main.css.map */

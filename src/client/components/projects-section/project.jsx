@@ -57,7 +57,6 @@ export default class Project extends Component {
     const containerStyles = {
       overflow: 'hidden',
       position: 'relative',
-      borderRadius: '12px'
     } 
 
     const overlayStyles = {
@@ -71,7 +70,6 @@ export default class Project extends Component {
 
     const thumbnailStyles = {
       ...fullSize,
-      objectFit: 'cover'
     }
 
     const overlayTopStyles = {
@@ -120,8 +118,6 @@ export default class Project extends Component {
       fontWeight: 600,
     }
 
-    console.log('id should be key: ', this.props.iden)
-
     return (
       <div 
         ref={container => this.container = container} 
@@ -138,21 +134,20 @@ export default class Project extends Component {
         
         {/* Overlay: name, technologies used, and button to show more */}
         <div style={overlayStyles} ref={overlay => this.overlay = overlay}>
-
           <div style={{position: 'relative', height: '100%'}}>
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
 
-              <div style={overlayNameStyles}>{name}</div>
+              <div className="name">{name}</div>
 
-              <ul style={overlayTechnologiesStyles}>
+              <ul className="technologies">
                 {technologies.map((technology, idx) => 
-                  <li key={`technology-${idx}`} style={{margin: '0 10px'}}>{technology}</li>)}
+                  <li key={`technology-${idx}`}>{technology}</li>)}
               </ul>
             </div>
 
-            <div style={overlayBotStyles} ref={overlayBot => this.overlayBot = overlayBot}>
-              <div onClick={() => toggleModal(idx)} style={detailsStyle} ref={details => this.details = details}>Details</div>
+            <div className="details" ref={overlayBot => this.overlayBot = overlayBot}>
+              <div onClick={() => toggleModal(idx)} ref={details => this.details = details}>Details</div>
             </div>
 
           </div>

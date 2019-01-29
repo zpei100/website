@@ -26,7 +26,7 @@ export default class Banner extends Component {
               <p id="greet-developer" className="honey">a full-stack developer...</p>
               <div>
               <button 
-                onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'center'})}
+                onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'start'})}
               >
                 About Me
               </button>

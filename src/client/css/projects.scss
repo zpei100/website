@@ -1,37 +1,121 @@
 @import 'variables';
 @import 'mixins';
 
-//projects section:
+//projects:
 #projects-section {
-	height: auto;
 	width: 100%;
-	background: #eee5e9;
-	padding: 30px 0 200px 0;
-	box-sizing: border-box;
+	@include biggerThan($ipad-pro) {
+		height: auto;
+		min-height: 100vh;
+	}
+
+	@include smallerThan($ipad-pro) {
+		min-height: 168vh;
+		background-size: auto auto;
+		background-repeat: 50% 50%
+	}
+
+	// background: #EEE5E9;
+	background: url("assets/images/project-background-1.jpg");
+	background-size: 100% 100%;
+	background-position: top left;
+	padding: 2% 0;
+	box-sizing: border-box;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 	h1 {
-		font-size: $h1-size;
+		font-size: 3vw;
+		margin: 1% 0;
+		color: gold;
 		text-align: center;
+
+		@include smallerThan($ipad-pro) {
+			font-size: 5vw;
+		}
 	}
 
 	img {
-		object-fit: contain;
+		object-fit: fill;
 	}
 
 	.project {
 		height: auto;
+
+		@include smallerThan($ipad-pro) {
+			width: 80vw;
+			margin: 6% 0;
+		}
+	}
+
+	.name {
+		display: flex;
+		justify-content: center;
+		font-size: 1.8vw;
+		font-weight: 550;
+
+		@include smallerThan($ipad-pro) {
+			font-size: 4vw;
+		}
+	}
+
+	.technologies {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		padding: 2% 2%;
+		font-size: 1.2vw;
+
+		@include smallerThan($ipad-pro) {
+			font-size: 2.4vw;
+		}
+
+		li {
+			margin: 0 2%;
+		}
+	}
+
+	.details {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		position: absolute;
+		bottom: -15%;
+
+		//button itself
+		&>div {
+			width: auto;
+			font-size: 1.2vw;
+			text-align: center;
+			border: 2px solid red;
+			border-radius: 8px;
+			padding: 1.5% 2.5%;
+			cursor: pointer;
+
+			@include smallerThan($ipad-pro) {
+				font-size: 2.4vw;
+			}
+		}
 	}
 
 	.gallery {
-		padding: 0 2%;
+		padding: 2%;
 		box-sizing: border-box;
 		display: grid;
 		grid-gap: 10px;
-		width: 100%;
+
+		box-shadow:  3px 3px black, 0em 0 4em black;
 		// grid-template-columns: repeat(3, auto);
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 3fr 1fr;
-		grid-template-areas: "airbnb upscale" "reddit upscale";
+		grid-template-rows: repeat(2, 18vw);
+		grid-template-columns: 13vw 13vw 26vw;
+		grid-template-areas: 
+		"airbnb airbnb upscale" 
+		"reddit reddit upscale";
+
+		@include smallerThan($ipad-pro) {
+			display: block;
+		}
 
 		#project-0 {
 			grid-area: airbnb;
@@ -43,11 +127,18 @@
 
 		#project-2 {
 			grid-area: upscale;
-		}
 
-		@include smallerThan($lg-bp) {
-			grid-template-columns: 1fr;
-			grid-template-rows: repeat(auto, 30%);
+			@include biggerThan($ipad-pro) {
+				.technologies {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					
+					li {
+						margin: 2% 0;
+					}
+				}
+			}
 		}
 	}
 }

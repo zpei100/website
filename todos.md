@@ -11,3 +11,4 @@
 
 [] Optimize solution and reach 80+ on lighthouse
 
+[] Change font for expertise section descriptions

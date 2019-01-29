@@ -314,6 +314,10 @@
 				padding-left: 0;
 			}
 
+			@include smallerThan($sm-bp) {
+				height: 15vw;
+			}
+
 			//external link icons -- github / gmail etc
 			img {
 				height: 26px;
@@ -330,8 +334,8 @@
 				}
 
 				@include smallerThan(640px) {
-					height: 40px;
-					width: 40px;
+					height: 30px;
+					width: 30px;
 				}
 			}
 

@@ -63,19 +63,18 @@ export default class Carousel extends Component {
     }
 
     const carouselStyles = {
-      width: this.state.carouselWidth,
-      minWidth: this.state.carouselWidth,
-      height: this.state.carouselHeight
+      // width: this.state.carouselWidth,
+      // minWidth: this.state.carouselWidth,
+      // height: '50vh'
     }
 
     const sliderImageStyles = {
       width: '100%',
-      objectFit: 'contain',
       height: '100%',
+      
     }
 
     const buttonStyles = {
-      background: 'white',
       cursor: 'pointer',
       outline: 0,
       width: '50%',
@@ -94,8 +93,8 @@ export default class Carousel extends Component {
           </div>
         </div>
         <div style={{display: 'flex'}}>
-          <button style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/left-arrow.png"></img></button>
-          <button style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/right-arrow.png"></img></button>
+          <button id="left-button" style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/left-arrow.svg"></img></button>
+          <button id="right-button" style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/right-arrow.svg"></img></button>
         </div>
       </React.Fragment>
     );
