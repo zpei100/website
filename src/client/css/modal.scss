@@ -34,6 +34,8 @@
 	}
 
 	.carousel {
+		
+
 		img {
 			object-fit: contain;
 		}
@@ -108,5 +110,6 @@
 
 //overrides;
 .slider {
-  background: black!important;
+  background: url("assets/images/project-background.jpg") !important;
+
 }

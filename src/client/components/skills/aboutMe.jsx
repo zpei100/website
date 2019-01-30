@@ -1,10 +1,26 @@
 import React, { Component } from 'react'
 import Observer from '../observer.jsx'
+import $ from 'jquery'
 
 export default class AboutMe extends Component {
+  componentDidMount() {
+    this.io = new IntersectionObserver(([entry]) => {
+      console.log('triggered: ', entry.intersectionRatio)
+      if(entry.intersectionRatio <= 0.50) {
+        $('.links').animate({opacity: 0}, 500, () => {
+          $('.links').addClass('sticky')
+        })
+        
+      }
+      // else if(entry.intersectionRatio > 0.5) $('.links').removeClass('sticky')
+    }, {threshold: [0, 0.2, 0.5, 0.8, 1]})
+
+    this.io.observe(this.readMe)
+  }
+
   render() {
     return (
-      <div  id="aboutMe" ref={links => this.links = links}>
+      <div id="aboutMe" ref={ele => this.readMe = ele}>
         <div style={{display: 'flex', height: '100%'}}>
           <div style={{height: '100%'}}>
             <div className="picture-container"></div>

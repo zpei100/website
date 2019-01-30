@@ -1,7 +1,3 @@
-[] Banner font size responsive
-  [ ] Choose best banner picture
-  [ ] Readjust button, title and developer text size
-
 [] Expertise text some times not showing
 [] Expertise style minor adjustments
 [] Projects picture retaken

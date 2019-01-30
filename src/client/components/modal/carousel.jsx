@@ -26,6 +26,7 @@ export default class Carousel extends Component {
       .first()
       .css({marginLeft: `-${this.getRenderedImageSize()}px`});
 
+    //carousel swipe
     $(".carousel").on("touchstart", (event) => {
       var xClick = event.originalEvent.touches[0].pageX;
       $(".carousel").one("touchmove", (event) => {
@@ -58,12 +59,12 @@ export default class Carousel extends Component {
       const marginChange = this.getRenderedImageSize() + 'px'
       this.setState({animating: true}, () => {
         this.slider
-          .find('img')
-          .first()
-          .animate({marginLeft: `${operation}=${marginChange}`}, this.animationDuration, () => {
-            const newActive = this.updateActive(operation)
-            this.setState({active: newActive, images: getThree(this.props.images, newActive), animating: false}, () => {
-              this.slider.find('img').first().css({marginLeft: `-${marginChange}`})
+        .find('img')
+        .first()
+        .animate({marginLeft: `${operation}=${marginChange}`}, this.animationDuration, () => {
+          const newActive = this.updateActive(operation)
+          this.setState({active: newActive, images: getThree(this.props.images, newActive), animating: false}, () => {
+            this.slider.find('img').first().css({marginLeft: `-${marginChange}`})
           })
         })
       })
@@ -77,19 +78,11 @@ export default class Carousel extends Component {
       overflow: 'hidden',
       padding: 0,
       whiteSpace: 'nowrap',
-      background: 'white'
-    }
-
-    const carouselStyles = {
-      // width: this.state.carouselWidth,
-      // minWidth: this.state.carouselWidth,
-      // height: '50vh'
     }
 
     const sliderImageStyles = {
       width: '100%',
       height: '100%',
-      
     }
 
     const buttonStyles = {
@@ -99,14 +92,13 @@ export default class Carousel extends Component {
       padding: '10px 0',
       border: 0,
       borderTop: '3px pink solid'
-
     }
 
     const { images } = this.state
 
     return (
       <React.Fragment>
-        <div className="carousel" style={carouselStyles}>
+        <div className="carousel">
           <div style={sliderStyles} ref={slider => this.slider = $(slider)} className="slider">
             {images.map((image, idx) => <img key={`image-${idx}`} style={sliderImageStyles} src={image} />)}
           </div>

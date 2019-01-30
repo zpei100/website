@@ -259,6 +259,31 @@
 		}
 	}
 
+	.sticky {
+		flex-direction: row !important;
+		position: fixed;
+		bottom: 0;
+		padding: 1% 0;
+		left: 0;
+		width: 100%;
+		margin: 0;
+		background: white;
+		border-top: 1px solid grey;
+		z-index: 10;
+		height: auto !important;
+		opacity: 0;
+		animation: appear 2s forwards;
+
+		.link {
+			height: 50px;
+			align-items: center;
+			width: 100% !important;
+			justify-content: center !important;
+			padding-left: 0 !important;
+			margin: auto !important;
+		}
+	}
+
 	.links {
 		//external links flex column under profile picture
 		padding: 0;
@@ -267,8 +292,6 @@
 		align-items: center;
 		justify-content: space-between;
 		align-items: center;
-		opacity: 0;
-		animation: appear 2s forwards;
 
 		@keyframes appear {
 			0% {opacity: 0}
@@ -277,18 +300,29 @@
 
 		//external links sticky to bottom of screen
 		@include smallerThan($lg-bp) {
-			flex-direction: row !important;
-			position: fixed;
-			bottom: 0;
-			padding: 1% 0;
-			left: 0;
-			width: 100%;
-			margin: 0;
-			background: white;
-			border-top: 1px solid grey;
-			z-index: 10;
-			height: auto !important;
+			// flex-direction: row !important;
+			// position: fixed;
+			// bottom: 0;
+			// padding: 1% 0;
+			// left: 0;
+			// width: 100%;
+			// margin: 0;
+			// background: white;
+			// border-top: 1px solid grey;
+			// z-index: 10;
+			// height: auto !important;
+			// opacity: 0;
+			// animation: appear 2s forwards;
 		}
+
+		// .sticky-link {
+		// 	height: 50px;
+		// 	align-items: center;
+		// 	width: 100% !important;
+		// 	justify-content: center !important;
+		// 	padding-left: 0 !important;
+		// 	margin: auto !important;
+		// }
 
 		.link {
 			display: flex;
@@ -305,13 +339,7 @@
 
 			//adds top border, spacing to each link
 			@include smallerThan($lg-bp) {
-				width: 100%;
-				height: 30px;
-				margin: auto;
-				align-items: center;
-				width: 100% !important;
-				justify-content: center !important;
-				padding-left: 0;
+				
 			}
 
 			@include smallerThan($sm-bp) {

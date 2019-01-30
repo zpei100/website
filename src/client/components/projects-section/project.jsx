@@ -33,16 +33,16 @@ export default class Project extends Component {
       }
     )
     
-    details.hover(
-      () => {
-        details.stop()
-        details.css({background: 'red', transition: '0.5s'})
-      },
-      () => {
-        details.stop()
-        details.css({background: 'white', transition: '0.5s'})
-      }
-    )
+    // details.hover(
+    //   () => {
+    //     details.stop()
+    //     details.css({background: 'red', transition: '0.5s'})
+    //   },
+    //   () => {
+    //     details.stop()
+    //     details.css({background: 'white', transition: '0.5s'})
+    //   }
+    // )
   }
   
   render() {

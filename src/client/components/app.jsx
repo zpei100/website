@@ -4,6 +4,7 @@ import Banner from './banner/banner.jsx'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
 import IntersectionObserver from 'intersection-observer-polyfill'
+import $ from 'jquery'
 
 window.IntersectionObserver = IntersectionObserver;
 
@@ -23,7 +24,9 @@ export default class App extends Component {
     import(/*webpackChunkName: "Modal" */ './modal/modal.jsx').then(module => {
       this.modal = module.default
     }).then(() => {
-      this.setState({showModal: !this.state.showModal, active: idx})
+      this.setState({showModal: !this.state.showModal, active: idx}, () => {
+        $('body').css('overflow', this.state.showModal ? 'hidden' : 'scroll')
+      })
     })
   }
 
@@ -37,13 +40,6 @@ export default class App extends Component {
         <LazySkills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
         <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
-
-        {/* <Modal 
-          showModal={this.state.showModal} 
-          toggleModal={this.toggleModal} 
-          data={this.state.data.projects[this.state.active]}
-        /> */}
-
         {Modal ? <Modal showModal={showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''}
       </React.Fragment>
     );

@@ -46,12 +46,12 @@
 
 	img {
 		object-fit: cover;
-		border: 3px solid black;
 	}
 
 	.project {
 		height: auto;
 		border-radius: 15px;
+		border: 3px solid #031D44;
 
 		@include smallerThan($ipad-pro) {
 			width: 90vw;
@@ -99,11 +99,17 @@
 			width: auto;
 			font-size: 1.2vw;
 			text-align: center;
-			border: 1px solid black;
+			border: 2px solid black;
 			border-radius: 15px;
 			padding: 1.5% 2.5%;
 			cursor: pointer;
-			box-shadow: 0px 5px 10px -10px rgba(0,0,0,0.4);
+			box-shadow: 0px 8px 10px -10px rgba(0,0,0,0.4);
+
+			&:hover {
+				color: white;
+				background: #F21B3F;
+				transition: 0.6s;
+			}
 
 			@include smallerThan($ipad-pro) {
 				font-size: 3vw;

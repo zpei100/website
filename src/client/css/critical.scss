@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 @import 'banner';
+@import 'skills';
+
+@import 'projects';
 
 @font-face {
 	font-family: honey;
@@ -90,10 +93,16 @@ body {
 	.carousel {
 		width: 100%;
 		height: 75%;
+		animation: emerge 0.3s forwards;
 
 		img {
 			object-fit: contain;
 		}
+	}
+
+	@keyframes emerge {
+		0% {opacity: 0}
+		100% {opacity: 100%}
 	}
 	
 
@@ -176,5 +185,5 @@ body {
 
 //overrides;
 .slider {
-  background: black!important;
+	background: url($carousel-image-background);
 }
