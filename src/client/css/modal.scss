@@ -24,7 +24,7 @@
 	// height: 720px;
 
 	width: 75vw;
-	height: 50vw;
+	height: calc(50vw - 50px);
 
 	button {
 		padding: 0 !important;

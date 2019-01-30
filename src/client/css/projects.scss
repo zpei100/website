@@ -7,6 +7,7 @@
 	width: 100%;
 	@include biggerThan($ipad-pro) {
 		height: auto;
+		padding-bottom: 50px;
 		// min-height: 100vh;
 	}
 

@@ -39,7 +39,7 @@ export default {
       title: 'UI/UX development',
       description: 'Build responsive, interactive components',
       bulletpoints: [
-         'Responsive layouts and all the basic compnents, including carousels, galleries, modals, dropdowns, forms etc...',
+         'Responsive layouts and all the basic components, including carousels, galleries, modals, dropdowns, forms etc...',
          'Custom animations based on user interactions',
          'Client-side caching, and use of service workers for better 3G and even off-line experience (learning)',
          'Modular codebase with React, Redux and Sass',
@@ -52,7 +52,7 @@ export default {
       bulletpoints: [
         'Deliver content to users more quickly with server-side-rendering',
         'Lazy loading below the fold, and non-critical content, images with observers',
-        'Dynamically import components to lessen size of initial data transfered',
+        'Dynamically import components to lessen size of initial data transferred',
         'Single page applications with bundling tools to reduce number of resource requests'
       ]
     },
