@@ -18,18 +18,14 @@ export default class Carousel extends Component {
     }
   }
 
+  //finds the three images, left of active, active and right of active currently
   getRenderedImageSize = () => this.slider.find('img').first().width()
 
   componentDidMount() {
-    this.slider
-      .find('img')
-      .first()
-      .css({marginLeft: `-${this.getRenderedImageSize()}px`});
-
     //carousel swipe
-    $(".carousel").on("touchstart", (event) => {
+    $('.carousel').on('touchstart', (event) => {
       var xClick = event.originalEvent.touches[0].pageX;
-      $(".carousel").one("touchmove", (event) => {
+      $('.carousel').one('touchmove', (event) => {
       var xMove = event.originalEvent.touches[0].pageX;
 
       if( Math.floor(xClick - xMove) > 5 ){
@@ -56,16 +52,30 @@ export default class Carousel extends Component {
 
   slide = operation => {
      if (!this.state.animating) {
+      const $images = this.slider.find('img')
       const marginChange = this.getRenderedImageSize() + 'px'
+      const newActive = this.updateActive(operation);
+      const images = getThree(this.props.images, newActive);
+
+      //left button, slide is moving right
+      if (operation === '+') {
+        this.slider.prepend(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap; margin-left: -${marginChange}" src="${images[0]}"/>`);
+      }
+
+      //right button, slide is moving left
+      if (operation === '-') {
+        this.slider.append(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap" src="${images[2]}"/>`);
+      }
+
       this.setState({animating: true}, () => {
-        this.slider
-        .find('img')
+        //bug if not declare $images a second time
+        const $images = this.slider.find('img')
+        $images
         .first()
         .animate({marginLeft: `${operation}=${marginChange}`}, this.animationDuration, () => {
-          const newActive = this.updateActive(operation)
-          this.setState({active: newActive, images: getThree(this.props.images, newActive), animating: false}, () => {
-            this.slider.find('img').first().css({marginLeft: `-${marginChange}`})
-          })
+          if(operation === '-') $images.first().remove();
+          if(operation === '+') $images.last().remove();
+          this.setState({active: newActive, images, animating: false})
         })
       })
     }
@@ -100,7 +110,7 @@ export default class Carousel extends Component {
       <React.Fragment>
         <div className="carousel">
           <div style={sliderStyles} ref={slider => this.slider = $(slider)} className="slider">
-            {images.map((image, idx) => <img key={`image-${idx}`} style={sliderImageStyles} src={image} />)}
+            <img style={sliderImageStyles} src={images[0]} />
           </div>
         </div>
         <div style={{display: 'flex'}}>
