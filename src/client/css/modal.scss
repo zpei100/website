@@ -17,14 +17,23 @@
 #modal-content {
   background: white;
 	margin: auto auto;
-	border: 2px solid black;
+	border: 5px solid white;
 	border-radius: 12px;
 	overflow: hidden;
-	// width: 650px;
-	// height: 720px;
+	position: relative;
 
-	width: 75vw;
-	height: calc(50vw - 50px);
+	width: 50vw;
+	height: 50vw;
+
+	@include smallerThan(1200px) {
+		width: 90vw;
+		height: 80vh;
+	}
+
+	@media screen and (max-device-width: $sm-bp) {
+		width: 90vw;
+		height: 140vw;
+	}
 
 	button {
 		padding: 0 !important;
@@ -34,38 +43,68 @@
 	}
 
 	.carousel {
-		
+		width: 100%;
+		height: 75%;
+		animation: emerge 0.3s forwards;
 
 		img {
 			object-fit: contain;
 		}
-
-		@include smallerThan($ipad-pro) {
-			width: 95vw;
-			height: 50vw;	
-		}
-	}
-	
-
-
-	// @include smallerThan()
-	
-
-	#left-button {
-		background: #DCD6F7;
-		height: 5vh;
-		@include smallerThan($ipad-pro) {
-			height: 6vh;
-		}
 	}
 
-	#right-button {
-		background: #D6E5E3;
+	@keyframes emerge {
+		0% {opacity: 0}
+		100% {opacity: 100%}
+	}
+}
+
+#exit-modal {
+	position: absolute;
+	background: transparent;
+	border: none;
+	display: flex;
+	align-items: center;
+	top: 10px;
+	right: 10px;
+	z-index: 15;
+	height: auto;
+	cursor: pointer;
+	width: 3vw;
+	@include smallerThan($ipad-pro) {
+		width: 5vw;
+	};
+	
+	@include smallerThan($iphone678) {
+		width: 8vw;
+	};
+
+	img {
+		width: 100%;
+		height: auto;
+	};
+
+	&:hover {
+		color: blue;
+		background: white;
+		border-radius: 6px;
+		overflow: hidden;
+
+	}
+}
+
+#carousel-buttons-container {
+	display: flex;
+	button {
 		height: 5vh;
-		@include smallerThan($ipad-pro) {
-			height: 6vh;
+		box-shadow: 0 4px #999;
+		&:active {transform: translateY(4px); box-shadow: none}
+		@media screen and (min-device-width: $ipad-pro) {
+			&:hover {filter: brightness(70%)};
 		}	
+
 	}
+	#left-button {background: #DCD6F7}
+	#right-button {background: #D6E5E3}
 }
 
 #modal-content-description {
@@ -73,12 +112,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	height: calc(25% - 5vh);
+	align-items: center;
 
 	h1 {
 		display: flex;
 		margin: 1% 0;
 		justify-content: center;
 		font-size: 1.5vw;
+
+		@include smallerThan($ipad-pro) {
+			font-size: 3vw;
+		}
 	}
 
   p {
@@ -88,28 +133,53 @@
     font-size: 22px;
 		font-weight: 600;
 		font-size: 1vw;
+
+		@include smallerThan($ipad-pro) {
+			font-size: 2vw;
+		}
 	}
 
-	#website-button {
+	#website-buttons {
 		display: flex;
 		justify-content: center;
 		margin: 1% 0;
 		font-size: 1vw;
+
+		@media screen and (max-device-width: $ipad-pro) {
+			font-size: 2vw !important;
+		}
+
+		@include smallerThan($ipad-pro) {
+			font-size: 1.5vw;
+		}
 	}
 
   a {
-    text-decoration: none;
+		text-decoration: none;
+		margin: 0 10px;
     color: black;
-    border: 2px solid;
-    border-color: red;
-		padding: 10px;
-		border-radius: 12px;
+    border: 2px solid $button-fill-color;
+		padding: 3% 10px;
+		border-radius: 15px;
+		box-shadow: 0 3px #999;
+
+		&:active{transform: translateY(3px); box-shadow:none}
+		&:hover {background: $button-fill-color; transition: 0.6s}
+
+		@media screen and (max-device-width: $ipad-pro) {
+			padding: 6% 5px;
+			border: 1px solid $button-fill-color;
+		}
+		
+		// @include smallerThan($ipad-pro) {
+		// 	padding: 6% 5px;
+		// 	border: 1px solid $button-fill-color;
+		// }
   }
 }
 
 
 //overrides;
 .slider {
-  background: url("assets/images/project-background.jpg") !important;
-
+	background: url($carousel-image-background);
 }

@@ -113,7 +113,7 @@ export default class Carousel extends Component {
             <img style={sliderImageStyles} src={images[0]} />
           </div>
         </div>
-        <div style={{display: 'flex'}}>
+        <div id="carousel-buttons-container">
           <button id="left-button" style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/left-arrow.svg"></img></button>
           <button id="right-button" style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/right-arrow.svg"></img></button>
         </div>

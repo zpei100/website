@@ -25,7 +25,9 @@ export default class App extends Component {
       this.modal = module.default
     }).then(() => {
       this.setState({showModal: !this.state.showModal, active: idx}, () => {
-        $('body').css('overflow', this.state.showModal ? 'hidden' : 'scroll')
+        $('body').toggleClass('body-overflow');
+        // $('body').css({overflowY: this.state.showModal ? 'hidden' : 'scroll', marginRight: this.state.showModal ? '10px' : 0})
+        $('.links').css('visibility', this.state.showModal ? 'hidden' : 'visible')
       })
     })
   }

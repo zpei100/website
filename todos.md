@@ -12,7 +12,7 @@ David's feedback:
 [] CSS , more spacing between letters in title of expertise-section
 [] Use emailed fonts
 [] On mobile: title / greeting too small
-[] Image flicker
+[x] Image flicker
 [] expertise section font size same as overlay in projects section
 [] exit button for overlay
-[] make swiping carousel work
+[x] make swiping carousel work

@@ -272,7 +272,7 @@
 		z-index: 10;
 		height: auto !important;
 		opacity: 0;
-		animation: appear 2s forwards;
+		animation: appear 1s ease-out forwards;
 
 		.link {
 			height: 50px;
@@ -286,7 +286,7 @@
 
 	.links {
 		//external links flex column under profile picture
-		padding: 0;
+		padding: 0 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -299,37 +299,18 @@
 		}
 
 		//external links sticky to bottom of screen
-		@include smallerThan($lg-bp) {
-			// flex-direction: row !important;
-			// position: fixed;
-			// bottom: 0;
-			// padding: 1% 0;
-			// left: 0;
-			// width: 100%;
-			// margin: 0;
-			// background: white;
-			// border-top: 1px solid grey;
-			// z-index: 10;
-			// height: auto !important;
-			// opacity: 0;
-			// animation: appear 2s forwards;
-		}
-
-		// .sticky-link {
-		// 	height: 50px;
-		// 	align-items: center;
-		// 	width: 100% !important;
-		// 	justify-content: center !important;
-		// 	padding-left: 0 !important;
-		// 	margin: auto !important;
-		// }
-
 		.link {
 			display: flex;
 			cursor: pointer;
 			width: 100%;
 			padding-left: 22%;
 			margin: 5px 0;
+			transition: 0.5s;
+
+			&:hover {
+				transform: translateY(-4px);
+				transition: 0.5s;
+			}
 
 			& > div {
 				height: 26px;
@@ -338,12 +319,13 @@
 			}
 
 			//adds top border, spacing to each link
-			@include smallerThan($lg-bp) {
-				
-			}
 
 			@include smallerThan($sm-bp) {
 				height: 15vw;
+			}
+
+			@include smallerThan($ipad-pro) {
+				height: 10vw;
 			}
 
 			//external link icons -- github / gmail etc
@@ -352,18 +334,18 @@
 				width: 26px;
 
 				@include smallerThan($lg-bp) {
-					height: 30px;
-					width: 30px;
+					height: 40px;
+					width: 40px;
 				}
 
 				@include smallerThan($ipad) {
-					height: 30px;
-					width: 30px;
+					height: 50px;
+					width: 50px;
 				}
 
 				@include smallerThan(640px) {
-					height: 30px;
-					width: 30px;
+					height: 35px;
+					width: 35px;
 				}
 			}
 

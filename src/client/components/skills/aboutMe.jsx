@@ -4,15 +4,14 @@ import $ from 'jquery'
 
 export default class AboutMe extends Component {
   componentDidMount() {
+    console.log('mounted')
     this.io = new IntersectionObserver(([entry]) => {
-      console.log('triggered: ', entry.intersectionRatio)
       if(entry.intersectionRatio <= 0.50) {
         $('.links').animate({opacity: 0}, 500, () => {
           $('.links').addClass('sticky')
         })
         
       }
-      // else if(entry.intersectionRatio > 0.5) $('.links').removeClass('sticky')
     }, {threshold: [0, 0.2, 0.5, 0.8, 1]})
 
     this.io.observe(this.readMe)

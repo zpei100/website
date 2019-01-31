@@ -96,7 +96,8 @@ export default {
         'assets/gallery/cozysheets/related.png',
         'assets/gallery/cozysheets/thumbnail.png'
       ],
-      website: 'https://airbnbui-service.herokuapp.com/rooms/5'
+      website: 'https://airbnbui-service.herokuapp.com/rooms/5',
+      github: 'https://github.com/zpei100/AirBnbUI'
     },
     {
       name: 'Reddit-Clone',
@@ -112,18 +113,21 @@ export default {
         'assets/gallery/reddit-clone/posting.png',
         'assets/gallery/reddit-clone/reply.png'
       ],
-      website: 'https://reddit-clon.herokuapp.com/'
+      website: 'https://reddit-clon.herokuapp.com/',
+      github: 'https://github.com/zpei100/Reddit-clone'
     },
     {
       name: 'upScale',
       description: 'Back end optimization and scaling',
       technologies: ['Node.js', 'MongoDB', 'Redis', 'Docker', 'AWS', ],
-      thumbnail: 'assets/gallery/upScale/Main-50.jpg',
+      thumbnail: 'assets/gallery/upScale/main.jpg',
       images: [
-        'assets/gallery/upScale/Main-50.png',
-        'assets/gallery/upScale/JMeter.png',
-        'assets/gallery/upScale/NewRelic.png'
-      ]
-    }
+        'assets/gallery/upScale/main.jpg',
+        'assets/gallery/upScale/newRelic-00.jpg',
+        'assets/gallery/upScale/newRelic-01.jpg',
+        'assets/gallery/upScale/spdy.png'
+      ],
+      github: 'https://github.com/zpei100/Up-Scale'
+    },
   ]
 } 

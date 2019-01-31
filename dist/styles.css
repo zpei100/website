@@ -1,7 +1,6 @@
 #banner {
   max-height: 100vh;
   max-width: 100vw;
-  height: 100vh;
   overflow: hidden;
   background: linear-gradient(rgba(2, 2, 2, 0.85), rgba(2, 2, 2, 0.85)), url("assets/images/dark-background-50-1920x1280.jpg");
   background-size: 100% 100%;
@@ -318,7 +317,7 @@
   z-index: 10;
   height: auto !important;
   opacity: 0;
-  animation: appear 2s forwards;
+  animation: appear 1s ease-out forwards;
 }
 #aboutMe .sticky .link {
   height: 50px;
@@ -329,7 +328,7 @@
   margin: auto !important;
 }
 #aboutMe .links {
-  padding: 0;
+  padding: 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -350,6 +349,11 @@
   width: 100%;
   padding-left: 22%;
   margin: 5px 0;
+  transition: 0.5s;
+}
+#aboutMe .links .link:hover {
+  transform: translateY(-4px);
+  transition: 0.5s;
 }
 #aboutMe .links .link > div {
   height: 26px;
@@ -361,26 +365,31 @@
     height: 15vw;
   }
 }
+@media screen and (max-width: 1024px) {
+  #aboutMe .links .link {
+    height: 10vw;
+  }
+}
 #aboutMe .links .link img {
   height: 26px;
   width: 26px;
 }
 @media screen and (max-width: 1500px) {
   #aboutMe .links .link img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
 }
 @media screen and (max-width: 768px) {
   #aboutMe .links .link img {
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
   }
 }
 @media screen and (max-width: 640px) {
   #aboutMe .links .link img {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
   }
 }
 #aboutMe .links .link a {
@@ -407,148 +416,6 @@
   }
 }
 
-#projects-section {
-  width: 100%;
-  background: url("assets/images/project-background-1.jpg");
-  background-size: 100% 100%;
-  background-position: top left;
-  padding-bottom: 2%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media screen and (min-width: 1024px) {
-  #projects-section {
-    height: auto;
-    padding-bottom: 50px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  #projects-section {
-    background-size: auto auto;
-    background-repeat: 50% 50%;
-  }
-}
-#projects-section h1 {
-  margin: 1% 0;
-  color: black;
-  text-align: center;
-  font-size: 4vw;
-  width: 100%;
-  background: white;
-  padding: 2% 0;
-  margin-top: 0;
-}
-@media screen and (max-width: 1024px) {
-  #projects-section h1 {
-    font-size: 5vw;
-  }
-}
-#projects-section img {
-  object-fit: cover;
-}
-#projects-section .project {
-  height: auto;
-  border-radius: 15px;
-  border: 3px solid #031D44;
-}
-@media screen and (max-width: 1024px) {
-  #projects-section .project {
-    width: 90vw;
-    margin: 6% 0;
-  }
-}
-#projects-section .name {
-  display: flex;
-  justify-content: center;
-  font-size: 1.8vw;
-  font-weight: 550;
-}
-@media screen and (max-width: 1024px) {
-  #projects-section .name {
-    font-size: 6vw;
-  }
-}
-#projects-section .technologies {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 2% 2%;
-  font-size: 1.2vw;
-}
-@media screen and (max-width: 1024px) {
-  #projects-section .technologies {
-    font-size: 4vw;
-  }
-}
-#projects-section .technologies li {
-  margin: 0 2%;
-}
-#projects-section .details {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  position: absolute;
-  bottom: -15%;
-  font-family: carla;
-}
-#projects-section .details > div {
-  width: auto;
-  font-size: 1.2vw;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 15px;
-  padding: 1.5% 2.5%;
-  cursor: pointer;
-  box-shadow: 0px 8px 10px -10px rgba(0, 0, 0, 0.4);
-}
-#projects-section .details > div:hover {
-  color: white;
-  background: #F21B3F;
-  transition: 0.6s;
-}
-@media screen and (max-width: 1024px) {
-  #projects-section .details > div {
-    font-size: 3vw;
-    padding: 2% 4%;
-  }
-}
-#projects-section .gallery {
-  padding: 2%;
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: 10px;
-  box-shadow: 3px 3px black, 0em 0 4em black;
-  grid-template-rows: repeat(2, 18vw);
-  grid-template-columns: 13vw 13vw 26vw;
-  grid-template-areas: "airbnb airbnb upscale" "reddit reddit upscale";
-}
-@media screen and (max-width: 1024px) {
-  #projects-section .gallery {
-    display: block;
-  }
-}
-#projects-section .gallery #project-0 {
-  grid-area: airbnb;
-}
-#projects-section .gallery #project-1 {
-  grid-area: reddit;
-}
-#projects-section .gallery #project-2 {
-  grid-area: upscale;
-}
-@media screen and (min-width: 1024px) {
-  #projects-section .gallery #project-2 .technologies {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #projects-section .gallery #project-2 .technologies li {
-    margin: 2% 0;
-  }
-}
-
 @font-face {
   font-family: honey;
   src: url("assets/fonts/painter.ttf");
@@ -572,145 +439,25 @@
 body {
   margin: 0;
   font-family: Helvetica, Arial;
+  overflow-x: hidden;
 }
 body p {
   font-family: lato;
 }
-body li {
+body li sti {
   font-family: lato;
 }
 body * {
   box-sizing: border-box;
 }
 
-#modal {
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: middle;
+.body-overflow {
+  overflow-y: hidden;
 }
-
-#modal-content {
-  background: white;
-  margin: auto auto;
-  border: 2px solid black;
-  border-radius: 12px;
-  overflow: hidden;
-  width: 50vw;
-  height: 50vw;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content {
-    width: 90vw;
-    height: 140vw;
+@media screen and (min-device-width: 1024px) {
+  .body-overflow {
+    margin-right: 12px;
   }
-}
-#modal-content button {
-  padding: 0 !important;
-}
-#modal-content button img {
-  height: 100%;
-}
-#modal-content .carousel {
-  width: 100%;
-  height: 75%;
-  animation: emerge 0.3s forwards;
-}
-#modal-content .carousel img {
-  object-fit: contain;
-}
-@keyframes emerge {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-#modal-content #left-button {
-  background: #DCD6F7;
-  height: 5vh;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content #left-button {
-    height: 5vh;
-  }
-}
-#modal-content #right-button {
-  background: #D6E5E3;
-  height: 5vh;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content #right-button {
-    height: 5vh;
-  }
-}
-
-#modal-content-description {
-  padding: 0 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: calc(25% - 5vh);
-  align-items: center;
-}
-#modal-content-description h1 {
-  display: flex;
-  margin: 1% 0;
-  justify-content: center;
-  font-size: 1.5vw;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content-description h1 {
-    font-size: 3vw;
-  }
-}
-#modal-content-description p {
-  display: flex;
-  margin: 1% 0;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-  font-size: 1vw;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content-description p {
-    font-size: 2vw;
-  }
-}
-#modal-content-description #website-button {
-  display: flex;
-  justify-content: center;
-  margin: 1% 0;
-  font-size: 1vw;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content-description #website-button {
-    font-size: 2vw;
-  }
-}
-#modal-content-description a {
-  text-decoration: none;
-  color: black;
-  border: 2px solid;
-  border-color: red;
-  padding: 10px;
-  border-radius: 12px;
-}
-@media screen and (max-width: 1024px) {
-  #modal-content-description a {
-    padding: 5px;
-    border-radius: 6px;
-    border: 1px solid red;
-  }
-}
-
-.slider {
-  background: url("assets/images/project-background.jpg");
 }
 
 /*# sourceMappingURL=styles.css.map */

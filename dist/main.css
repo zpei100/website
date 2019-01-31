@@ -105,4 +105,340 @@
   }
 }
 
+#projects-section {
+  width: 100%;
+  background: url("assets/images/project-background-1.jpg");
+  background-size: 100% 100%;
+  background-position: top left;
+  padding-bottom: 2%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  #projects-section {
+    height: auto;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #projects-section {
+    background-size: auto auto;
+    background-repeat: 50% 50%;
+  }
+}
+#projects-section h1 {
+  margin: 1% 0;
+  color: black;
+  text-align: center;
+  font-size: 4vw;
+  width: 100%;
+  background: white;
+  padding: 2% 0;
+  margin-top: 0;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section h1 {
+    font-size: 5vw;
+  }
+}
+#projects-section img {
+  object-fit: cover;
+}
+#projects-section .project {
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid #031D44;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .project {
+    width: 90vw;
+    margin: 6% 0;
+  }
+}
+#projects-section .name {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8vw;
+  font-weight: 550;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .name {
+    font-size: 6vw;
+  }
+}
+#projects-section .technologies {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 2% 2%;
+  font-size: 1.2vw;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .technologies {
+    font-size: 4vw;
+  }
+}
+#projects-section .technologies li {
+  margin: 0 2%;
+}
+#projects-section .details {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: -15%;
+  font-family: carla;
+}
+#projects-section .details > div {
+  width: auto;
+  font-size: 1.2vw;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1.5% 2.5%;
+  cursor: pointer;
+  box-shadow: 0px 5px #999;
+}
+#projects-section .details > div:active {
+  transform: translateY(5px);
+  box-shadow: none;
+  transition: none;
+}
+#projects-section .details > div:hover {
+  color: white;
+  background: #F21B3F;
+  transition: 0.6s;
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .details > div {
+    font-size: 3vw;
+    padding: 2% 4%;
+  }
+}
+#projects-section .gallery {
+  padding: 2%;
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 10px;
+  box-shadow: 3px 3px black, 0em 0 4em black;
+  grid-template-rows: repeat(2, 18vw);
+  grid-template-columns: 13vw 13vw 26vw;
+  grid-template-areas: "airbnb airbnb upscale" "reddit reddit upscale";
+}
+@media screen and (max-width: 1024px) {
+  #projects-section .gallery {
+    display: block;
+  }
+}
+#projects-section .gallery #project-0 {
+  grid-area: airbnb;
+}
+#projects-section .gallery #project-1 {
+  grid-area: reddit;
+}
+#projects-section .gallery #project-2 {
+  grid-area: upscale;
+}
+@media screen and (min-width: 1024px) {
+  #projects-section .gallery #project-2 .technologies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #projects-section .gallery #project-2 .technologies li {
+    margin: 2% 0;
+  }
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+#modal-content {
+  background: white;
+  margin: auto auto;
+  border: 5px solid white;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+}
+@media screen and (max-width: 1200px) {
+  #modal-content {
+    width: 90vw;
+    height: 80vh;
+  }
+}
+@media screen and (max-device-width: 480px) {
+  #modal-content {
+    width: 90vw;
+    height: 140vw;
+  }
+}
+#modal-content button {
+  padding: 0 !important;
+}
+#modal-content button img {
+  height: 100%;
+}
+#modal-content .carousel {
+  width: 100%;
+  height: 75%;
+  animation: emerge 0.3s forwards;
+}
+#modal-content .carousel img {
+  object-fit: contain;
+}
+@keyframes emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+#exit-modal {
+  position: absolute;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+  height: auto;
+  cursor: pointer;
+  width: 3vw;
+}
+@media screen and (max-width: 1024px) {
+  #exit-modal {
+    width: 5vw;
+  }
+}
+@media screen and (max-width: 375px) {
+  #exit-modal {
+    width: 8vw;
+  }
+}
+#exit-modal img {
+  width: 100%;
+  height: auto;
+}
+#exit-modal:hover {
+  color: blue;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#carousel-buttons-container {
+  display: flex;
+}
+#carousel-buttons-container button {
+  height: 5vh;
+  box-shadow: 0 4px #999;
+}
+#carousel-buttons-container button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+@media screen and (min-device-width: 1024px) {
+  #carousel-buttons-container button:hover {
+    filter: brightness(70%);
+  }
+}
+#carousel-buttons-container #left-button {
+  background: #DCD6F7;
+}
+#carousel-buttons-container #right-button {
+  background: #D6E5E3;
+}
+
+#modal-content-description {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(25% - 5vh);
+  align-items: center;
+}
+#modal-content-description h1 {
+  display: flex;
+  margin: 1% 0;
+  justify-content: center;
+  font-size: 1.5vw;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description h1 {
+    font-size: 3vw;
+  }
+}
+#modal-content-description p {
+  display: flex;
+  margin: 1% 0;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  font-size: 1vw;
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description p {
+    font-size: 2vw;
+  }
+}
+#modal-content-description #website-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1% 0;
+  font-size: 1vw;
+}
+@media screen and (max-device-width: 1024px) {
+  #modal-content-description #website-buttons {
+    font-size: 2vw !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #modal-content-description #website-buttons {
+    font-size: 1.5vw;
+  }
+}
+#modal-content-description a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: black;
+  border: 2px solid #F21B3F;
+  padding: 3% 10px;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+#modal-content-description a:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+#modal-content-description a:hover {
+  background: #F21B3F;
+  transition: 0.6s;
+}
+@media screen and (max-device-width: 1024px) {
+  #modal-content-description a {
+    padding: 6% 5px;
+    border: 1px solid #F21B3F;
+  }
+}
+
+.slider {
+  background: url("assets/images/project-background.jpg");
+}
+
 /*# sourceMappingURL=main.css.map */
