@@ -106,7 +106,7 @@ export default {
       thumbnail: 'assets/gallery/reddit-clone/main.png',
       images: [
         'assets/gallery/reddit-clone/main.png',
-        'assets/gallery/reddit-clone/Detail.png',
+        'assets/gallery/reddit-clone/Details.png',
         'assets/gallery/reddit-clone/Edit2.png',
         'assets/gallery/reddit-clone/nested.png',
         'assets/gallery/reddit-clone/post.png',
