@@ -26,6 +26,7 @@ export default class Carousel extends Component {
     $('.carousel').on('touchstart', (event) => {
       var xClick = event.originalEvent.touches[0].pageX;
       $('.carousel').one('touchmove', (event) => {
+      event.preventDefault();
       var xMove = event.originalEvent.touches[0].pageX;
 
       if( Math.floor(xClick - xMove) > 5 ){
@@ -34,7 +35,7 @@ export default class Carousel extends Component {
       else if( Math.floor(xClick - xMove) < -5 ){
           this.slide('+');
       }
-    });
+    }, false);
 
       $(".carousel").on("touchend", function(){
         $(".carousel").off("touchmove");

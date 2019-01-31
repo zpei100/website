@@ -12,7 +12,7 @@ David's feedback:
 [] refine description of self
 [] CSS , more spacing between letters in title of expertise-section
 [] Use emailed fonts
-[] On mobile: title / greeting too small
+[x] On mobile: title / greeting too small
 [x] Image flicker
 [] expertise section font size same as overlay in projects section
 [x] exit button for overlay
