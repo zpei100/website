@@ -1,7 +1,6 @@
 @import 'variables';
 @import 'mixins';
 @import 'banner';
-@import 'skills';
 
 @font-face {
 	font-family: honey;
@@ -24,6 +23,12 @@
 
 .karla {
 	font-family: carla;
+}
+
+button {
+	&:focus {
+		outline: none;
+	}
 }
 
 body {

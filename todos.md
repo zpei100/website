@@ -1,12 +1,13 @@
 [] Expertise text some times not showing
 [] Expertise style minor adjustments
-[] Projects picture retaken
-[] Projects modal re-design
+[x] Projects picture retaken
+[x] Projects modal re-design
 [] Optimize solution and reach 80+ on lighthouse
 [] Change font for expertise section descriptions
+[] Prefetch assets (important)
 
 David's feedback:
-[] on hover animation links
+[x] on hover animation links
 [] change font to paragraphs to non-times new roman
 [] refine description of self
 [] CSS , more spacing between letters in title of expertise-section
@@ -14,5 +15,5 @@ David's feedback:
 [] On mobile: title / greeting too small
 [x] Image flicker
 [] expertise section font size same as overlay in projects section
-[] exit button for overlay
+[x] exit button for overlay
 [x] make swiping carousel work
