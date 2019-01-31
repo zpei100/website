@@ -21,12 +21,17 @@ export default class App extends Component {
   }
 
   toggleModal = idx => {
+    const freeze = e => e.preventDefault();
+
     import(/*webpackChunkName: "Modal" */ './modal/modal.jsx').then(module => {
       this.modal = module.default
     }).then(() => {
       this.setState({showModal: !this.state.showModal, active: idx}, () => {
+        //disable ios background body scrolling:
+        if (this.state.showModal) document.body.addEventListener('touchmove', freeze, false)
+        else document.body.removeEventListener('touchmove', freeze, false)
+        
         $('body').toggleClass('body-overflow');
-        // $('body').css({overflowY: this.state.showModal ? 'hidden' : 'scroll', marginRight: this.state.showModal ? '10px' : 0})
         $('.links').css('visibility', this.state.showModal ? 'hidden' : 'visible')
       })
     })
