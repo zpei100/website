@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack -w",
-    "sass": "sass --watch src/client/css/critical.scss:dist/styles.css src/client/css/main.scss:dist/main.css",
+    "sass": "sass --watch src/client/css/critical.scss:dist/css/styles.css src/client/css/main.scss:dist/css/main.css",
     "server": "nodemon src/server/index.js",
-    "start": "webpack -p && sass src/client/css/critical.scss:dist/styles.css src/client/css/main.scss:dist/main.css && NODE_ENV=production node src/server/index.js"
+    "start": "webpack -p && sass src/client/css/critical.scss:dist/css/styles.css src/client/css/main.scss:dist/css/main.css && NODE_ENV=production node src/server/index.js"
   },
   "keywords": [],
   "author": "",

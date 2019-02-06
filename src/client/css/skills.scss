@@ -9,7 +9,7 @@
 	height: 225px;
 	width: 225px;
 	border: 2px solid black;
-	background: url('assets/images/profile.png') no-repeat;
+	background: url('/images/profile.png') no-repeat;
 	background-size: contain;
 	@include smallerThan($ipad-pro) {
 		height: 200px;

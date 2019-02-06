@@ -5,10 +5,6 @@ module.exports = {
   mode: 'production',
   optimization: {
     minimizer: [
-      // new UglifyJsPlugin({
-      //   cache: true,
-      //   parallel: true
-      // }),
       new OptimizeCSSAssetsPlugin({})
     ]
   },
@@ -16,7 +12,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist/js')
   },
   module: {
     rules: [{

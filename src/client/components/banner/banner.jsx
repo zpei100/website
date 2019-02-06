@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import MediaQuery from 'react-responsive'
+import { scrollTo } from '../../utility/scroll'
 
 export default class Banner extends Component {
   showImage = image => {
     if (image) 
     image.onload = () => {
       $(image).animate({opacity: 0.75}, 1000)
+      image.src = '/images/lightbulb.jpg'
       setTimeout(() => {
         $(this.greeting).animate({opacity: 1}, 1000)
       })
@@ -17,35 +19,38 @@ export default class Banner extends Component {
     return (
       <MediaQuery query="(max-device-width: 1024px)">
         {match => (
+
+          //smaller than ipad: serve different background image
           match ? 
 
           <div id="banner">
-            <img ref={image => this.showImage(image)} style={{width: '100vw', height: '100vh', transform: 'scale(1.4)', transformOrigin: '50% 20%'}} src="assets/images/banner-1.jpg" />
+            <img ref={image => this.showImage(image)} src="assets/images/banner-50.jpg" />
             <div ref={greeting => this.greeting = greeting} id="greeting">
               <p id="greet-name">Hi! I'm Zen,</p>
               <p id="greet-developer" className="honey">a full-stack developer...</p>
               <div>
-              <button 
-                onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: 'start'})}
-              >
+              <button onClick={e => scrollToById('skills-section', 'smooth', 'start')}>
                 About Me
               </button>
               </div>
             </div>
           </div>   
 
+          //larger than ipad;
           : 
           <MediaQuery query="(min-width: 1500px)">
             {match => (
               <div id="banner">
-                <img ref={image => this.showImage(image)} src="assets/images/lightbulb-50-1920x1280.jpg" />
+                <img 
+                  ref={image => this.showImage(image)} 
+                  src="/images/lightbulb-50-1920x1280.jpg" 
+                  trueSrc="/images/lightbulb.jpg" 
+                />
                 <div ref={greeting => this.greeting = greeting} id="greeting">
                   <p id="greet-name">Hi! I'm Zen,</p>
                   <p id="greet-developer" className="honey">a full-stack developer...</p>
                   <div>
-                  <button 
-                    onClick={e => document.getElementById('skills-section').scrollIntoView({behavior: 'smooth', block: match ? 'end' : 'start'})}
-                  >
+                  <button onClick={e => scrollToById('skills-section', 'smooth', match ? 'end' : 'start')}>
                     About Me
                   </button>
                   </div>

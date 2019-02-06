@@ -5,6 +5,15 @@
     ".vscode": true,
     "node_modules": true,
     "package-lock.json": true,
-    "src/client/components/expertise-section-copy": true
+    "src/client/components/expertise-section-copy": true,
+    "dist/js": true,
+    "src/server": true,
+    ".babelrc": true,
+    ".gitignore": true,
+    "package.json": true,
+    "webpack.config.js": true,
+    "dist/css": true,
+    "dist/assets/fonts": true,
+    "dist/assets/pdf": true
   }
 }

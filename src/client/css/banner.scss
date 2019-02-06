@@ -7,7 +7,7 @@
 	overflow: hidden;
   background: 
     linear-gradient(rgba(2, 2, 2, 0.85), rgba(2, 2, 2, 0.85)),
-    url('assets/images/dark-background-50-1920x1280.jpg');
+    url('/images/dark-background-50-1920x1280.jpg');
     
 	background-size: 100% 100%;
   position: relative;
@@ -34,6 +34,13 @@
 	img {
 		width: 100%;
 		opacity: 0;
+
+		@media screen and (max-device-width: 1024px) {
+			width: 100vw;
+			height: 100vh;
+			transform: scale(1.4);
+			transform-origin: 50% 20%;
+		}
 	}
 
 	button {
