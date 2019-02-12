@@ -32,7 +32,7 @@ export default class App extends Component {
         else document.body.removeEventListener('touchmove', freeze, false)
         
         $('body').toggleClass('body-overflow');
-        $('.links').css('visibility', this.state.showModal ? 'hidden' : 'visible')
+        $('.links').css('display', this.state.showModal ? 'none' : 'flex')
       })
     })
   }

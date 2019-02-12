@@ -7,7 +7,6 @@
     "package-lock.json": true,
     "src/client/components/expertise-section-copy": true,
     "dist/js": true,
-    "src/server": true,
     ".babelrc": true,
     ".gitignore": true,
     "package.json": true,
