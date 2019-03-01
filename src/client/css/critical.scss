@@ -1,16 +1,16 @@
 @import 'variables';
 @import 'mixins';
-@import 'banner';
+@import 'hero';
 
 /* ===== font families ==== */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
 
 @font-face {font-family: Honey; src: url('/fonts/painter.ttf');}
-@font-face {font-family: lato; src: url('https://fonts.googleapis.com/css?family=Lato" rel="stylesheet')}
-@font-face {font-family: carla; src: url('https://fonts.googleapis.com/css?family=Karla')}
+@font-face {font-family: Carla; src: url('https://fonts.googleapis.com/css?family=Karla')}
 
-.karla {font-family: carla}
+.karla {font-family: 'Carla'}
+.roboto {font-family: 'Roboto'}
 .open-sans{font-family: 'Open Sans';}
 .lato{font-family: 'Lato'}
 .playfair-display{font-family: 'Playfair Display'}

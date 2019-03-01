@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Bar from './bar.jsx'
+import Bar from './bar'
 import MediaQuery from 'react-responsive'
 
 export default class SkillsBars extends Component {

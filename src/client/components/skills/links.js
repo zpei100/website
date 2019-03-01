@@ -1,6 +1,6 @@
 import React from 'react'
 import Observer from '../observer.jsx'
-import External from './external.jsx'
+import External from './external'
 import MediaQuery from 'react-responsive'
 
 export default () => (

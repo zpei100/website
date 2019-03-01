@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SkillsBars from './skillsBars.jsx'
-import AboutMe from './aboutMe.jsx'
+import SkillsBars from './skillsBars'
+import AboutMe from './aboutMe'
 
 export default class Skills extends Component {
   render() {

@@ -1,10 +1,9 @@
 import $ from 'jquery'
 
 $(window).scroll(function() {
-  const image = $('#banner img')
+  const image = $('#hero img')
   const scrollPosition = $(this).scrollTop()
   const greeting = $('#greeting')
-
   const vertical = window.screen.width <= 1024
 
 

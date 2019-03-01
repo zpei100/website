@@ -4,7 +4,6 @@ import $ from 'jquery'
 
 export default class AboutMe extends Component {
   componentDidMount() {
-    console.log('mounted')
     this.io = new IntersectionObserver(([entry]) => {
       if(entry.intersectionRatio <= 0.50) {
         $('.links').animate({opacity: 0}, 500, () => {
@@ -23,20 +22,20 @@ export default class AboutMe extends Component {
         <div style={{display: 'flex', height: '100%'}}>
           <div style={{height: '100%'}}>
             <div className="picture-container"></div>
-            <Observer load={() => import(/*webpackChunkName: "links" */ "./links.jsx")}>
+            <Observer load={() => import(/*webpackChunkName: "links" */ "./links.js")}>
               {Component => Component ? <Component /> : ''} 
             </Observer>
           </div>
-          <div className="text">
+          <div className="text roboto">
             <h1>About Me</h1>
             <p>
-              I'm passionate about mathematics and problem solving. I've been doing a deep dive on full-stack web developer using JavaScript and Node.js. 
+              My main passions include mathematics and problem solving. I am motivated by interesting challenges, learning opportunities and professional growth.
             </p>
             <p>
-              I've built numerous full stack applications from the ground up, using technologies ranging from raw JavaScript (pre-ES5) to the most buzz-wordy frameworks and libraries today.
+              JavaScript is my main language. Although my skills center around building full stack applications that leverage modern technologies like React & Redux, Node.js, MongoDB and MySQL, I am excited about extending these skills to Angular, Python, Java, Go environments and etc... 
             </p>
             <p>
-              I enjoy solving toy problems with time and space complexity constraints. My hobbies include playing social board-games like One Night Werewolf, and watching gamers break world records at the highest levels.
+              In the work place, I am the quiet introvert, who is self-sufficient, independent and always at work. I am horrible at small talk, but communicative in real conversations.
             </p>
           </div>
         </div>

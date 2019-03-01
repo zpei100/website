@@ -23,7 +23,7 @@ export default class Banner extends Component {
           //smaller than ipad: serve different background image
           match ? 
 
-          <div id="banner">
+          <div id="hero">
             <img ref={image => this.showImage(image)} src="assets/images/banner-50.jpg" />
             <div ref={greeting => this.greeting = greeting} id="greeting">
               <p id="greet-name">Hi! I'm Zen,</p>
@@ -40,11 +40,11 @@ export default class Banner extends Component {
           : 
           <MediaQuery query="(min-width: 1500px)">
             {match => (
-              <div id="banner">
+              <div id="hero">
                 <img 
                   ref={image => this.showImage(image)} 
                   src="/images/lightbulb-LQ.jpg" 
-                  trueSrc="/images/lightbulb.jpg" 
+                  truesrc="/images/lightbulb.jpg" 
                 />
                 <div ref={greeting => this.greeting = greeting} id="greeting">
                   <p id="greet-name">Hi! I'm Zen,</p>

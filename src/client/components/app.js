@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LazySkills from './skills/lazy-skills.jsx'
+import LazySkills from './skills/lazy-skills'
 import Hero from './hero/hero'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
