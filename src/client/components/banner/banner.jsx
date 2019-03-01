@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 import MediaQuery from 'react-responsive'
-import { scrollTo } from '../../utility/scroll'
+import { scrollToById } from '../../utility/scroll'
 
 export default class Banner extends Component {
   showImage = image => {

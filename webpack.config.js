@@ -2,12 +2,12 @@ const path = require('path')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
-  optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({})
-    ]
-  },
+  mode: 'development',
+  // optimization: {
+  //   minimizer: [
+  //     new OptimizeCSSAssetsPlugin({})
+  //   ]
+  // },
   entry: path.resolve(__dirname, 'src/client/index.jsx'),
   output: {
     filename: '[name].bundle.js',
