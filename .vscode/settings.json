@@ -1,15 +1,6 @@
 {
   "git.ignoreLimitWarning": true,
   "files.exclude": {
-    "__error": "Not found",
-    ".vscode": true,
-    "node_modules": true,
-    "package-lock.json": true,
-    "src/client/components/expertise-section-copy": true,
-    ".babelrc": true,
-    ".gitignore": true,
-    "dist/css": true,
-    "dist/assets/fonts": true,
-    "dist/assets/pdf": true
+    "__error": "Not found"
   }
 }

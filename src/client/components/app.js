@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LazySkills from './skills/lazy-skills.jsx'
-import Banner from './banner/banner.jsx'
+import Hero from './hero/hero'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
 import IntersectionObserver from 'intersection-observer-polyfill'
@@ -43,7 +43,7 @@ export default class App extends Component {
 
     return (
       <React.Fragment>
-        <Banner />
+        <Hero />
         <LazySkills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
         <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>

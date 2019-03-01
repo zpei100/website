@@ -8,7 +8,7 @@ module.exports = {
   //     new OptimizeCSSAssetsPlugin({})
   //   ]
   // },
-  entry: path.resolve(__dirname, 'src/client/index.jsx'),
+  entry: path.resolve(__dirname, 'src/client/index.js'),
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',

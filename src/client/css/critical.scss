@@ -2,28 +2,51 @@
 @import 'mixins';
 @import 'banner';
 
-@font-face {
-	font-family: honey;
-	src: url('/fonts/painter.ttf');
-}
+/* ===== font families ==== */
 
-@font-face {
-	font-family: lato;
-	src: url('https://fonts.googleapis.com/css?family=Lato" rel="stylesheet')
-}
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
 
-.honey {
-	font-family: honey;
-}
+@font-face {font-family: Honey; src: url('/fonts/painter.ttf');}
+@font-face {font-family: lato; src: url('https://fonts.googleapis.com/css?family=Lato" rel="stylesheet')}
+@font-face {font-family: carla; src: url('https://fonts.googleapis.com/css?family=Karla')}
 
-@font-face {
-	font-family: carla;
-	src: url('https://fonts.googleapis.com/css?family=Karla')
-}
+.karla {font-family: carla}
+.open-sans{font-family: 'Open Sans';}
+.lato{font-family: 'Lato'}
+.playfair-display{font-family: 'Playfair Display'}
+.libre-baskerville{font-family: 'Libre Baskerville'}
+.oswald{font-family: 'Oswald'}
+.montserrat{font-family: 'Montserrat'}
+.vollkorn{font-family: 'Vollkorn'}
+.bree-serif{font-family: 'Bree Serif'}
+.raleway{font-family: 'Raleway'}
+.merriweather{font-family: 'Merriweather'}
+.cardo{font-family: 'Cardo'}
+.abril-fatface{font-family: 'Abril Fatface'}
+.muli{font-family: 'Muli'}
+.honey {font-family: 'Honey';}
 
-.karla {
-	font-family: carla;
-}
+
+/* ==== Weights, styles, letterspacing, etc. ==== */
+
+.thin{font-weight: 100;}
+.light{font-weight: 300;}
+.regular{font-weight: 400;}
+.bold{font-weight: 700;}
+.italic{font-style: italic;}
+.normal{font-style: normal;}
+.ls-small{letter-spacing: 2px;}
+.ls-medium{letter-spacing: 4px;}
+.ls-large{letter-spacing: 8px;}
+.ls-xlarge{letter-spacing: 12px;}
+.uppercase{text-transform: uppercase;}
+.color-emphasis-1{color: #FF4056}
+.color-emphasis-2{color: #000;}
+.color-emphasis-3{color: #60547c}
+.text-left{text-align: left;}
+.line-height-small{line-height: 1.2}
+.line-height-medium{line-height: 1.45}
+.line-height-large{line-height: 1.65}
 
 button {
 	&:focus {

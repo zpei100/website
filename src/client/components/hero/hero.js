@@ -8,7 +8,7 @@ export default class Banner extends Component {
     if (image) 
     image.onload = () => {
       $(image).animate({opacity: 0.75}, 1000)
-      image.src = '/images/lightbulb.jpg'
+      // image.src = '/images/lightbulb.jpg'
       setTimeout(() => {
         $(this.greeting).animate({opacity: 1}, 1000)
       })
@@ -43,7 +43,7 @@ export default class Banner extends Component {
               <div id="banner">
                 <img 
                   ref={image => this.showImage(image)} 
-                  src="/images/lightbulb-50-1920x1280.jpg" 
+                  src="/images/lightbulb-LQ.jpg" 
                   trueSrc="/images/lightbulb.jpg" 
                 />
                 <div ref={greeting => this.greeting = greeting} id="greeting">
