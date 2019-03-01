@@ -29,10 +29,10 @@ export default class AboutMe extends Component {
           <div className="text roboto">
             <h1>About Me</h1>
             <p>
-              My main passions include mathematics and problem solving. I am motivated by interesting challenges, learning opportunities and professional growth.
+              Strongly passionate over mathematics and problem solving, I am a developer motivated by interesting challenges, learning opportunities and professional growth.
             </p>
             <p>
-              JavaScript is my main language. Although my skills center around building full stack applications that leverage modern technologies like React & Redux, Node.js, MongoDB and MySQL, I am excited about extending these skills to Angular, Python, Java, Go environments and etc... 
+              JavaScript is my main language. And although my skills center around building full stack applications that leverage modern technologies like React & Redux, Node.js, MongoDB and MySQL, I am excited about extending these skills to Angular, Python, Java, Go environments and etc... 
             </p>
             <p>
               In the work place, I am the quiet introvert, who is self-sufficient, independent and always at work. I am horrible at small talk, but communicative in real conversations.
