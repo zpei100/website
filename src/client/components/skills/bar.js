@@ -40,7 +40,6 @@ export default class Bar extends Component {
       overflow: 'hidden',
       position: 'relative',
       borderRadius: '14px',
-      clipPath: 'circle(45%)',
     }
 
     const barContainerStyles = {
