@@ -17,11 +17,6 @@ export default class Bar extends Component {
     )
 
     this.io.observe(this.barContainer)
-
-    // const { delay = 0.2 } = this.props;
-    // setTimeout(() => {
-    //   $(this.bar).animate({left: '0%'}, 2000, 'swing')
-    // }, 1000 * delay)
   }
 
   render() {

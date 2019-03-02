@@ -6,7 +6,7 @@
 .picture-container {
 	background: url('/images/profile.png') no-repeat;
 	background-size: contain;
-	@include largerThan($ipad-pro) {height: 225px; width: 225px}
+	@include biggerThan($ipad-pro) {height: 225px; width: 225px}
 	@include smallerThan($ipad-pro) {height: 200px; width: 200px}
 	@include smallerThan(700px) {height: 25vw; width: 25vw}
 }

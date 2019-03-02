@@ -36,45 +36,44 @@ export default {
   expertises: [
     {
       icon: 'assets/images/coding2.svg',
-      title: 'UI/UX development',
-      description: 'Build responsive, interactive components',
+      title: 'UI/UX Development',
       bulletpoints: [
-         'Responsive layouts and all the basic components, including carousels, galleries, modals, dropdowns, forms etc...',
-         'Custom animations based on user interactions',
-         'Client-side caching, and use of service workers for better 3G and even off-line experience (learning)',
-         'Modular codebase with React, Redux and Sass',
+         'Responsive layouts',
+         'Custom components, with vanilla JS and CSS, or popular front end libraries',
+         'PWA service workers and client side caching',
+         'Project intgration with external APIs',
+         'Modular codebase with React, Redux, Bootstrap and Sass',
       ]
     },
     {
       icon: 'assets/images/optimization.svg',
       title: 'Optimization',
-      description: 'Improve page loading speed and user experience',
       bulletpoints: [
-        'Deliver content to users more quickly with server-side-rendering',
-        'Lazy loading below the fold, and non-critical content, images with observers',
-        'Dynamically import components to lessen size of initial data transferred',
-        'Single page applications with bundling tools to reduce number of resource requests'
+        'Quick content delivery and improving SEO with server side rendering',
+        'Better mobile experience through lazy loading non-critical content',
+        'Lessen initial resource required by dynamically importing components',
+        'Reduce number of requests. Single page applications with bundling tools and app routing',
       ]
     },
     {
       icon: 'assets/images/server.svg',
-      title: 'Server',
-      description: 'Implement RESTful APIs as well as GraphQL back ends',
+      title: 'Back End',
       bulletpoints: [
-        'Implement RESTful APIs to support all CRUD operations and nested queries with MySQL and MongoDB',
-        'GraphQL integration for exact and efficient queries',
+        'Serve JSON payload. Engineer REST APIs with Node.js and Express.js',
+        'Schema design, data migrations with MySQL',
+        'Efficeintly query SQL and NoSQL databases through ORMs, ODMs',
+        'JavaScript implementation of GraphQL',
         'Server-side caching, templating, routing, authentication and SSL handling',
       ]
     },
     {
       icon: 'assets/images/scale.svg',
-      title: 'Scaling',
-      description: 'Leveraging server caching, CDN, load balancers and reverse proxies to increase back end scaliability',
+      title: 'DevOps (Inexperienced)',
       bulletpoints: [
-        'Leveraging CDN and reverse-proxies to reduce server load (learning)',
-        'Reduce numbers of requests hitting the server via caching on multiple layers',
-        'Deploy Dockerized applications across multiple AWS cloud instances',
-        'Benchmarked back-end performance with JMeter, ApacheBench, New Relic'
+        'Leverage CDN and reverse-proxies to handle large traffic',
+        'Deploy Dockerized applications across multiple AWS EC2 instances',
+        'Reduce server load with multiple layers of caching',
+        'Stress tested back-end performance with JMeter, New Relic'
       ]
     }
   ],
