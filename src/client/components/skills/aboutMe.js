@@ -18,15 +18,15 @@ export default class AboutMe extends Component {
 
   render() {
     return (
-      <div id="aboutMe" ref={ele => this.readMe = ele}>
+      <div id="aboutMe" className="panel" ref={ele => this.readMe = ele}>
         <div style={{display: 'flex', height: '100%'}}>
           <div style={{height: '100%'}}>
-            <div className="picture-container"></div>
+            <div className="picture-container avatar"></div>
             <Observer load={() => import(/*webpackChunkName: "links" */ "./links.js")}>
               {Component => Component ? <Component /> : ''} 
             </Observer>
           </div>
-          <div className="text roboto">
+          <div className="text">
             <h1>About Me</h1>
             <p>
               Strongly passionate over mathematics and problem solving, I am a developer motivated by interesting challenges, learning opportunities and professional growth.

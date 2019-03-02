@@ -1,25 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
-
-//skills-section:
-//profile picture
+//avatar
+.avatar {clip-path:circle(45%)}
 .picture-container {
-	border-radius: 50%;
-	height: 225px;
-	width: 225px;
-	border: 2px solid black;
 	background: url('/images/profile.png') no-repeat;
 	background-size: contain;
-	@include smallerThan($ipad-pro) {
-		height: 200px;
-		width: 200px;
-	}
-
-	@include smallerThan(700px) {
-		height: 25vw;
-		width: 25vw;
-	}
+	@include largerThan($ipad-pro) {height: 225px; width: 225px}
+	@include smallerThan($ipad-pro) {height: 200px; width: 200px}
+	@include smallerThan(700px) {height: 25vw; width: 25vw}
 }
 
 //contains about me and skill bars
@@ -28,35 +17,16 @@
 	background: $aboutMe-background;
 
 	//break components into rows
-	@include smallerThan($lg-bp) {
-		max-height: 900px;
-		display: block;
-	}
-
-	@include smallerThan($ipad-pro) {
-		max-height: 1100px !important;
-	}
-
-	@include smallerThan($ipad) {
-		max-height: 1050 !important;
-		height: auto;
-	}
+	@include smallerThan($lg-bp) { max-height: 900px; display: block }
+	@include smallerThan($ipad-pro) { max-height: 1100px !important }
+	@include smallerThan($ipad) { max-height: 1050 !important; height: auto }
 
 	//about me and skill bars sections padding
-	& > div {
+	.panel {
 		padding: 50px 2%;
-
-		@include smallerThan($lg-bp) {
-			padding: 50px 7%;
-		}
-
-		@include smallerThan(700px) {
-			padding: 50px 2%;
-		}
-
-		@include smallerThan($sm-bp) {
-			padding: 20px 2%;
-		}
+		@include smallerThan($lg-bp) { padding: 50px 7% }
+		@include smallerThan(700px) { padding: 50px 2% }
+		@include smallerThan($sm-bp) { padding: 20px 2% }
 	}
 }
 
@@ -297,7 +267,7 @@
 			display: flex;
 			cursor: pointer;
 			width: 100%;
-			padding-left: 22%;
+			padding-left: 25%;
 			margin: 5px 0;
 			transition: 0.5s;
 

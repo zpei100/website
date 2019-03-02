@@ -10,7 +10,7 @@ export default class Bar extends Component {
           this.io.unobserve(this.bar);
           const { delay = 0.2 } = this.props;
           setTimeout(() => {
-            $(this.bar).animate({left: '0%'}, 2000, 'swing')
+            $(this.bar).animate({left: '0%'}, 1000, 'swing')
           }, 1000 * delay)
         }
       }, {threshold: [1]}
@@ -45,6 +45,7 @@ export default class Bar extends Component {
       overflow: 'hidden',
       position: 'relative',
       borderRadius: '14px',
+      clipPath: 'circle(45%)',
     }
 
     const barContainerStyles = {

@@ -48,29 +48,9 @@
 .line-height-medium{line-height: 1.45}
 .line-height-large{line-height: 1.65}
 
-button {
-	&:focus {
-		outline: none;
-	}
-}
-
-body {
-	margin: 0;
-	font-family: Helvetica, Arial;
-	overflow-x: hidden;
-
-	p {
-		font-family: lato;
-	}
-
-	li sti{
-		font-family: lato;
-	}
-
-	* {
-		box-sizing: border-box;
-	}
-}
+button :focus { outline: none }
+body { margin: 0; font-family: Lato, Helvetica, Arial; overflow-x: hidden }
+* { box-sizing: border-box }
 
 .body-overflow {
 	overflow-y: hidden;

@@ -7,7 +7,7 @@ export default class SkillsBars extends Component {
     const { skillsData } = this.props
 
     return (
-      <div id="skills-bars">
+      <div id="skills-bars" className="panel">
         {skillsData.map((skill, idx) => <Bar key={`bar-${idx}`} {...skill} delay={idx * 0.15} />)}
       </div>
     );

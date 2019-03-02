@@ -28,6 +28,7 @@ export default class Observer extends React.Component {
   }
 
   render() {
-    return <div ref={div => this.container = div}>{this.props.children(this.state.component)}</div>
+    return this.state.component ? <React.Fragment>{this.props.children(this.state.component)}</React.Fragment>
+    : <div ref={div => this.container = div}></div>
   }
 }
