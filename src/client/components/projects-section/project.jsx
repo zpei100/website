@@ -32,17 +32,6 @@ export default class Project extends Component {
         thumbnail.css({opacity: 1, transition: `ease-out ${delay}s`})
       }
     )
-    
-    // details.hover(
-    //   () => {
-    //     details.stop()
-    //     details.css({background: 'red', transition: '0.5s'})
-    //   },
-    //   () => {
-    //     details.stop()
-    //     details.css({background: 'white', transition: '0.5s'})
-    //   }
-    // )
   }
   
   render() {
@@ -138,12 +127,15 @@ export default class Project extends Component {
 
             <div style={overlayTopStyles} ref={overlayTop => this.overlayTop = overlayTop}>
 
-              <div className="name">{name}</div>
+              <div className="project-name">{name}</div>
 
-              <ul className="technologies">
+              {/* done */}
+              <ul className="technologies p-2 size-2">
                 {technologies.map((technology, idx) => 
                   <li key={`technology-${idx}`}>{technology}</li>)}
               </ul>
+
+
             </div>
 
             <div className="details" ref={overlayBot => this.overlayBot = overlayBot}>

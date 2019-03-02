@@ -1,112 +1,86 @@
 @import 'variables';
 @import 'mixins';
 
-$star-range: 2000;
-@function stars($n) {
-  $value: '#{random($star-range)}px #{random($star-range)}px #767676';
-  @for $i from 2 through $n {
-    $value: '#{$value} , #{random($star-range)}px #{random($star-range)}px #767676';
-  }
-  @return unquote($value);
+%flex-center {
+	display: flex;
+	justify-content: center;
 }
 
-// store random stars
-$small-stars: stars(700);
-
-.small-stars {
-	padding: 3px;
-	width: 1px;
-	height: 1px;
-	background: transparent;
-	box-shadow: $small-stars;
-	animation: starsAnimation 50s linear infinite;
+.gallery-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 3%;
 }
 
-@keyframes starsAnimation {
-	from { transform: translateY(-2000px) }
-	to { transform: translateY(0px) }
+.gallery {
+	@include smallerThan($ipad-pro) { display: block }
+	@include biggerThan($ipad-pro) {
+		display: grid;
+		grid-gap: 10px;
+		box-shadow:  3px 3px black, 0em 0 4em black;
+		grid-template-rows: repeat(2, 18vw);
+		grid-template-columns: 13vw 13vw 26vw;
+		grid-template-areas: 
+		"airbnb airbnb upscale" 
+		"reddit reddit upscale";
+
+		#project-0 { grid-area: airbnb }
+		#project-1 { grid-area: reddit }
+		#project-2 { grid-area: upscale;
+			.technologies {
+				flex-direction: column;
+				align-items: center;
+				li { margin: 2% 0 }
+			}
+		}
+	}
 }
+
 
 #projects-section {
-	width: 100%;
-
-	@include biggerThan($ipad-pro) { height: auto; padding-bottom: 50px }
+	@include biggerThan($ipad-pro) { height: auto }
 	@include smallerThan($ipad-pro) { background-size: auto auto; background-repeat: 50% 50% }
 
-	// background: #EEE5E9;
+	width: 100%;
 	background: url("/images/project-background-1.jpg");
-	// background-size: 100% 100%;
-	// background-position: top left;
-	padding-bottom: 2%;
-	box-sizing: border-box;	
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	
 
-	h1 {
-		margin: 1% 0;
+	.title {
 		color: black;
-		text-align: center;
-		font-size: 4vw;
-
-		@include smallerThan($ipad-pro) {
-			font-size: 5vw;
-		}
-
-
-		width: 100%;
 		background: white;
-		padding: 2% 0;
-		margin-top: 0;
-	}
-
-	img {
-		object-fit: cover;
+		padding: 2%;
+		text-align: center;
+		width: 100%;
+		margin: 0;
+		font-size: $size-7;
+		@include smallerThan($ipad-pro) { font-size: $size-9 };
 	}
 
 	.project {
 		height: auto;
 		border-radius: 15px;
-		border: 3px solid #031D44;
-
-		@include smallerThan($ipad-pro) {
-			width: 90vw;
-			margin: 6% 0;
-		}
+		@include smallerThan($ipad-pro) { width: 90vw; margin: 6% 0 }
 	}
 
-	.name {
+	.project-name {
 		display: flex;
 		justify-content: center;
-		font-size: 1.8vw;
+		font-size: $size-4;
 		font-weight: 550;
 
-		@include smallerThan($ipad-pro) {
-			font-size: 6vw;
-		}
+		@include smallerThan($ipad-pro) { font-size: $size-10 }
 	}
 
 	.technologies {
 		list-style: none;
-		display: flex;
-		justify-content: center;
-		padding: 2% 2%;
-		font-size: 1.2vw;
-
-		@include smallerThan($ipad-pro) {
-			font-size: 4vw;
-		}
-
-		li {
-			margin: 0 2%;
-		}
+		@extend %flex-center;
+		@include smallerThan($ipad-pro) { font-size: $size-7 }
+		li { margin: 0 2% }
 	}
 
 	.details {
-		display: flex;
+		@extend %flex-center;
 		width: 100%;
-		justify-content: center;
 		position: absolute;
 		bottom: -15%;
 		font-family : carla;
@@ -141,45 +115,31 @@ $small-stars: stars(700);
 			}
 		}
 	}
+}
 
-	.gallery {
-		padding: 2%;
-		box-sizing: border-box;
-		display: grid;
-		grid-gap: 10px;
-		box-shadow:  3px 3px black, 0em 0 4em black;
-		grid-template-rows: repeat(2, 18vw);
-		grid-template-columns: 13vw 13vw 26vw;
-		grid-template-areas: 
-		"airbnb airbnb upscale" 
-		"reddit reddit upscale";
 
-		@include smallerThan($ipad-pro) {
-			display: block;
-		}
+$star-range: 2000;
+@function stars($n) {
+  $value: '#{random($star-range)}px #{random($star-range)}px white';
+  @for $i from 2 through $n {
+   	$value: '#{$value} , #{random($star-range)}px #{random($star-range)}px white';
+  }
+  @return unquote($value);
+}
 
-		#project-0 {
-			grid-area: airbnb;
-		}
+// store random stars
+$small-stars: stars(700);
 
-		#project-1 {
-			grid-area: reddit;
-		}
+.small-stars {
+	padding: 1px;
+	width: 1px;
+	height: 1px;
+	background: transparent;
+	box-shadow: $small-stars;
+	animation: starsAnimation 50s linear infinite;
+}
 
-		#project-2 {
-			grid-area: upscale;
-
-			@include biggerThan($ipad-pro) {
-				.technologies {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					
-					li {
-						margin: 2% 0;
-					}
-				}
-			}
-		}
-	}
+@keyframes starsAnimation {
+	from { transform: translateY(-2000px) }
+	to { transform: translateY(0px) }
 }

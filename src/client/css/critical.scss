@@ -32,6 +32,7 @@
 .thin{font-weight: 100;}
 .light{font-weight: 300;}
 .regular{font-weight: 400;}
+.lbold{font-weight: 500;}
 .bold{font-weight: 700;}
 .italic{font-style: italic;}
 .normal{font-style: normal;}
@@ -48,13 +49,26 @@
 .line-height-medium{line-height: 1.45}
 .line-height-large{line-height: 1.65}
 
+/* ==== paddings and margins ==== */
+.p-5{padding: 5%}
+.p-4{padding: 4%}
+.p-3{padding: 3%}
+.p-2{padding: 2%}
+.p-1{padding: 1%}
+
+/* ==== font sizes ==== */
+.size-1{font-size: 1.2vw}
+.size-2{font-size: 1.4vw}
+.size-3{font-size: 1.6vw}
+.size-4{font-size: 2vw}
+.size-5{font-size: 2.5vw}
+.size-6{font-size: 3vw}
+.size-7{font-size: 4vw}
+.size-8{font-size: 5vw}
+.size-9{font-size: 5.5vw}
+.size-10{font-size: 6vw}
+
+* { box-sizing: border-box }
 button :focus { outline: none }
 body { margin: 0; font-family: Lato, Helvetica, Arial; overflow-x: hidden }
-* { box-sizing: border-box }
 
-.body-overflow {
-	overflow-y: hidden;
-	@media screen and (min-device-width: 1024px) {
-		margin-right: 12px;
-	}
-}
