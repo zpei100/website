@@ -37,12 +37,13 @@
 	}
 }
 
-
 #projects-section {
 	@include biggerThan($ipad-pro) { height: auto }
 	@include smallerThan($ipad-pro) { background-size: auto auto; background-repeat: 50% 50% }
 
 	width: 100%;
+	//extra space for sticky links at buttom
+	margin-bottom: 50px;
 	background: url("/images/project-background-1.jpg");
 
 	.title {

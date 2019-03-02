@@ -8,7 +8,6 @@ export default class Banner extends Component {
     if (image) 
     image.onload = () => {
       $(image).animate({opacity: 0.75}, 1000)
-      // image.src = '/images/lightbulb.jpg'
       setTimeout(() => {
         $(this.greeting).animate({opacity: 1}, 1000)
       })

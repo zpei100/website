@@ -99,11 +99,7 @@
 		height: 5vh;
 		box-shadow: 0 4px #999;
 		transition: 0.6s;
-		&:active {transform: translateY(4px); box-shadow: none; transition: 0.6s;}
-		@media screen and (min-device-width: $ipad-pro) {
-			&:hover {filter: brightness(70%)};
-		}	
-
+		&:active { box-shadow: none; margin-top: 4px; margin-bottom: -4px; transition: 0.2s;}
 	}
 	#left-button {background: #DCD6F7}
 	#right-button {background: #D6E5E3}

@@ -50,13 +50,13 @@ export default class Carousel extends Component {
     else return active === 0 ? len : active - 1;
   }
 
-  slide = operation => {
+  slide = (operation, e) => {
      if (!this.state.animating) {
       const $images = this.slider.find('img')
       const marginChange = this.getRenderedImageSize() + 'px'
       const newActive = this.updateActive(operation);
       const images = getThree(this.props.images, newActive);
-
+   
       //left button, slide is moving right
       if (operation === '+') {
         this.slider.prepend(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap; margin-left: -${marginChange}" src="${images[0]}"/>`);
@@ -114,8 +114,8 @@ export default class Carousel extends Component {
           </div>
         </div>
         <div id="carousel-buttons-container">
-          <button id="left-button" style={buttonStyles} onClick={() => this.slide('+')}><img src="assets/icons/left-arrow.svg"></img></button>
-          <button id="right-button" style={buttonStyles} onClick={() => this.slide('-')}><img src="assets/icons/right-arrow.svg"></img></button>
+          <button id="left-button" style={buttonStyles} onClick={(e) => this.slide('+', e)}><img src="assets/icons/left-arrow.svg"></img></button>
+          <button id="right-button" style={buttonStyles} onClick={(e) => this.slide('-', e)}><img src="assets/icons/right-arrow.svg"></img></button>
         </div>
       </React.Fragment>
     );

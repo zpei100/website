@@ -8,28 +8,25 @@ export default class Project extends Component {
     const overlayBot = $(this.overlayBot)
     const details = $(this.details)
     const thumbnail = $(this.thumbnail)
-    const duration = 0.3
-    const delay = duration /2
+    const duration = 0.5
+    const delay = 0 /2
     const container = $(this.container)
 
     $(this.container).hover(
       () => {
         overlay.stop()
+        thumbnail.css({opacity: 0, transition: `ease-out ${delay}s`})
         overlay.css({opacity: 1, transition: `ease-in, ${duration}s`})
-        // container.css({border: '2px solid black', transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '15%', transition: `linear, ${duration}s ${delay}s`})
         overlayBot.css({bottom: '15%', transition: `linear, ${duration}s ${delay}s`})
-        thumbnail.css({opacity: 0, transition: `linear ${delay}s`})
       },
 
       () => {
         overlay.stop()
-        overlay.css({opacity: 0, transition: `ease-in, ${duration}s`})
-        container.css({border: 'none', transition: `ease-in, ${duration}s`})
-        container.css({border: 'none', transition: `ease-in, ${duration}s`})
-        overlayTop.css({top: '-25%', transition: `ease-out, ${duration}s`})
-        overlayBot.css({bottom: '-15%', transition: `ease-out, ${duration}s`})
         thumbnail.css({opacity: 1, transition: `ease-out ${delay}s`})
+        overlay.css({opacity: 0, transition: `ease-in, ${duration}s`})
+        overlayTop.css({top: '-30%', transition: `ease-out, ${duration}s`})
+        overlayBot.css({bottom: '-15%', transition: `ease-out, ${duration}s`})
       }
     )
   }
@@ -63,7 +60,7 @@ export default class Project extends Component {
 
     const overlayTopStyles = {
       position: 'absolute',
-      top: '-25%',
+      top: '-30%',
       ...fullSize
     }
     

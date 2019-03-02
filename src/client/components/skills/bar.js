@@ -11,7 +11,7 @@ export default class Bar extends Component {
           const { delay = 0.2 } = this.props;
           setTimeout(() => {
             $(this.bar).animate({left: '0%'}, 1000, 'swing')
-          }, 1000 * delay)
+          }, 500 * delay)
         }
       }, {threshold: [1]}
     )

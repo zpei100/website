@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import LazySkills from './skills/lazy-skills'
+import Skills from './skills/skills'
+// import LazySkills from './skills/lazy-skills'
 import Hero from './hero/hero'
 import LazyExpertiseSection from './expertise-section/lazy-expertise-section.jsx'
 import LazyProjectSection from './projects-section/lazy-projects-section.jsx'
@@ -44,7 +45,7 @@ export default class App extends Component {
     return (
       <React.Fragment>
         <Hero />
-        <LazySkills skillsData={skills} />
+        <Skills skillsData={skills} />
         <LazyExpertiseSection expertises={expertises} />
         <LazyProjectSection projects={projects} toggleModal={this.toggleModal}/>
         {Modal ? <Modal showModal={showModal} toggleModal={this.toggleModal} data={this.state.data.projects[this.state.active]}/> : ''}
