@@ -85,7 +85,7 @@ export default class Bar extends Component {
           <div className="bar" style={matches ? verticalBarContainerStyles : barContainerStyles} ref={barContainer => this.barContainer = barContainer}>
             <div ref={bar => this.bar = bar} style={barStyle} className="bar-fill"></div>
           </div>
-          <div className="skill-label" style={matches ? verticalLabelStyles : labelStyle}>{label}</div>
+          <div className="skill-label lato" style={matches ? verticalLabelStyles : labelStyle}>{label}</div>
         </div>
       )}
       </MediaQuery>

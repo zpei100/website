@@ -7,7 +7,7 @@ export default class External extends Component {
     return (
       <div className="link" onClick={() => location.href = link}>
         <img  src={icon}></img>
-        <div><a href={link} target="_blank" >{text}</a></div>
+        <div><a href={link} target="_blank" className="lato" >{text}</a></div>
       </div>
     );
   }
