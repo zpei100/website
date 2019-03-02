@@ -68,7 +68,7 @@ export default {
     },
     {
       icon: 'assets/images/scale.svg',
-      title: 'DevOps (Inexperienced)',
+      title: 'DevOps (Learning)',
       bulletpoints: [
         'Leverage CDN and reverse-proxies to handle large traffic',
         'Deploy Dockerized applications across multiple AWS EC2 instances',
