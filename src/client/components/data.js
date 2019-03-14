@@ -128,5 +128,19 @@ export default {
       ],
       github: 'https://github.com/zpei100/Up-Scale'
     },
+    {
+      name: 'DashDoor',
+      description: 'Landing page clone for DoorDash',
+      technologies: ['Node.js', 'React', 'Bootstrap', 'jQuery'],
+      thumbnail: 'assets/gallery/doordash/hero.png',
+      images: [
+        'assets/gallery/doordash/hero.png',
+        'assets/gallery/doordash/slide.png',
+        'assets/gallery/doordash/order.png',
+        'assets/gallery/doordash/footer.png'
+      ],
+      website: 'https://doordash-clone.herokuapp.com/',
+      github: 'https://github.com/zpei100/Door-dash'
+    }
   ]
 } 

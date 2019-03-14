@@ -15,18 +15,22 @@ export default class Project extends Component {
     $(this.container).hover(
       () => {
         overlay.stop()
-        thumbnail.css({opacity: 0, transition: `ease-out ${delay}s`})
+        container.css({boxShadow: '0 0 3pt 2pt #80CED7'})
+        thumbnail.css({opacity: 0})
         overlay.css({opacity: 1, transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '15%', transition: `linear, ${duration}s ${delay}s`})
         overlayBot.css({bottom: '15%', transition: `linear, ${duration}s ${delay}s`})
+        $('.project img').css({filter: 'brightness(80%)'})
       },
 
       () => {
         overlay.stop()
-        thumbnail.css({opacity: 1, transition: `ease-out ${delay}s`})
+        container.css({boxShadow: 'none'})
+        thumbnail.css({opacity: 1})
         overlay.css({opacity: 0, transition: `ease-in, ${duration}s`})
         overlayTop.css({top: '-30%', transition: `ease-out, ${duration}s`})
         overlayBot.css({bottom: '-15%', transition: `ease-out, ${duration}s`})
+        $('.project img').css({filter: 'none'})
       }
     )
   }
@@ -56,6 +60,8 @@ export default class Project extends Component {
 
     const thumbnailStyles = {
       ...fullSize,
+      objectFit: 'cover',
+      objectPosition: 'top'
     }
 
     const overlayTopStyles = {

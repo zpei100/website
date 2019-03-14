@@ -42,7 +42,7 @@ export default class Carousel extends Component {
     });
   }
 
-  updateActive = operation => {
+  getNewActive = operation => {
     const len = this.props.images.length - 1
     const { active } = this.state
 
@@ -54,17 +54,18 @@ export default class Carousel extends Component {
      if (!this.state.animating) {
       const $images = this.slider.find('img')
       const marginChange = this.getRenderedImageSize() + 'px'
-      const newActive = this.updateActive(operation);
+      const newActive = this.getNewActive(operation);
+      console.log('old active: ', this.state.active, 'new Active: ', newActive)
       const images = getThree(this.props.images, newActive);
    
-      //left button, slide is moving right
+      //left button, slide is moving right;
       if (operation === '+') {
-        this.slider.prepend(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap; margin-left: -${marginChange}" src="${images[0]}"/>`);
-      }
+        this.slider.prepend(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap; margin-left: -${marginChange}" src="${images[1]}"/>`);
+      } 
 
       //right button, slide is moving left
       if (operation === '-') {
-        this.slider.append(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap" src="${images[2]}"/>`);
+        this.slider.append(`<img style="width: 100%; height: 100%; overflow: hidden; padding: 0; whiteSpace: nowrap" src="${images[1]}"/>`);
       }
 
       this.setState({animating: true}, () => {
@@ -110,7 +111,7 @@ export default class Carousel extends Component {
       <React.Fragment>
         <div className="carousel">
           <div style={sliderStyles} ref={slider => this.slider = $(slider)} className="slider">
-            <img style={sliderImageStyles} src={images[0]} />
+            <img style={sliderImageStyles} src={images[1]} />
           </div>
         </div>
         <div id="carousel-buttons-container">

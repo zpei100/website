@@ -17,23 +17,27 @@
 	@include smallerThan($ipad-pro) { display: block }
 	@include biggerThan($ipad-pro) {
 		display: grid;
-		grid-gap: 10px;
+		// grid-gap: 10px;
 		box-shadow:  3px 3px black, 0em 0 4em black;
 		grid-template-rows: repeat(2, 18vw);
-		grid-template-columns: 13vw 13vw 26vw;
+		grid-template-columns: 30vw 30vw;
 		grid-template-areas: 
-		"airbnb airbnb upscale" 
-		"reddit reddit upscale";
+		"airbnb doordash" 
+		"reddit upscale";
 
 		#project-0 { grid-area: airbnb }
 		#project-1 { grid-area: reddit }
-		#project-2 { grid-area: upscale;
-			.technologies {
-				flex-direction: column;
-				align-items: center;
-				li { margin: 2% 0 }
-			}
-		}
+		#project-2 { grid-area: upscale }
+		#project-3 { grid-area: doordash }
+
+
+		// #project-2 { grid-area: upscale;
+		// 	.technologies {
+		// 		flex-direction: column;
+		// 		align-items: center;
+		// 		li { margin: 2% 0 }
+		// 	}
+		// }
 	}
 }
 
@@ -59,8 +63,10 @@
 
 	.project {
 		height: auto;
-		border-radius: 15px;
+		// border-radius: 15px;
+		border: 2px solid #80CED7;
 		@include smallerThan($ipad-pro) { width: 90vw; margin: 6% 0 }
+		img { transition: 0.4s }
 	}
 
 	.project-name {
