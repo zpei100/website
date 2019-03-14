@@ -28,9 +28,9 @@ export default class Banner extends Component {
               <p id="greet-name">Hi! I'm Zen,</p>
               <p id="greet-developer" className="honey">a full-stack developer...</p>
               <div>
-              {/* <button onClick={e => scrollToById('skills-section', 'smooth', 'start')}>
+              <button onClick={e => scrollToById('skills-section', 'smooth', 'start')}>
                 About Me
-              </button> */}
+              </button>
               </div>
             </div>
           </div>   
@@ -49,9 +49,9 @@ export default class Banner extends Component {
                   <p id="greet-name">Hi! I'm Zen,</p>
                   <p id="greet-developer" className="honey">a full-stack developer...</p>
                   <div>
-                  {/* <button onClick={e => scrollToById('skills-section', 'smooth', match ? 'end' : 'start')}>
+                  <button onClick={e => scrollToById('skills-section', 'smooth', 'start')}>
                     About Me
-                  </button> */}
+                  </button>
                   </div>
                 </div>
               </div>   
