@@ -14,6 +14,22 @@ setInterval(() => {
 app.use(compression())
 app.use(cors())
 
+var visitors = {};
+
+app.get('/', (req, res, next) => {
+  var ip = (req.headers['x-forwarded-for'] ||
+     req.connection.remoteAddress ||
+     req.socket.remoteAddress ||
+     req.connection.socket.remoteAddress).split(",")[0];
+  if(!(ip in visitors)) visitors[ip] = 0;
+  visitors[ip]+1;
+  next();
+})
+
+app.get('/visitors', (req, res) => {
+  res.send(visitors)
+})
+
 app.use(express.static(path.resolve(__dirname, '../../dist/js')));
 app.use(express.static(path.resolve(__dirname, '../../dist/css')));
 app.use(express.static(path.resolve(__dirname, '../../dist/assets')));
