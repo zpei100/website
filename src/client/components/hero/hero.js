@@ -48,9 +48,12 @@ export default class Banner extends Component {
                 <div ref={greeting => this.greeting = greeting} id="greeting">
                   <p id="greet-name">Hi! I'm Zen,</p>
                   <p id="greet-developer" className="honey">a full-stack developer...</p>
-                  <div>
+                  <div className="buttons">
                   <button onClick={e => scrollToById('skills-section', 'smooth', 'start')}>
                     About Me
+                  </button>
+                  <button onClick={e => scrollToById('projects-section', 'smooth', 'start')}>
+                    Projects
                   </button>
                   </div>
                 </div>

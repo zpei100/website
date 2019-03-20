@@ -21,6 +21,11 @@
 		}
 	}
 
+	.buttons {
+		display: flex;
+		justify-content: start !important;
+	}
+
 	#greet-developer {
 		font-size: 4vw; 
 		font-weight: 350; 
@@ -48,11 +53,12 @@
 		color: white;
     border-radius: 12px;
     font-size: 2vw;
-		padding: 12px;
+		padding: 8px;
 		background: linear-gradient(to right, $button-fill-color 50%, transparent 50%);
 		background-size: 200% 100%;
 		background-position: right bottom;
 		transition: 1s;
+		margin-right: 5%;
 
 		&:hover {
 			background-position: left bottom;

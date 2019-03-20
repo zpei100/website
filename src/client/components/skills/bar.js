@@ -10,7 +10,7 @@ export default class Bar extends Component {
           this.io.unobserve(this.bar);
           const { delay = 0.2 } = this.props;
           setTimeout(() => {
-            $(this.bar).animate({left: '0%'}, 1000, 'swing')
+            $(this.bar).css({transform: 'translateX(100%)'}, 1000, 'swing')
           }, 500 * delay)
         }
       }, {threshold: [1]}
