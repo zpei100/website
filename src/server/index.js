@@ -22,8 +22,10 @@ app.get('/', (req, res, next) => {
      req.connection.remoteAddress ||
      req.socket.remoteAddress ||
      req.connection.socket.remoteAddress).split(",")[0];
-  if(!(ip in visitors)) visitors[ip] = {count: 0, timeStamps: []}
+  if(!(ip in visitors)) visitors[ip] = {count: 0, timeStamps: [], host: req.headers.host}
   visitors[ip].count++;
+  console.log(req.headers.host
+    )
   visitors[ip].timeStamps.push(moment().format('MMMM Do YYYY, h:mm:ss a'))
   next();
 })
