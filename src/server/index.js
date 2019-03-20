@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const axios = require('axios')
+const moment = require('moment')
 
 const app = express()
 const compression = require('compression')
@@ -23,7 +24,7 @@ app.get('/', (req, res, next) => {
      req.connection.socket.remoteAddress).split(",")[0];
   if(!(ip in visitors)) visitors[ip] = {count: 0, timeStamps: []}
   visitors[ip].count++;
-  visitors[ip].timeStamps.push(new Date())
+  visitors[ip].timeStamps.push(moment().format('MMMM Do YYYY, h:mm:ss a'))
   next();
 })
 
