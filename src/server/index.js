@@ -24,8 +24,6 @@ app.get('/', (req, res, next) => {
      req.connection.socket.remoteAddress).split(",")[0];
   if(!(ip in visitors)) visitors[ip] = {count: 0, timeStamps: [], host: req.headers.host}
   visitors[ip].count++;
-  console.log(req.headers.host
-    )
   visitors[ip].timeStamps.push(moment().format('MMMM Do YYYY, h:mm:ss a'))
   next();
 })
@@ -33,6 +31,8 @@ app.get('/', (req, res, next) => {
 app.get('/visitors', (req, res) => {
   res.send(visitors)
 })
+
+app.get('/visitors/reset', (req, res) => visitors = {})
 
 app.use(express.static(path.resolve(__dirname, '../../dist/js')));
 app.use(express.static(path.resolve(__dirname, '../../dist/css')));
