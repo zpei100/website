@@ -7,7 +7,7 @@ export default class Banner extends Component {
   showImage = image => {
     if (image) 
     image.onload = () => {
-      $(image).animate({opacity: 0.75}, 1000)
+      $(image).animate({opacity: 1}, 1000)
       setTimeout(() => {
         $(this.greeting).animate({opacity: 1}, 1000)
       })
