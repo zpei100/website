@@ -21,8 +21,9 @@ app.get('/', (req, res, next) => {
      req.connection.remoteAddress ||
      req.socket.remoteAddress ||
      req.connection.socket.remoteAddress).split(",")[0];
-  if(!(ip in visitors)) visitors[ip] = 0;
-  visitors[ip]+1;
+  if(!(ip in visitors)) visitors[ip] = {count: 0, timeStamps: []}
+  visitors[ip].count++;
+  visitors[ip].timeStamps.push(new Date())
   next();
 })
 
