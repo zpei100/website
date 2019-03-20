@@ -1,9 +1,15 @@
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
+const axios = require('axios')
 
 const app = express()
 const compression = require('compression')
+
+//makes calls to project to keep alive:
+setInterval(() => {
+  axios.get('https://dashboard.heroku.com/apps/reddit-clon');
+}, 60*1000)
 
 app.use(compression())
 app.use(cors())
